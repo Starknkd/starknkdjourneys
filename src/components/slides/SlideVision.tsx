@@ -1,9 +1,9 @@
 import SlideShell from "@/components/SlideShell";
 import { SlideContent, SlideItem } from "@/components/SlideContent";
-import climberImg from "@/assets/climber.jpg";
+import mountaineerImg from "@/assets/mountaineer-pink.jpg";
 
 const SlideVision = () => (
-  <SlideShell slideKey={11} backgroundImage={climberImg}>
+  <SlideShell slideKey={11} backgroundImage={mountaineerImg}>
     <SlideContent>
       <SlideItem>
         <p className="text-stark-periwinkle text-sm tracking-[0.3em] uppercase mb-6">Vision</p>
