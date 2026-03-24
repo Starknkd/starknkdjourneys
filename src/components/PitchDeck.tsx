@@ -58,7 +58,7 @@ const PitchDeck = () => {
   const CurrentSlide = slides[current];
 
   return (
-    <div className="relative w-screen h-screen bg-background overflow-hidden">
+    <div className="relative w-screen h-screen bg-background overflow-y-auto">
       {/* Grain overlay */}
       <div className="grain-overlay" />
 
