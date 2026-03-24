@@ -16,7 +16,7 @@ const SlideTitle = () => (
       </SlideItem>
       <SlideItem>
         <p className="text-lg md:text-xl text-muted-foreground tracking-[0.35em] uppercase">
-          Human Performance
+          Calm Under Pressure
         </p>
       </SlideItem>
     </SlideContent>
