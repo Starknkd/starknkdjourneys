@@ -8,12 +8,12 @@ const ProgressBar = ({ current, total }: ProgressBarProps) => (
     {Array.from({ length: total }, (_, i) => (
       <div
         key={i}
-        className={`h-[2px] w-6 rounded-full transition-all duration-500 ${
+        className={`h-[2px] rounded-full transition-all duration-500 ${
           i === current
-            ? "bg-stark-orange w-10"
+            ? "bg-primary w-10"
             : i < current
-            ? "bg-stark-cream-dim"
-            : "bg-muted"
+            ? "bg-stark-periwinkle w-6"
+            : "bg-muted w-6"
         }`}
       />
     ))}

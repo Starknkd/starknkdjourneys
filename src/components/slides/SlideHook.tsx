@@ -5,7 +5,7 @@ const SlideHook = () => (
   <SlideShell slideKey={1}>
     <SlideContent>
       <SlideItem>
-        <p className="text-muted-foreground text-sm tracking-widest uppercase mb-6">The Problem</p>
+        <p className="text-primary text-sm tracking-[0.3em] uppercase mb-6">The Problem</p>
       </SlideItem>
       <SlideItem>
         <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-foreground">

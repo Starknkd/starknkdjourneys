@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ["Space Grotesk", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,12 +51,16 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         stark: {
-          deep: "hsl(var(--stark-deep))",
-          surface: "hsl(var(--stark-surface))",
-          orange: "hsl(var(--stark-orange))",
-          "orange-glow": "hsl(var(--stark-orange-glow))",
-          cream: "hsl(var(--stark-cream))",
-          "cream-dim": "hsl(var(--stark-cream-dim))",
+          ink: "hsl(var(--stark-ink))",
+          eclipse: "hsl(var(--stark-eclipse))",
+          sunset: "hsl(var(--stark-sunset))",
+          dusk: "hsl(var(--stark-dusk))",
+          dawn: "hsl(var(--stark-dawn))",
+          periwinkle: "hsl(var(--stark-periwinkle))",
+          lavender: "hsl(var(--stark-lavender))",
+          orchid: "hsl(var(--stark-orchid))",
+          "night-sky": "hsl(var(--stark-night-sky))",
+          tangerine: "hsl(var(--stark-tangerine))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,54 +6,62 @@
 
 @layer base {
   :root {
-    /* Stark NKD — Cinematic Dark */
-    --background: 270 15% 5%;
-    --foreground: 40 20% 90%;
+    /* Stark NKD Brand Palette */
+    /* INK #130730 → HSL ~268 80% 11% */
+    --background: 268 80% 11%;
+    --foreground: 0 0% 100%;
 
-    --card: 270 12% 8%;
-    --card-foreground: 40 20% 90%;
+    --card: 268 60% 14%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 270 12% 8%;
-    --popover-foreground: 40 20% 90%;
+    --popover: 268 60% 14%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 24 85% 48%;
-    --primary-foreground: 40 20% 95%;
+    /* SUNSET #e9635e → HSL ~2 77% 64% */
+    --primary: 2 77% 64%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 270 10% 14%;
-    --secondary-foreground: 40 20% 85%;
+    /* LAVENDER #4f3775 → HSL ~268 36% 34% */
+    --secondary: 268 36% 34%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 270 8% 12%;
-    --muted-foreground: 270 5% 45%;
+    --muted: 268 40% 18%;
+    --muted-foreground: 268 20% 55%;
 
-    --accent: 24 85% 48%;
-    --accent-foreground: 40 20% 95%;
+    /* DUSK #eb835d → HSL ~18 79% 64% */
+    --accent: 18 79% 64%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 270 8% 16%;
-    --input: 270 8% 16%;
-    --ring: 24 85% 48%;
+    --border: 268 30% 20%;
+    --input: 268 30% 20%;
+    --ring: 2 77% 64%;
 
     --radius: 0.5rem;
 
-    /* Custom tokens */
-    --stark-deep: 270 20% 4%;
-    --stark-surface: 270 12% 8%;
-    --stark-orange: 24 85% 48%;
-    --stark-orange-glow: 24 90% 55%;
-    --stark-cream: 40 20% 90%;
-    --stark-cream-dim: 40 10% 60%;
-    --stark-grain-opacity: 0.04;
+    /* Brand tokens */
+    --stark-ink: 268 80% 11%;
+    --stark-eclipse: 0 0% 100%;
+    --stark-sunset: 2 77% 64%;
+    --stark-dusk: 18 79% 64%;
+    --stark-dawn: 355 96% 76%;
+    --stark-periwinkle: 268 44% 72%;
+    --stark-lavender: 268 36% 34%;
+    --stark-orchid: 290 60% 30%;
+    --stark-night-sky: 250 78% 37%;
+    --stark-tangerine: 5 80% 52%;
+    --stark-grain-opacity: 0.035;
 
-    --sidebar-background: 270 12% 8%;
-    --sidebar-foreground: 40 20% 90%;
-    --sidebar-primary: 24 85% 48%;
-    --sidebar-primary-foreground: 40 20% 95%;
-    --sidebar-accent: 270 10% 14%;
-    --sidebar-accent-foreground: 40 20% 90%;
-    --sidebar-border: 270 8% 16%;
-    --sidebar-ring: 24 85% 48%;
+    --sidebar-background: 268 60% 14%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 2 77% 64%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 268 36% 34%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 268 30% 20%;
+    --sidebar-ring: 2 77% 64%;
   }
 }
 
@@ -64,7 +72,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow: hidden;
@@ -84,45 +92,15 @@
     background-size: 256px 256px;
   }
 
-  /* Fingerprint texture */
-  .fingerprint-texture {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-  }
-
-  .fingerprint-texture::before {
-    content: '';
-    position: absolute;
-    width: 140%;
-    height: 140%;
-    top: -20%;
-    left: -20%;
-    background: repeating-conic-gradient(
-      from 0deg at 50% 50%,
-      hsla(24, 85%, 48%, 0.015) 0deg,
-      transparent 2deg,
-      transparent 8deg
-    );
-    border-radius: 50%;
-    animation: breathe 12s ease-in-out infinite;
-  }
-
-  @keyframes breathe {
-    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.5; }
-    50% { transform: scale(1.03) rotate(1deg); opacity: 0.8; }
-  }
-
   /* Dark overlay for image slides */
   .slide-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
       180deg,
-      hsla(270, 20%, 4%, 0.7) 0%,
-      hsla(270, 20%, 4%, 0.85) 50%,
-      hsla(270, 20%, 4%, 0.95) 100%
+      hsla(268, 80%, 11%, 0.65) 0%,
+      hsla(268, 80%, 11%, 0.8) 50%,
+      hsla(268, 80%, 11%, 0.92) 100%
     );
   }
 
@@ -132,11 +110,11 @@
   }
 
   .progress-segment.active {
-    background-color: hsl(var(--stark-orange));
+    background-color: hsl(var(--stark-sunset));
   }
 
   .progress-segment.past {
-    background-color: hsl(var(--stark-cream-dim));
+    background-color: hsl(var(--stark-periwinkle));
   }
 }
 

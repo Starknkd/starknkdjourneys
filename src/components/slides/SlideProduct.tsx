@@ -1,11 +1,12 @@
 import SlideShell from "@/components/SlideShell";
 import { SlideContent, SlideItem } from "@/components/SlideContent";
+import workoutImg from "@/assets/workout-orange.jpg";
 
 const SlideProduct = () => (
-  <SlideShell slideKey={4}>
+  <SlideShell slideKey={4} backgroundImage={workoutImg}>
     <SlideContent>
       <SlideItem>
-        <p className="text-muted-foreground text-sm tracking-widest uppercase mb-6">Product</p>
+        <p className="text-accent text-sm tracking-[0.3em] uppercase mb-6">Product</p>
       </SlideItem>
       <SlideItem>
         <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-foreground">
