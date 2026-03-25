@@ -60,7 +60,7 @@ const SlideBreathingLab = () => (
                 line.type === "accent"
                   ? "text-lg md:text-xl font-semibold text-accent"
                   : line.type === "emphasis"
-                    ? "text-lg md:text-xl font-bold text-foreground/95 mt-4"
+                    ? "text-lg md:text-xl font-extrabold text-foreground mt-4 tracking-wide"
                     : "text-base md:text-lg text-foreground/70",
                 isMiddleGroup ? "!my-0.5" : "",
               ].join(" ")}
