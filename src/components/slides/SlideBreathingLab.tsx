@@ -34,7 +34,7 @@ const SlideBreathingLab = () => (
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          Step inside the lab.
+          Step into the lab.
         </motion.p>
 
         {/* Headline */}
