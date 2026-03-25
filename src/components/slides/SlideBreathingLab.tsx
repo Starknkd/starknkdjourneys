@@ -6,7 +6,7 @@ import bioGraph from "@/assets/biofeedback-graph.jpg";
 const bodyLines = [
   { text: "A working pop-up breathing lab in central London.", delay: 2.0, type: "main" as const },
   { text: "Simulated stress.", delay: 2.8, type: "main" as const },
-  { text: "Live physiological feedback.", delay: 3.4, type: "accent" as const },
+  { text: "Live physiological feedback", delay: 3.4, type: "accent" as const },
   { text: "People see —", delay: 4.2, type: "main" as const },
   { text: "in real time", delay: 4.6, type: "accent" as const },
   { text: "— how their system shifts under pressure.", delay: 4.8, type: "main" as const },
@@ -21,7 +21,7 @@ const SlideBreathingLab = () => (
       <img
         src={labEnv}
         alt=""
-        className="absolute inset-0 w-full h-full object-cover object-right opacity-[0.06]"
+        className="absolute inset-0 w-full h-full object-cover object-right opacity-[0.10]"
         style={{ filter: "saturate(0.3) brightness(0.5)" }}
       />
       <div className="absolute inset-0 bg-background/90" />
@@ -29,7 +29,7 @@ const SlideBreathingLab = () => (
       <div className="relative z-10 pl-12 md:pl-24 lg:pl-32 pr-10 max-w-2xl">
         {/* Micro-line */}
         <motion.p
-          className="text-sm tracking-[0.3em] uppercase text-foreground/30 mb-6"
+          className="text-sm tracking-[0.3em] uppercase text-foreground/50 mb-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
@@ -50,17 +50,20 @@ const SlideBreathingLab = () => (
         </motion.h2>
 
         {/* Body copy */}
-        <div className="mt-10 space-y-2">
-          {bodyLines.map((line, i) => (
+        <div className="mt-10 space-y-1.5">
+          {bodyLines.map((line, i) => {
+            const isMiddleGroup = i >= 3 && i <= 5;
+            return (
             <motion.p
               key={i}
-              className={
+              className={[
                 line.type === "accent"
                   ? "text-lg md:text-xl font-semibold text-accent"
                   : line.type === "emphasis"
                     ? "text-lg md:text-xl font-bold text-foreground/95 mt-4"
-                    : "text-base md:text-lg text-foreground/70"
-              }
+                    : "text-base md:text-lg text-foreground/70",
+                isMiddleGroup ? "!my-0.5" : "",
+              ].join(" ")}
               style={
                 line.type === "accent"
                   ? { textShadow: "0 0 20px hsl(var(--accent) / 0.25)" }
@@ -74,7 +77,8 @@ const SlideBreathingLab = () => (
             >
               {line.text}
             </motion.p>
-          ))}
+          );
+          })}
         </div>
 
         {/* Supporting bottom */}
@@ -111,17 +115,24 @@ const SlideBreathingLab = () => (
         }}
       />
 
-      {/* Biofeedback graph — very subtle data layer */}
+      {/* Biofeedback graph — subtle data layer */}
+      <img
+        src={bioGraph}
+        alt=""
+        className="absolute w-[130%] h-auto bottom-0 left-[-15%]"
+        style={{
+          opacity: 0.08,
+          filter: "blur(1.5px) saturate(0) brightness(1.8) contrast(0.5)",
+          mixBlendMode: "screen",
+        }}
+      />
+
+      {/* Top-right corner darken (wall text) */}
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: `url(${bioGraph})`,
-          backgroundSize: "120% auto",
-          backgroundPosition: "center 70%",
-          backgroundRepeat: "no-repeat",
-          opacity: 0.06,
-          filter: "blur(2px) saturate(0) brightness(1.5) contrast(0.6)",
-          mixBlendMode: "screen",
+          background:
+            "radial-gradient(ellipse at 95% 5%, hsl(var(--background) / 0.6) 0%, transparent 40%)",
         }}
       />
 
