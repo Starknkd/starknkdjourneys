@@ -152,51 +152,49 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             {/* Glow overlay — SVG matches image scaling via identical preserveAspectRatio */}
             <svg
               className="absolute inset-0 w-full h-full pointer-events-none"
-              viewBox="0 0 1080 1080"
+              viewBox="0 0 1920 1920"
               preserveAspectRatio="xMidYMid slice"
             >
               <defs>
                 <radialGradient id="nz-glow-outer">
-                  <stop offset="0%" stopColor="white" stopOpacity="0.35" />
-                  <stop offset="50%" stopColor="white" stopOpacity="0.08" />
+                  <stop offset="0%" stopColor="white" stopOpacity="0.45" />
+                  <stop offset="40%" stopColor="white" stopOpacity="0.12" />
                   <stop offset="100%" stopColor="white" stopOpacity="0" />
                 </radialGradient>
                 <radialGradient id="nz-glow-inner">
-                  <stop offset="0%" stopColor="white" stopOpacity="0.5" />
-                  <stop offset="50%" stopColor="white" stopOpacity="0.12" />
+                  <stop offset="0%" stopColor="white" stopOpacity="0.6" />
+                  <stop offset="50%" stopColor="white" stopOpacity="0.15" />
                   <stop offset="100%" stopColor="white" stopOpacity="0" />
                 </radialGradient>
               </defs>
-              {/* outer breathing glow — larger than white circle */}
+              {/* outer breathing glow — 1.5-2x NZ white circle, centered at (1810, 900) */}
               <motion.circle
-                cx="848" cy="393" r="40"
+                cx="1810" cy="900" r="100"
                 fill="url(#nz-glow-outer)"
-                animate={{ r: [40, 70, 40], opacity: [0.8, 0.15, 0.8] }}
+                animate={{ r: [100, 160, 100], opacity: [0.85, 0.2, 0.85] }}
                 transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
               />
-              {/* inner glow — sits just over the white circle */}
+              {/* inner glow — sits over the white circle */}
               <motion.circle
-                cx="848" cy="393" r="24"
+                cx="1810" cy="900" r="55"
                 fill="url(#nz-glow-inner)"
-                animate={{ r: [24, 32, 24], opacity: [0.9, 0.35, 0.9] }}
+                animate={{ r: [55, 75, 55], opacity: [0.9, 0.4, 0.9] }}
                 transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
               />
             </svg>
 
-            {/* SVG for dim ambient dots only */}
+            {/* Dim static ambient dots — no animation, suppressed */}
             <svg
-              className="absolute inset-0 w-full h-full"
-              viewBox="0 0 1000 1000"
+              className="absolute inset-0 w-full h-full pointer-events-none"
+              viewBox="0 0 1920 1920"
               preserveAspectRatio="xMidYMid slice"
             >
               {ambientDots.map((dot, i) => (
-                <motion.circle
+                <circle
                   key={i}
-                  cx={dot.cx} cy={dot.cy} r="2.5"
+                  cx={dot.cx * 1.92} cy={dot.cy * 1.92} r="3"
                   fill="hsl(var(--stark-sunset))"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: [0, 0.25, 0] }}
-                  transition={{ duration: 5, delay: dot.delay, repeat: Infinity, ease: "easeInOut" }}
+                  opacity="0.08"
                 />
               ))}
             </svg>
