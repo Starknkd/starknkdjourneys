@@ -127,13 +127,14 @@ const SlideBreathingLab = () => (
       />
 
       {/* Biofeedback graph — subtle data layer */}
+      {/* Biofeedback data signal */}
       <img
         src={bioGraph}
         alt=""
-        className="absolute w-[130%] h-auto bottom-0 left-[-15%]"
+        className="absolute w-[140%] h-auto bottom-[5%] left-[-20%]"
         style={{
-          opacity: 0.08,
-          filter: "blur(1.5px) saturate(0) brightness(1.8) contrast(0.5)",
+          opacity: 0.12,
+          filter: "blur(1px) saturate(0.2) brightness(2) contrast(0.4)",
           mixBlendMode: "screen",
         }}
       />
