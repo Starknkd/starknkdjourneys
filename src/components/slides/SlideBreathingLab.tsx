@@ -126,18 +126,6 @@ const SlideBreathingLab = () => (
         }}
       />
 
-      {/* Biofeedback data signal — real graph as subtle background */}
-      <img
-        src={bioGraph}
-        alt=""
-        className="absolute w-[130%] h-auto bottom-[5%] left-[-15%]"
-        style={{
-          opacity: 0.18,
-          filter: "brightness(0.6) contrast(1.5) saturate(0) invert(1)",
-          mixBlendMode: "screen",
-        }}
-      />
-
       {/* Top-right corner darken (wall text) */}
       <div
         className="absolute inset-0"
@@ -156,6 +144,18 @@ const SlideBreathingLab = () => (
         }}
       />
 
+      {/* Biofeedback data signal — lifted above darkening overlays so it stays visible */}
+      <img
+        src={bioGraph}
+        alt=""
+        className="absolute z-10 w-[138%] h-auto bottom-[3%] right-[-16%] pointer-events-none"
+        style={{
+          opacity: 0.32,
+          filter: "blur(0.8px) brightness(0.95) contrast(1.9) saturate(0) invert(1)",
+          mixBlendMode: "screen",
+        }}
+      />
+
       {/* Left edge fade into text panel */}
       <div
         className="absolute inset-0"
@@ -170,7 +170,7 @@ const SlideBreathingLab = () => (
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to top, hsl(var(--background) / 0.5) 0%, transparent 30%)",
+            "linear-gradient(to top, hsl(var(--background) / 0.35) 0%, transparent 24%)",
         }}
       />
     </div>
