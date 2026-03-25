@@ -6,7 +6,7 @@ import bioGraph from "@/assets/biofeedback-graph.jpg";
 const bodyLines = [
   { text: "A working pop-up breathing lab in central London.", delay: 2.0, type: "main" as const },
   { text: "Simulated stress.", delay: 2.8, type: "main" as const },
-  { text: "Live physiological feedback.", delay: 3.4, type: "accent" as const },
+  { text: "Live physiological feedback", delay: 3.4, type: "accent" as const },
   { text: "People see —", delay: 4.2, type: "main" as const },
   { text: "in real time", delay: 4.6, type: "accent" as const },
   { text: "— how their system shifts under pressure.", delay: 4.8, type: "main" as const },
