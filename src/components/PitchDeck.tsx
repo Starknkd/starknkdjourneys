@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import ProgressBar from "@/components/ProgressBar";
 import SlideTitle from "@/components/slides/SlideTitle";
 import SlideHook from "@/components/slides/SlideHook";
@@ -6,13 +6,15 @@ import SlideInsight from "@/components/slides/SlideInsight";
 import SlideSolution from "@/components/slides/SlideSolution";
 import SlideProduct from "@/components/slides/SlideProduct";
 import SlideAI from "@/components/slides/SlideAI";
-import SlideJourneys from "@/components/slides/SlideJourneys";
+import SlideJourneys, { SlideJourneysRef } from "@/components/slides/SlideJourneys";
 import SlideLab from "@/components/slides/SlideLab";
 import SlideMarket from "@/components/slides/SlideMarket";
 import SlideTraction from "@/components/slides/SlideTraction";
 import SlideTeam from "@/components/slides/SlideTeam";
 import SlideVision from "@/components/slides/SlideVision";
 import SlideClose from "@/components/slides/SlideClose";
+
+const JOURNEYS_INDEX = 7; // SlideJourneys position in slides array
 
 const slides = [
   SlideTitle,
@@ -33,12 +35,20 @@ const slides = [
 const PitchDeck = () => {
   const [current, setCurrent] = useState(0);
   const total = slides.length;
+  const journeysRef = useRef<SlideJourneysRef>(null);
 
   const navigate = useCallback(
     (direction: 1 | -1) => {
+      // If on Journeys slide, try internal navigation first
+      if (current === JOURNEYS_INDEX && journeysRef.current) {
+        const consumed = direction === 1
+          ? journeysRef.current.handleNext()
+          : journeysRef.current.handlePrev();
+        if (consumed) return;
+      }
       setCurrent((prev) => Math.max(0, Math.min(total - 1, prev + direction)));
     },
-    [total]
+    [total, current]
   );
 
   useEffect(() => {
@@ -59,13 +69,12 @@ const PitchDeck = () => {
 
   return (
     <div className="relative w-screen h-screen bg-background overflow-y-auto">
-      {/* Grain overlay */}
       <div className="grain-overlay" />
-
-      {/* Current slide */}
-      <CurrentSlide />
-
-      {/* Progress */}
+      {current === JOURNEYS_INDEX ? (
+        <SlideJourneys ref={journeysRef} />
+      ) : (
+        <CurrentSlide />
+      )}
       <ProgressBar current={current} total={total} />
     </div>
   );
