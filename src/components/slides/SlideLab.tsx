@@ -1,23 +1,21 @@
 import { motion } from "framer-motion";
 import speakerImg from "@/assets/speaker-orange.jpg";
 
-/* ─── narrative lines ─── */
 const narrativeLines = [
-  { text: "You don't follow a programme.", delay: 0.4, type: "main" as const },
-  { text: "You travel with a coach.", delay: 1.2, type: "main" as const },
-  { text: "One that learns:", delay: 2.2, type: "main" as const },
-  { text: "how you think,", delay: 3.0, type: "sub" as const },
-  { text: "how you react,", delay: 3.5, type: "sub" as const },
-  { text: "how you avoid,", delay: 4.0, type: "sub" as const },
-  { text: "how you push.", delay: 4.5, type: "sub" as const },
-  { text: "Over time,", delay: 5.8, type: "main" as const },
-  { text: "it knows you better than you know yourself.", delay: 6.8, type: "emphasis" as const },
+  { text: "You don't follow a programme.", delay: 2.8, type: "main" as const },
+  { text: "You travel with a coach.", delay: 3.8, type: "accent" as const },
+  { text: "One that learns:", delay: 5.0, type: "main" as const },
+  { text: "how you think", delay: 6.0, type: "sub" as const },
+  { text: "how you react", delay: 6.5, type: "sub" as const },
+  { text: "how you stumble", delay: 7.0, type: "sub" as const },
+  { text: "And over time,", delay: 8.4, type: "main" as const },
+  { text: "it knows you better than you know yourself.", delay: 9.4, type: "emphasis" as const },
 ];
 
 const supportingItems = [
-  { text: "daily guidance", delay: 9.0 },
-  { text: "adaptive coaching", delay: 9.4 },
-  { text: "identity reinforcement", delay: 9.8 },
+  { text: "daily guidance", delay: 11.0 },
+  { text: "adaptive coaching", delay: 11.4 },
+  { text: "identity reinforcement", delay: 11.8 },
 ];
 
 const SlideLab = () => (
@@ -30,15 +28,25 @@ const SlideLab = () => (
       style={{ filter: "brightness(0.82)" }}
     />
 
-    {/* Overlays — keep centre-right visually quiet */}
+    {/* Overlays */}
     <div className="absolute inset-0 bg-background/20" />
+    {/* Left-side darken for headline readability */}
     <div
       className="absolute inset-0"
       style={{
         background:
-          "linear-gradient(to right, hsl(var(--background) / 0.80) 0%, hsl(var(--background) / 0.55) 45%, hsl(var(--background) / 0.25) 70%, transparent 100%)",
+          "linear-gradient(to right, hsl(var(--background) / 0.82) 0%, hsl(var(--background) / 0.55) 40%, hsl(var(--background) / 0.25) 60%, transparent 100%)",
       }}
     />
+    {/* Right-side darken for narrative readability */}
+    <div
+      className="absolute inset-0"
+      style={{
+        background:
+          "linear-gradient(to left, hsl(var(--background) / 0.75) 0%, hsl(var(--background) / 0.50) 35%, transparent 55%)",
+      }}
+    />
+    {/* Bottom gradient */}
     <div
       className="absolute inset-0"
       style={{
@@ -55,57 +63,52 @@ const SlideLab = () => (
       }}
     />
 
-    {/* Content */}
-    <div className="relative z-10 flex items-center h-full px-12 md:px-24 lg:px-32">
-      <div className="max-w-2xl">
-        {/* Label */}
-        <motion.p
-          className="text-accent text-sm tracking-[0.3em] uppercase mb-8 font-medium"
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0 }}
-        >
-          The Lab
-        </motion.p>
-
-        {/* Headline */}
+    {/* Content — split layout */}
+    <div className="relative z-10 flex h-full">
+      {/* LEFT: headline + bridge */}
+      <div className="flex flex-col justify-center w-1/2 px-12 md:px-20 lg:px-28">
         <motion.h2
           className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground/95 mb-3"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.15 }}
         >
-          The best advice —<br />at your fingertips
+          The best advice –<br />at your fingertips
         </motion.h2>
 
-        {/* Bridging line */}
         <motion.p
-          className="text-lg md:text-xl text-foreground/50 mb-12"
+          className="text-lg md:text-xl text-foreground/45 mt-1"
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
         >
           for the moments that usually throw you.
         </motion.p>
+      </div>
 
-        {/* Narrative */}
-        <div className="space-y-1">
+      {/* RIGHT: narrative */}
+      <div className="flex flex-col justify-center w-1/2 px-12 md:px-16 lg:px-20">
+        <div className="space-y-3 max-w-lg">
           {narrativeLines.map((line, i) => (
             <motion.p
               key={i}
               className={
-                line.type === "emphasis"
-                  ? "text-lg md:text-xl text-foreground/95 font-semibold mt-4"
-                  : line.type === "sub"
-                    ? "text-base md:text-lg text-foreground/55 pl-4"
-                    : "text-base md:text-lg text-foreground/80"
+                line.type === "accent"
+                  ? "text-lg md:text-xl font-semibold text-accent mt-2 mb-2"
+                  : line.type === "emphasis"
+                    ? "text-lg md:text-xl text-foreground/95 font-bold mt-5"
+                    : line.type === "sub"
+                      ? "text-base md:text-lg text-foreground/50 pl-4"
+                      : "text-base md:text-lg text-foreground/75"
               }
               style={
-                line.type === "emphasis"
-                  ? { textShadow: "0 0 18px hsl(var(--foreground) / 0.15)" }
-                  : undefined
+                line.type === "accent"
+                  ? { textShadow: "0 0 24px hsl(var(--accent) / 0.3)" }
+                  : line.type === "emphasis"
+                    ? { textShadow: "0 0 20px hsl(var(--foreground) / 0.15)" }
+                    : undefined
               }
-              initial={{ opacity: 0, y: 8 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: line.delay, ease: "easeOut" }}
             >
@@ -114,12 +117,12 @@ const SlideLab = () => (
           ))}
         </div>
 
-        {/* Supporting — minimal, late fade */}
-        <div className="flex gap-6 mt-12">
+        {/* Supporting */}
+        <div className="flex gap-8 mt-14">
           {supportingItems.map((item, i) => (
             <motion.span
               key={i}
-              className="text-xs tracking-[0.2em] uppercase text-foreground/25"
+              className="text-xs tracking-[0.25em] uppercase text-foreground/40"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.2, delay: item.delay, ease: "easeOut" }}
