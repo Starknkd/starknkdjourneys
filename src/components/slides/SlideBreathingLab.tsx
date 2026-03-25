@@ -115,17 +115,24 @@ const SlideBreathingLab = () => (
         }}
       />
 
-      {/* Biofeedback graph — very subtle data layer */}
+      {/* Biofeedback graph — subtle data layer */}
+      <img
+        src={bioGraph}
+        alt=""
+        className="absolute w-[130%] h-auto bottom-0 left-[-15%]"
+        style={{
+          opacity: 0.08,
+          filter: "blur(1.5px) saturate(0) brightness(1.8) contrast(0.5)",
+          mixBlendMode: "screen",
+        }}
+      />
+
+      {/* Top-right corner darken (wall text) */}
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: `url(${bioGraph})`,
-          backgroundSize: "120% auto",
-          backgroundPosition: "center 70%",
-          backgroundRepeat: "no-repeat",
-          opacity: 0.06,
-          filter: "blur(2px) saturate(0) brightness(1.5) contrast(0.6)",
-          mixBlendMode: "screen",
+          background:
+            "radial-gradient(ellipse at 95% 5%, hsl(var(--background) / 0.6) 0%, transparent 40%)",
         }}
       />
 
