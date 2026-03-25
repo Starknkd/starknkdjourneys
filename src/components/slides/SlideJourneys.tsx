@@ -149,46 +149,39 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             <img src={mapImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-background/10" />
 
-            {/* Glow pulse overlay on NZ marker — matches white circle in image */}
-            <motion.div
-              className="absolute pointer-events-none"
-              style={{
-                left: "82%",
-                top: "49%",
-                width: 120,
-                height: 120,
-                transform: "translate(-50%, -50%)",
-              }}
+            {/* Glow overlay — SVG matches image scaling via identical preserveAspectRatio */}
+            <svg
+              className="absolute inset-0 w-full h-full pointer-events-none"
+              viewBox="0 0 1080 1080"
+              preserveAspectRatio="xMidYMid slice"
             >
-              {/* outer glow pulse */}
-              <motion.div
-                className="absolute inset-0 rounded-full"
-                style={{
-                  background: "radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.05) 50%, transparent 70%)",
-                }}
-                animate={{
-                  scale: [1, 1.8, 1],
-                  opacity: [0.7, 0.15, 0.7],
-                }}
+              <defs>
+                <radialGradient id="nz-glow-outer">
+                  <stop offset="0%" stopColor="white" stopOpacity="0.35" />
+                  <stop offset="50%" stopColor="white" stopOpacity="0.08" />
+                  <stop offset="100%" stopColor="white" stopOpacity="0" />
+                </radialGradient>
+                <radialGradient id="nz-glow-inner">
+                  <stop offset="0%" stopColor="white" stopOpacity="0.5" />
+                  <stop offset="50%" stopColor="white" stopOpacity="0.12" />
+                  <stop offset="100%" stopColor="white" stopOpacity="0" />
+                </radialGradient>
+              </defs>
+              {/* outer breathing glow — larger than white circle */}
+              <motion.circle
+                cx="848" cy="393" r="40"
+                fill="url(#nz-glow-outer)"
+                animate={{ r: [40, 70, 40], opacity: [0.8, 0.15, 0.8] }}
                 transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
               />
-              {/* inner soft glow */}
-              <motion.div
-                className="absolute rounded-full"
-                style={{
-                  top: "20%",
-                  left: "20%",
-                  width: "60%",
-                  height: "60%",
-                  background: "radial-gradient(circle, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.1) 50%, transparent 70%)",
-                }}
-                animate={{
-                  scale: [1, 1.3, 1],
-                  opacity: [0.8, 0.3, 0.8],
-                }}
+              {/* inner glow — sits just over the white circle */}
+              <motion.circle
+                cx="848" cy="393" r="24"
+                fill="url(#nz-glow-inner)"
+                animate={{ r: [24, 32, 24], opacity: [0.9, 0.35, 0.9] }}
                 transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
               />
-            </motion.div>
+            </svg>
 
             {/* SVG for dim ambient dots only */}
             <svg
