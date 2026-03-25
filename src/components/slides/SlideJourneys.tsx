@@ -149,36 +149,51 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             <img src={mapImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-background/10" />
 
-            {/* Glow overlay — SVG matches image scaling via identical preserveAspectRatio */}
+            {/* 3-layer NZ glow — centered exactly at (1811, 901), circle r≈70 */}
             <svg
               className="absolute inset-0 w-full h-full pointer-events-none"
               viewBox="0 0 1920 1920"
               preserveAspectRatio="xMidYMid slice"
             >
               <defs>
-                <radialGradient id="nz-glow-outer">
-                  <stop offset="0%" stopColor="white" stopOpacity="0.45" />
-                  <stop offset="40%" stopColor="white" stopOpacity="0.12" />
+                {/* Layer 3: outer halo — 2.1x radius (~147) */}
+                <radialGradient id="nz-glow-L3">
+                  <stop offset="0%" stopColor="white" stopOpacity="0.18" />
+                  <stop offset="50%" stopColor="white" stopOpacity="0.06" />
                   <stop offset="100%" stopColor="white" stopOpacity="0" />
                 </radialGradient>
-                <radialGradient id="nz-glow-inner">
-                  <stop offset="0%" stopColor="white" stopOpacity="0.6" />
-                  <stop offset="50%" stopColor="white" stopOpacity="0.15" />
+                {/* Layer 2: primary glow — 1.7x radius (~119) */}
+                <radialGradient id="nz-glow-L2">
+                  <stop offset="0%" stopColor="white" stopOpacity="0.35" />
+                  <stop offset="45%" stopColor="white" stopOpacity="0.10" />
+                  <stop offset="100%" stopColor="white" stopOpacity="0" />
+                </radialGradient>
+                {/* Layer 1: core halo — 1.1x radius (~77) */}
+                <radialGradient id="nz-glow-L1">
+                  <stop offset="0%" stopColor="white" stopOpacity="0.55" />
+                  <stop offset="60%" stopColor="white" stopOpacity="0.15" />
                   <stop offset="100%" stopColor="white" stopOpacity="0" />
                 </radialGradient>
               </defs>
-              {/* outer breathing glow — 1.5-2x NZ white circle, centered at (1810, 900) */}
+              {/* Layer 3: outer halo — r≈147, pulses to ~162 */}
               <motion.circle
-                cx="1810" cy="900" r="100"
-                fill="url(#nz-glow-outer)"
-                animate={{ r: [100, 160, 100], opacity: [0.85, 0.2, 0.85] }}
+                cx="1811" cy="901" r="147"
+                fill="url(#nz-glow-L3)"
+                animate={{ r: [147, 162, 147], opacity: [0.8, 0.55, 0.8] }}
                 transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
               />
-              {/* inner glow — sits over the white circle */}
+              {/* Layer 2: primary glow — r≈119, pulses to ~132 */}
               <motion.circle
-                cx="1810" cy="900" r="55"
-                fill="url(#nz-glow-inner)"
-                animate={{ r: [55, 75, 55], opacity: [0.9, 0.4, 0.9] }}
+                cx="1811" cy="901" r="119"
+                fill="url(#nz-glow-L2)"
+                animate={{ r: [119, 132, 119], opacity: [0.85, 0.6, 0.85] }}
+                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+              />
+              {/* Layer 1: core halo — r≈77, pulses to ~85 */}
+              <motion.circle
+                cx="1811" cy="901" r="77"
+                fill="url(#nz-glow-L1)"
+                animate={{ r: [77, 85, 77], opacity: [0.9, 0.7, 0.9] }}
                 transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
               />
             </svg>
