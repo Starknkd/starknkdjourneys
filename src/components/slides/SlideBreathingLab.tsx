@@ -7,9 +7,9 @@ const bodyLines = [
   { text: "A working pop-up breathing lab in central London.", delay: 2.0, type: "main" as const },
   { text: "Simulated stress.", delay: 2.8, type: "main" as const },
   { text: "Live physiological feedback", delay: 3.4, type: "accent" as const },
-  { text: "People see —", delay: 4.2, type: "main" as const },
+  { text: "People see -", delay: 4.2, type: "main" as const },
   { text: "in real time", delay: 4.6, type: "accent" as const },
-  { text: "— how their system shifts under pressure.", delay: 4.8, type: "main" as const },
+  { text: "- what pressure does to them.", delay: 4.8, type: "main" as const },
   { text: "Then they learn to control it.", delay: 5.8, type: "emphasis" as const },
 ];
 
@@ -34,7 +34,7 @@ const SlideBreathingLab = () => (
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          Step inside the lab.
+          Step into the lab.
         </motion.p>
 
         {/* Headline */}
@@ -60,7 +60,7 @@ const SlideBreathingLab = () => (
                 line.type === "accent"
                   ? "text-lg md:text-xl font-semibold text-accent"
                   : line.type === "emphasis"
-                    ? "text-lg md:text-xl font-bold text-foreground/95 mt-4"
+                    ? "text-lg md:text-xl font-extrabold text-foreground mt-4 tracking-wide"
                     : "text-base md:text-lg text-foreground/70",
                 isMiddleGroup ? "!my-0.5" : "",
               ].join(" ")}
@@ -84,7 +84,7 @@ const SlideBreathingLab = () => (
         {/* Supporting bottom */}
         <div className="mt-16 space-y-1">
           <motion.p
-            className="text-xs tracking-[0.2em] uppercase text-foreground/45"
+            className="text-xs tracking-[0.2em] uppercase text-foreground/60"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 7.0, duration: 1 }}
@@ -92,12 +92,12 @@ const SlideBreathingLab = () => (
             enterprise demo environment
           </motion.p>
           <motion.p
-            className="text-xs tracking-[0.15em] text-foreground/35"
+            className="text-xs tracking-[0.15em] text-foreground/50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 7.4, duration: 1 }}
           >
-            built to test and prove impact quickly
+            built to test and prove impact — fast
           </motion.p>
         </div>
       </div>
@@ -111,18 +111,30 @@ const SlideBreathingLab = () => (
         alt="Person wearing VR headset in the Stark NKD breathing lab"
         className="absolute inset-0 w-full h-full object-cover object-center"
         style={{
-          filter: "brightness(0.75) contrast(1.1)",
+          filter: "brightness(0.72) contrast(1.15)",
+        }}
+      />
+
+      {/* Grain texture to match other slides */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          opacity: 0.04,
+          backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E\")",
+          backgroundRepeat: "repeat",
+          backgroundSize: "256px 256px",
         }}
       />
 
       {/* Biofeedback graph — subtle data layer */}
+      {/* Biofeedback data signal */}
       <img
         src={bioGraph}
         alt=""
-        className="absolute w-[130%] h-auto bottom-0 left-[-15%]"
+        className="absolute w-[140%] h-auto bottom-[5%] left-[-20%]"
         style={{
-          opacity: 0.08,
-          filter: "blur(1.5px) saturate(0) brightness(1.8) contrast(0.5)",
+          opacity: 0.12,
+          filter: "blur(1px) saturate(0.2) brightness(2) contrast(0.4)",
           mixBlendMode: "screen",
         }}
       />
