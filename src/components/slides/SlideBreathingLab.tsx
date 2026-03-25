@@ -56,13 +56,14 @@ const SlideBreathingLab = () => (
             return (
             <motion.p
               key={i}
-              className={
+              className={[
                 line.type === "accent"
                   ? "text-lg md:text-xl font-semibold text-accent"
                   : line.type === "emphasis"
                     ? "text-lg md:text-xl font-bold text-foreground/95 mt-4"
-                    : "text-base md:text-lg text-foreground/70"
-              }
+                    : "text-base md:text-lg text-foreground/70",
+                isMiddleGroup ? "!my-0.5" : "",
+              ].join(" ")}
               style={
                 line.type === "accent"
                   ? { textShadow: "0 0 20px hsl(var(--accent) / 0.25)" }
@@ -76,7 +77,8 @@ const SlideBreathingLab = () => (
             >
               {line.text}
             </motion.p>
-          ))}
+          );
+          })}
         </div>
 
         {/* Supporting bottom */}
