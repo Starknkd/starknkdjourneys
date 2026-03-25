@@ -84,7 +84,7 @@ const SlideBreathingLab = () => (
         {/* Supporting bottom */}
         <div className="mt-16 space-y-1">
           <motion.p
-            className="text-xs tracking-[0.2em] uppercase text-foreground/45"
+            className="text-xs tracking-[0.2em] uppercase text-foreground/60"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 7.0, duration: 1 }}
@@ -92,12 +92,12 @@ const SlideBreathingLab = () => (
             enterprise demo environment
           </motion.p>
           <motion.p
-            className="text-xs tracking-[0.15em] text-foreground/35"
+            className="text-xs tracking-[0.15em] text-foreground/50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 7.4, duration: 1 }}
           >
-            built to test and prove impact quickly
+            built to test and prove impact — fast
           </motion.p>
         </div>
       </div>
