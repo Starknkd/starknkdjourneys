@@ -105,12 +105,11 @@ const SlideAI = () => (
             {i < stages.length - 1 && (
               <motion.div className="hidden md:flex items-center mx-1">
                 <motion.div
-                  className="h-px w-10 lg:w-16"
+                  className="h-px w-10 lg:w-16 origin-left"
                   style={{ background: `linear-gradient(90deg, ${stages[i].color}, ${stages[i + 1].color})` }}
                   initial={{ scaleX: 0, opacity: 0 }}
                   animate={{ scaleX: 1, opacity: 0.4 }}
                   transition={{ duration: 0.6, delay: stage.delay + 0.4 }}
-                  style-origin="left"
                 />
                 <motion.div
                   className="w-0 h-0 border-t-[5px] border-b-[5px] border-l-[7px] border-t-transparent border-b-transparent"
