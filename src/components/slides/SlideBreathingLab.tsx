@@ -29,7 +29,7 @@ const SlideBreathingLab = () => (
       <div className="relative z-10 pl-12 md:pl-24 lg:pl-32 pr-10 max-w-2xl">
         {/* Micro-line */}
         <motion.p
-          className="text-sm tracking-[0.3em] uppercase text-foreground/30 mb-6"
+          className="text-sm tracking-[0.3em] uppercase text-foreground/50 mb-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
