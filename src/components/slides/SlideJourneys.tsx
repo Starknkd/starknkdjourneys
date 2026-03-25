@@ -149,27 +149,26 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             <img src={mapImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-background/10" />
 
-            {/* Glow pulse overlay on NZ marker position — positioned to match the white circle in the image */}
-            {/* The marker is roughly at ~82% from left, ~52% from top in the uploaded map */}
+            {/* Glow pulse overlay on NZ marker — matches white circle in image */}
             <motion.div
-              className="absolute"
+              className="absolute pointer-events-none"
               style={{
-                right: "14%",
-                top: "48%",
-                width: 80,
-                height: 80,
-                transform: "translate(50%, -50%)",
+                left: "82%",
+                top: "49%",
+                width: 120,
+                height: 120,
+                transform: "translate(-50%, -50%)",
               }}
             >
               {/* outer glow pulse */}
               <motion.div
                 className="absolute inset-0 rounded-full"
                 style={{
-                  background: "radial-gradient(circle, hsl(var(--foreground) / 0.15) 0%, transparent 70%)",
+                  background: "radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.05) 50%, transparent 70%)",
                 }}
                 animate={{
-                  scale: [1, 1.6, 1],
-                  opacity: [0.4, 0.08, 0.4],
+                  scale: [1, 1.8, 1],
+                  opacity: [0.7, 0.15, 0.7],
                 }}
                 transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
               />
@@ -177,15 +176,15 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
               <motion.div
                 className="absolute rounded-full"
                 style={{
-                  top: "25%",
-                  left: "25%",
-                  width: "50%",
-                  height: "50%",
-                  background: "radial-gradient(circle, hsl(var(--foreground) / 0.25) 0%, transparent 70%)",
+                  top: "20%",
+                  left: "20%",
+                  width: "60%",
+                  height: "60%",
+                  background: "radial-gradient(circle, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.1) 50%, transparent 70%)",
                 }}
                 animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.5, 0.2, 0.5],
+                  scale: [1, 1.3, 1],
+                  opacity: [0.8, 0.3, 0.8],
                 }}
                 transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
               />
