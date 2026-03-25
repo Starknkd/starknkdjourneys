@@ -50,8 +50,10 @@ const SlideBreathingLab = () => (
         </motion.h2>
 
         {/* Body copy */}
-        <div className="mt-10 space-y-2">
-          {bodyLines.map((line, i) => (
+        <div className="mt-10 space-y-1.5">
+          {bodyLines.map((line, i) => {
+            const isMiddleGroup = i >= 3 && i <= 5;
+            return (
             <motion.p
               key={i}
               className={
