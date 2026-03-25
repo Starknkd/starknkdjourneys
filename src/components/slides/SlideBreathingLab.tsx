@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import labVR from "@/assets/lab-vr-headset.jpg";
 import labEnv from "@/assets/lab-environment.png";
-import bioGraph from "@/assets/biofeedback-graph.jpg";
+import bioGraph from "@/assets/biofeedback-graph.png";
 
 const bodyLines = [
   { text: "A working pop-up breathing lab in central London.", delay: 2.0, type: "main" as const },
