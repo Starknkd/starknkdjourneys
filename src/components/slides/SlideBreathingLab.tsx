@@ -21,7 +21,7 @@ const SlideBreathingLab = () => (
       <img
         src={labEnv}
         alt=""
-        className="absolute inset-0 w-full h-full object-cover object-right opacity-[0.06]"
+        className="absolute inset-0 w-full h-full object-cover object-right opacity-[0.10]"
         style={{ filter: "saturate(0.3) brightness(0.5)" }}
       />
       <div className="absolute inset-0 bg-background/90" />
