@@ -8,6 +8,7 @@ import SlideProduct from "@/components/slides/SlideProduct";
 import SlideAI from "@/components/slides/SlideAI";
 import SlideJourneys, { SlideJourneysRef } from "@/components/slides/SlideJourneys";
 import SlideLab from "@/components/slides/SlideLab";
+import SlideBreathingLab from "@/components/slides/SlideBreathingLab";
 import SlideMarket from "@/components/slides/SlideMarket";
 import SlideTraction from "@/components/slides/SlideTraction";
 import SlideTeam from "@/components/slides/SlideTeam";
@@ -26,6 +27,7 @@ const slides = [
   SlideAI,
   SlideJourneys,
   SlideLab,
+  SlideBreathingLab,
   SlideTraction,
   SlideTeam,
   SlideVision,
