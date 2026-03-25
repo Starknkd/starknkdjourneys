@@ -149,56 +149,76 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             <img src={mapImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-background/10" />
 
-            {/* 3-layer NZ glow — centered exactly at (1811, 901), circle r≈70 */}
+            {/* NZ glow — anchored exactly to white circle center (1811, 901), circle r≈70 */}
             <svg
               className="absolute inset-0 w-full h-full pointer-events-none"
               viewBox="0 0 1920 1920"
               preserveAspectRatio="xMidYMid slice"
             >
               <defs>
-                {/* Layer 3: outer halo — 2.1x radius (~147) */}
-                <radialGradient id="nz-glow-L3">
-                  <stop offset="0%" stopColor="white" stopOpacity="0.18" />
-                  <stop offset="50%" stopColor="white" stopOpacity="0.06" />
-                  <stop offset="100%" stopColor="white" stopOpacity="0" />
+                <filter id="nz-blur-soft" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="8" />
+                </filter>
+                <filter id="nz-blur-medium" x="-60%" y="-60%" width="220%" height="220%">
+                  <feGaussianBlur stdDeviation="18" />
+                </filter>
+                <filter id="nz-blur-wide" x="-80%" y="-80%" width="260%" height="260%">
+                  <feGaussianBlur stdDeviation="32" />
+                </filter>
+                <radialGradient id="nz-glow-core">
+                  <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.95" />
+                  <stop offset="58%" stopColor="hsl(var(--foreground))" stopOpacity="0.26" />
+                  <stop offset="100%" stopColor="hsl(var(--foreground))" stopOpacity="0" />
                 </radialGradient>
-                {/* Layer 2: primary glow — 1.7x radius (~119) */}
-                <radialGradient id="nz-glow-L2">
-                  <stop offset="0%" stopColor="white" stopOpacity="0.35" />
-                  <stop offset="45%" stopColor="white" stopOpacity="0.10" />
-                  <stop offset="100%" stopColor="white" stopOpacity="0" />
+                <radialGradient id="nz-glow-primary">
+                  <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.72" />
+                  <stop offset="48%" stopColor="hsl(var(--foreground))" stopOpacity="0.16" />
+                  <stop offset="100%" stopColor="hsl(var(--foreground))" stopOpacity="0" />
                 </radialGradient>
-                {/* Layer 1: core halo — 1.1x radius (~77) */}
-                <radialGradient id="nz-glow-L1">
-                  <stop offset="0%" stopColor="white" stopOpacity="0.55" />
-                  <stop offset="60%" stopColor="white" stopOpacity="0.15" />
-                  <stop offset="100%" stopColor="white" stopOpacity="0" />
+                <radialGradient id="nz-glow-outer">
+                  <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.42" />
+                  <stop offset="42%" stopColor="hsl(var(--foreground))" stopOpacity="0.08" />
+                  <stop offset="100%" stopColor="hsl(var(--foreground))" stopOpacity="0" />
                 </radialGradient>
               </defs>
-              {/* Layer 3: outer halo — r≈147, pulses to ~162 */}
+
+              {/* Layer 3: outer halo — 2.4x radius, dominant circular signal */}
               <motion.circle
-                cx="1811" cy="901" r="147"
-                fill="url(#nz-glow-L3)"
-                animate={{ r: [147, 162, 147], opacity: [0.8, 0.55, 0.8] }}
-                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+                cx="1811" cy="901" r="168"
+                fill="url(#nz-glow-outer)"
+                filter="url(#nz-blur-wide)"
+                animate={{ r: [168, 198, 168], opacity: [0.92, 0.74, 0.92] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               />
-              {/* Layer 2: primary glow — r≈119, pulses to ~132 */}
+              {/* Layer 2: primary glow — 1.8x radius */}
               <motion.circle
-                cx="1811" cy="901" r="119"
-                fill="url(#nz-glow-L2)"
-                animate={{ r: [119, 132, 119], opacity: [0.85, 0.6, 0.85] }}
-                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+                cx="1811" cy="901" r="126"
+                fill="url(#nz-glow-primary)"
+                filter="url(#nz-blur-medium)"
+                animate={{ r: [126, 148, 126], opacity: [0.98, 0.78, 0.98] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               />
-              {/* Layer 1: core halo — r≈77, pulses to ~85 */}
+              {/* Layer 1: core halo — 1.2x radius, clearly beyond circle boundary */}
               <motion.circle
-                cx="1811" cy="901" r="77"
-                fill="url(#nz-glow-L1)"
-                animate={{ r: [77, 85, 77], opacity: [0.9, 0.7, 0.9] }}
-                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+                cx="1811" cy="901" r="84"
+                fill="url(#nz-glow-core)"
+                filter="url(#nz-blur-soft)"
+                animate={{ r: [84, 99, 84], opacity: [1, 0.8, 1] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              />
+              {/* Secondary ring — expands from circle edge to ~2.5x radius */}
+              <motion.circle
+                cx="1811" cy="901" r="70"
+                fill="none"
+                stroke="hsl(var(--foreground))"
+                strokeWidth="3"
+                filter="url(#nz-blur-soft)"
+                animate={{ r: [70, 175, 70], opacity: [0.36, 0, 0.36] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               />
             </svg>
 
-            {/* Dim static ambient dots — no animation, suppressed */}
+            {/* Dim static ambient dots — suppressed, no animation */}
             <svg
               className="absolute inset-0 w-full h-full pointer-events-none"
               viewBox="0 0 1920 1920"
@@ -209,7 +229,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                   key={i}
                   cx={dot.cx * 1.92} cy={dot.cy * 1.92} r="3"
                   fill="hsl(var(--stark-sunset))"
-                  opacity="0.08"
+                  opacity="0.05"
                 />
               ))}
             </svg>
