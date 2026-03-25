@@ -184,7 +184,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
 
               {/* Layer 3: outer halo — 2.4x radius, dominant circular signal */}
               <motion.circle
-                cx="1811" cy="901" r="168"
+                cx="1800" cy="920" r="168"
                 fill="url(#nz-glow-outer)"
                 filter="url(#nz-blur-wide)"
                 animate={{ r: [168, 198, 168], opacity: [0.92, 0.74, 0.92] }}
@@ -192,7 +192,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
               />
               {/* Layer 2: primary glow — 1.8x radius */}
               <motion.circle
-                cx="1811" cy="901" r="126"
+                cx="1800" cy="920" r="126"
                 fill="url(#nz-glow-primary)"
                 filter="url(#nz-blur-medium)"
                 animate={{ r: [126, 148, 126], opacity: [0.98, 0.78, 0.98] }}
@@ -200,7 +200,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
               />
               {/* Layer 1: core halo — 1.2x radius, clearly beyond circle boundary */}
               <motion.circle
-                cx="1811" cy="901" r="84"
+                cx="1800" cy="920" r="84"
                 fill="url(#nz-glow-core)"
                 filter="url(#nz-blur-soft)"
                 animate={{ r: [84, 99, 84], opacity: [1, 0.8, 1] }}
@@ -208,7 +208,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
               />
               {/* Secondary ring — expands from circle edge to ~2.5x radius */}
               <motion.circle
-                cx="1811" cy="901" r="70"
+                cx="1800" cy="920" r="70"
                 fill="none"
                 stroke="hsl(var(--foreground))"
                 strokeWidth="3"
