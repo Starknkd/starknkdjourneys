@@ -184,7 +184,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
 
               {/* Layer 3: outer halo — 2.4x radius, dominant circular signal */}
               <motion.circle
-                cx="1811" cy="901" r="168"
+                cx="1800" cy="920" r="168"
                 fill="url(#nz-glow-outer)"
                 filter="url(#nz-blur-wide)"
                 animate={{ r: [168, 198, 168], opacity: [0.92, 0.74, 0.92] }}
