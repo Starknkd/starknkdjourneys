@@ -1,54 +1,32 @@
-import { useState, useEffect, useRef, useCallback, forwardRef, useImperativeHandle } from "react";
+import { useState, useEffect, useRef, forwardRef, useImperativeHandle } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import diverImg from "@/assets/diver-journey.jpg";
 import mapImg from "@/assets/world-map.jpg";
+import climberImg from "@/assets/climber-journey.jpg";
 
 /* ─── narrative lines for Part 3 ─── */
 const narrativeLines = [
   { text: "You begin at the southern tip of New Zealand.", delay: 0 },
   { text: "Every breath moves you forward.", delay: 1.8 },
-  { text: "", delay: 3.8 }, // pause
+  { text: "", delay: 3.8 },
   { text: "The ocean is alive.", delay: 5.0 },
   { text: "You hear whale calls in the distance.", delay: 7.0 },
   { text: "A kiwi moves in the dark.", delay: 9.0 },
-  { text: "", delay: 11.0 }, // pause
+  { text: "", delay: 11.0 },
   { text: "You meet Friday.", delay: 12.5 },
   { text: "He's been behind the bar on Stewart Island for 30 years.", delay: 14.5 },
-  { text: "", delay: 17.0 }, // pause
-  { text: "He gives you advice you didn't know you needed.", delay: 18.5 },
-  { text: "", delay: 21.0 }, // pause
-  { text: "This is your daily practice.", delay: 22.5 },
-  { text: "", delay: 25.0 }, // pause
+  { text: "", delay: 17.0 },
+  { text: "He gives you advice you didn't know you needed.", delay: 18.5, glow: "subtle" },
+  { text: "", delay: 21.0 },
+  { text: "This is your daily practice.", delay: 22.5, glow: "medium" },
+  { text: "", delay: 25.0 },
   { text: "The more you return —", delay: 26.5 },
-  { text: "the further you travel.", delay: 28.5 },
-  { text: "", delay: 31.0 }, // pause
-  { text: "The best advice — at your fingertips", delay: 32.5, accent: true },
+  { text: "the further you travel.", delay: 28.5, glow: "strong", accent: "orange" },
+  { text: "", delay: 31.0 },
+  { text: "The best advice — at your fingertips", delay: 32.5, accent: "final" },
 ];
 
-/* ─── breathing dot for Part 2 ─── */
-const BreathingDot = () => (
-  <motion.g>
-    {/* diffused glow */}
-    <motion.circle
-      cx="540" cy="720"
-      r="18"
-      fill="hsl(var(--stark-sunset))"
-      opacity="0.15"
-      animate={{ r: [18, 26, 18], opacity: [0.15, 0.06, 0.15] }}
-      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-    />
-    {/* core dot */}
-    <motion.circle
-      cx="540" cy="720"
-      r="6"
-      fill="hsl(var(--stark-sunset))"
-      animate={{ r: [6, 8.5, 6], opacity: [0.9, 0.55, 0.9] }}
-      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-    />
-  </motion.g>
-);
-
-/* ─── ambient dot nodes ─── */
+/* ─── ambient dot nodes (dimmer, secondary) ─── */
 const ambientDots = [
   { cx: 780, cy: 280, delay: 0 },
   { cx: 620, cy: 350, delay: 1.5 },
@@ -59,12 +37,12 @@ const ambientDots = [
 
 /* ─── main component ─── */
 export interface SlideJourneysRef {
-  handleNext: () => boolean; // returns true if consumed internally
+  handleNext: () => boolean;
   handlePrev: () => boolean;
 }
 
 const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
-  const [phase, setPhase] = useState(0); // 0=title, 1=map, 2=narrative
+  const [phase, setPhase] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useImperativeHandle(ref, () => ({
@@ -78,10 +56,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
     },
   }));
 
-  /* ambient ocean audio — very low volume */
   useEffect(() => {
-    // We won't auto-play audio to avoid browser restrictions
-    // Audio is opt-in via user interaction
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
@@ -89,6 +64,34 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
       }
     };
   }, []);
+
+  const getLineClassName = (line: typeof narrativeLines[number]) => {
+    const base = "text-lg md:text-xl leading-relaxed";
+
+    if (line.accent === "final") {
+      return `${base} text-stark-sunset font-semibold text-xl md:text-2xl mt-8`;
+    }
+    if (line.accent === "orange") {
+      return `${base} text-stark-sunset font-semibold text-xl md:text-2xl`;
+    }
+    return `${base} text-foreground/90`;
+  };
+
+  const getLineStyle = (line: typeof narrativeLines[number]): React.CSSProperties => {
+    if (line.accent === "final") {
+      return { textShadow: "0 0 20px hsl(var(--stark-sunset) / 0.5), 0 0 40px hsl(var(--stark-sunset) / 0.2)" };
+    }
+    if (line.accent === "orange") {
+      return { textShadow: "0 0 16px hsl(var(--stark-sunset) / 0.4), 0 0 32px hsl(var(--stark-sunset) / 0.15)" };
+    }
+    if (line.glow === "medium") {
+      return { textShadow: "0 0 12px hsl(var(--foreground) / 0.2)" };
+    }
+    if (line.glow === "subtle") {
+      return { textShadow: "0 0 8px hsl(var(--foreground) / 0.12)" };
+    }
+    return {};
+  };
 
   return (
     <div className="absolute inset-0 w-screen h-screen overflow-hidden bg-background">
@@ -103,26 +106,18 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
           >
-            {/* diver image */}
-            <img
-              src={diverImg}
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            {/* vignette */}
+            <img src={diverImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
             <div
               className="absolute inset-0"
               style={{
                 background: "radial-gradient(ellipse at center, transparent 30%, hsl(var(--background) / 0.7) 100%)",
               }}
             />
-            {/* darken */}
             <div className="absolute inset-0 bg-background/30" />
 
-            {/* text */}
             <div className="relative z-10 flex flex-col items-center justify-center h-full px-8">
               <motion.p
-                className="text-stark-periwinkle text-sm tracking-[0.3em] uppercase mb-6"
+                className="text-stark-periwinkle text-sm tracking-[0.4em] uppercase mb-6 font-medium"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
@@ -151,37 +146,70 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
           >
-            {/* map background */}
-            <img
-              src={mapImg}
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-background/20" />
+            <img src={mapImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-background/10" />
 
-            {/* SVG overlay for dots */}
+            {/* Glow pulse overlay on NZ marker position — positioned to match the white circle in the image */}
+            {/* The marker is roughly at ~82% from left, ~52% from top in the uploaded map */}
+            <motion.div
+              className="absolute"
+              style={{
+                right: "14%",
+                top: "48%",
+                width: 80,
+                height: 80,
+                transform: "translate(50%, -50%)",
+              }}
+            >
+              {/* outer glow pulse */}
+              <motion.div
+                className="absolute inset-0 rounded-full"
+                style={{
+                  background: "radial-gradient(circle, hsl(var(--foreground) / 0.15) 0%, transparent 70%)",
+                }}
+                animate={{
+                  scale: [1, 1.6, 1],
+                  opacity: [0.4, 0.08, 0.4],
+                }}
+                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+              />
+              {/* inner soft glow */}
+              <motion.div
+                className="absolute rounded-full"
+                style={{
+                  top: "25%",
+                  left: "25%",
+                  width: "50%",
+                  height: "50%",
+                  background: "radial-gradient(circle, hsl(var(--foreground) / 0.25) 0%, transparent 70%)",
+                }}
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.5, 0.2, 0.5],
+                }}
+                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+              />
+            </motion.div>
+
+            {/* SVG for dim ambient dots only */}
             <svg
               className="absolute inset-0 w-full h-full"
               viewBox="0 0 1000 1000"
               preserveAspectRatio="xMidYMid slice"
             >
-              {/* ambient dots */}
               {ambientDots.map((dot, i) => (
                 <motion.circle
                   key={i}
-                  cx={dot.cx} cy={dot.cy} r="3"
+                  cx={dot.cx} cy={dot.cy} r="2.5"
                   fill="hsl(var(--stark-sunset))"
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: [0, 0.4, 0] }}
+                  animate={{ opacity: [0, 0.25, 0] }}
                   transition={{ duration: 5, delay: dot.delay, repeat: Infinity, ease: "easeInOut" }}
                 />
               ))}
-
-              {/* NZ breathing dot */}
-              <BreathingDot />
             </svg>
 
-            {/* text — left aligned */}
+            {/* text */}
             <div className="relative z-10 flex flex-col justify-end h-full px-12 md:px-24 pb-32">
               <motion.p
                 className="text-2xl md:text-3xl font-bold text-foreground mb-4"
@@ -203,7 +231,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
           </motion.div>
         )}
 
-        {/* ═══════ PART 3 — NARRATIVE ═══════ */}
+        {/* ═══════ PART 3 — IMMERSIVE NARRATIVE (CLIMBER) ═══════ */}
         {phase === 2 && (
           <motion.div
             key="journey-narrative"
@@ -213,17 +241,27 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
           >
-            {/* diver image returns */}
+            {/* climber image */}
             <img
-              src={diverImg}
+              src={climberImg}
               alt=""
               className="absolute inset-0 w-full h-full object-cover"
+              style={{ filter: "brightness(0.85)" }}
             />
-            <div className="absolute inset-0 bg-background/60" />
+            {/* darken overlay */}
+            <div className="absolute inset-0 bg-background/15" />
+            {/* text-safe gradient: deep purple from left */}
             <div
               className="absolute inset-0"
               style={{
-                background: "radial-gradient(ellipse at center, transparent 20%, hsl(var(--background) / 0.5) 100%)",
+                background: "linear-gradient(to right, hsl(var(--background) / 0.75) 0%, hsl(var(--background) / 0.45) 40%, transparent 70%)",
+              }}
+            />
+            {/* vignette */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background: "radial-gradient(ellipse at center, transparent 30%, hsl(var(--background) / 0.4) 100%)",
               }}
             />
 
@@ -233,11 +271,8 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                 {narrativeLines.filter(l => l.text).map((line, i) => (
                   <motion.p
                     key={i}
-                    className={`text-lg md:text-xl leading-relaxed ${
-                      line.accent
-                        ? "text-stark-sunset font-semibold text-xl md:text-2xl mt-8"
-                        : "text-foreground/90"
-                    }`}
+                    className={getLineClassName(line)}
+                    style={getLineStyle(line)}
                     initial={{ opacity: 0, y: 8, filter: "blur(2px)" }}
                     animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                     transition={{
