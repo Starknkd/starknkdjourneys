@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import labVR from "@/assets/lab-vr-headset.jpg";
 import labEnv from "@/assets/lab-environment.png";
-import bioGraph from "@/assets/biofeedback-graph.jpg";
+import bioGraph from "@/assets/biofeedback-graph.png";
 
 const bodyLines = [
   { text: "A working pop-up breathing lab in central London.", delay: 2.0, type: "main" as const },
@@ -130,10 +130,10 @@ const SlideBreathingLab = () => (
       <img
         src={bioGraph}
         alt=""
-        className="absolute w-[120%] h-auto bottom-[8%] left-[-10%]"
+        className="absolute w-[130%] h-auto bottom-[5%] left-[-15%]"
         style={{
-          opacity: 0.1,
-          filter: "blur(0.5px) saturate(0) brightness(2.5) contrast(0.35)",
+          opacity: 0.18,
+          filter: "brightness(0.6) contrast(1.5) saturate(0) invert(1)",
           mixBlendMode: "screen",
         }}
       />
