@@ -11,7 +11,7 @@ const SlideInsight = () => (
         src={brandWaveBg}
         alt=""
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ opacity: 0.15 }}
+        style={{ opacity: 0.3 }}
       />
       {/* Mask: hide pattern in centre, show at edges */}
       <div
