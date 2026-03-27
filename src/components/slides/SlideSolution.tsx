@@ -44,7 +44,7 @@ const SlideSolution = () => (
           ].map(({ text, delay }) => (
             <motion.p
               key={text}
-              className="text-lg md:text-xl text-muted-foreground"
+              className="text-lg md:text-xl text-stark-periwinkle"
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay, duration: 0.5 }}
