@@ -72,8 +72,8 @@ const SlideBreathingLab = () => (
             >
               {line.text}
             </motion.p>
-          );
-          })}
+            ))
+          }
         </div>
 
         {/* Supporting bottom */}
