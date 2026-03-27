@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, forwardRef, useImperativeHandle } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import milfordImg from "@/assets/milford-bird.png";
-import mapImg from "@/assets/world-map.jpg";
+import mapImg from "@/assets/world-map.png";
 import climberImg from "@/assets/climber-journey.jpg";
 
 /* ─── narrative lines for Part 3 ─── */
