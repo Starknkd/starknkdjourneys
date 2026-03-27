@@ -49,16 +49,19 @@ const SlideTitle = () => (
       </motion.p>
 
       {/* Headline — fades in last with slight upward motion */}
-      <motion.p
-        className="text-xl md:text-2xl lg:text-[1.7rem] text-muted-foreground tracking-[0.18em] uppercase leading-[1.8]"
-        initial={{ opacity: 0, y: 12 }}
+      <motion.div
+        className="text-xl md:text-2xl lg:text-[1.7rem] uppercase tracking-[0.14em]"
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: "easeOut", delay: 0.3 }}
       >
-        Journey into the unknown.
-        <br />
-        Train your way back to control.
-      </motion.p>
+        <p className="text-foreground/90 leading-[2.2]">
+          Journey into the unknown.
+        </p>
+        <p className="text-foreground/70 leading-[2.2]">
+          Train your way back to control.
+        </p>
+      </motion.div>
     </div>
   </SlideShell>
 );
