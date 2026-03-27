@@ -245,20 +245,20 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             {/* text */}
             <div className="relative z-10 flex flex-col justify-end h-full px-12 md:px-24 pb-32">
               <motion.p
-                className="text-2xl md:text-3xl font-bold text-foreground mb-4"
+                className="text-2xl md:text-3xl font-bold text-foreground mb-4 px-0 py-0"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                You begin here
+                Choose your route.{" "}
               </motion.p>
               <motion.p
-                className="text-lg md:text-xl text-muted-foreground"
+                className="text-lg md:text-xl text-muted-foreground py-[8px]"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.6 }}
               >
-                Every breath moves you forward
+                Keys unlock. Locals advise. Nature beckons.
               </motion.p>
             </div>
           </motion.div>
