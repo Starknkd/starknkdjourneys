@@ -8,9 +8,10 @@ const narrativeLines = [
   { text: "Biometrics show you what's happening underneath.", delay: 6.0, type: "main" as const },
   { text: "\n\nYou're a striver. ", delay: 6.5, type: "main" as const },
   { text: "You feel it first. ", delay: 7.0, type: "accent" as const },
-  { text: "Less edge. Less noise. More control when it counts.\n\nYou handle things differently. ", delay: 8.4, type: "main" as const },
+  { text: "Less edge. Less noise. More control when it counts.", delay: 8.4, type: "benefit" as const },
+  { text: "\nYou handle things differently. ", delay: 8.8, type: "main" as const },
   { text: "And over time your numbers follow.", delay: 9.0, type: "main" as const },
-  { text: "You close the gap between overwhelm & control.\n\n\n", delay: 10.0, type: "emphasis" as const },
+  { text: "You close the gap between overwhelm & control.", delay: 10.0, type: "anchor" as const },
 ];
 
 const supportingItems = [
@@ -26,7 +27,7 @@ const SlideLab = () => (
       src={speakerImg}
       alt=""
       className="absolute inset-0 w-full h-full object-cover"
-      style={{ filter: "brightness(0.82)" }}
+      style={{ filter: "brightness(0.77) contrast(1.1)" }}
     />
 
     {/* Overlays */}
@@ -44,7 +45,16 @@ const SlideLab = () => (
       className="absolute inset-0"
       style={{
         background:
-          "linear-gradient(to left, hsl(var(--background) / 0.75) 0%, hsl(var(--background) / 0.50) 35%, transparent 55%)",
+          "linear-gradient(to left, hsl(var(--background) / 0.78) 0%, hsl(var(--background) / 0.55) 35%, transparent 55%)",
+      }}
+    />
+    {/* Text safe zone — subtle extra darken behind right column only */}
+    <div
+      className="absolute top-0 bottom-0 right-0"
+      style={{
+        width: "50%",
+        background:
+          "linear-gradient(to left, hsl(var(--background) / 0.12) 0%, hsl(var(--background) / 0.10) 80%, transparent 100%)",
       }}
     />
     {/* Bottom gradient */}
@@ -87,8 +97,8 @@ const SlideLab = () => (
         </motion.p>
       </div>
 
-      {/* RIGHT: narrative */}
-      <div className="flex flex-col justify-center w-1/2 px-12 md:px-16 lg:px-20">
+      {/* RIGHT: narrative — nudged down 3–5% */}
+      <div className="flex flex-col justify-center w-1/2 px-12 md:px-16 lg:px-20" style={{ paddingTop: "4vh" }}>
         <div className="space-y-3 max-w-lg">
           {narrativeLines.map((line, i) => (
             <motion.p
@@ -96,16 +106,20 @@ const SlideLab = () => (
               className={
                 (line.type === "accent"
                   ? "text-lg md:text-xl font-semibold text-accent mt-2 mb-2"
-                  : line.type === "emphasis"
-                    ? "text-lg md:text-xl text-foreground/95 font-bold mt-8"
-                    : "text-base md:text-lg text-foreground/75") + " whitespace-pre-line"
+                  : line.type === "benefit"
+                    ? "text-base md:text-lg text-foreground/90 whitespace-pre-line"
+                    : line.type === "anchor"
+                      ? "text-xl md:text-2xl text-foreground/95 font-bold mt-10 whitespace-pre-line"
+                      : "text-base md:text-lg text-foreground/75 whitespace-pre-line")
               }
               style={
                 line.type === "accent"
                   ? { textShadow: "0 0 24px hsl(var(--accent) / 0.3)" }
-                  : line.type === "emphasis"
-                    ? { textShadow: "0 0 20px hsl(var(--foreground) / 0.15)" }
-                    : undefined
+                  : line.type === "anchor"
+                    ? { textShadow: "0 0 20px hsl(var(--foreground) / 0.15)", lineHeight: "1.5" }
+                    : line.type === "benefit"
+                      ? { lineHeight: "1.75" }
+                      : undefined
               }
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -117,11 +131,11 @@ const SlideLab = () => (
         </div>
 
         {/* Supporting */}
-        <div className="flex gap-8 mt-14">
+        <div className="flex gap-10 mt-14 mb-4">
           {supportingItems.map((item, i) => (
             <motion.span
               key={i}
-              className="text-xs tracking-[0.25em] uppercase text-foreground/40"
+              className="text-xs tracking-[0.3em] uppercase text-foreground/90"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.2, delay: item.delay, ease: "easeOut" }}
