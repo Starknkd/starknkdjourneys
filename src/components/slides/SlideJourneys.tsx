@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, forwardRef, useImperativeHandle } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import diverImg from "@/assets/diver-journey.jpg";
+import milfordImg from "@/assets/milford-bird.png";
 import mapImg from "@/assets/world-map.jpg";
 import climberImg from "@/assets/climber-journey.jpg";
 
@@ -106,7 +106,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
           >
-            <img src={diverImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+            <img src={milfordImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
             <div
               className="absolute inset-0"
               style={{
@@ -130,8 +130,16 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 1.2 }}
               >
-                Breathe your way<br />around the world
+                Your gateway to a new world.
               </motion.h2>
+              <motion.p
+                className="text-lg md:text-xl text-stark-periwinkle mt-6"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.8 }}
+              >
+                Where breathing takes you places
+              </motion.p>
             </div>
           </motion.div>
         )}
