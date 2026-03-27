@@ -40,13 +40,13 @@ const SlideProduct = () => (
 
       {/* Sub */}
       <motion.p
-        className="text-lg md:text-xl leading-relaxed text-stark-periwinkle"
+        className="text-lg md:text-xl leading-relaxed text-stark-periwinkle opacity-80"
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.8 }}
       >
         It starts with a 7-day control reset.<br />
-        <span className="text-foreground font-semibold px-[5px] py-[5px]">10 minutes a day. Built for real life.</span>
+        <span className="text-foreground font-semibold px-[5px] my-0 py-[10px]">{"\n"}10 minutes a day. Built for real life.</span>
       </motion.p>
 
       {/* 3-Stage Flow */}
