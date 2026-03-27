@@ -27,11 +27,11 @@ const SlideTeam = () => (
     />
 
     {/* Smooth left-to-right gradient for text legibility — wide soft transition */}
-    {/* Left image opacity reduction — 50% darker on left half */}
+    {/* Left image overlay — covers VR girl fully, flush with hiker edge */}
     <div
-      className="absolute top-0 left-0 bottom-0 w-[50%]"
+      className="absolute top-0 left-0 bottom-0 w-[55%]"
       style={{
-        background: "hsl(var(--background) / 0.5)",
+        background: "hsl(var(--background) / 0.8)",
       }}
     />
 
