@@ -24,7 +24,6 @@ const slides = [
   SlideSolution,
   SlideMarket,
   SlideProduct,
-  SlideAI,
   SlideJourneys,
   SlideLab,
   SlideBreathingLab,
