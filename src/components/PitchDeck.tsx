@@ -15,6 +15,7 @@ import SlideTraction from "@/components/slides/SlideTraction";
 import SlideTeam from "@/components/slides/SlideTeam";
 import SlideVision from "@/components/slides/SlideVision";
 import SlideBiotravel from "@/components/slides/SlideBiotravel";
+import SlidePartner from "@/components/slides/SlidePartner";
 import SlideClose from "@/components/slides/SlideClose";
 
 const JOURNEYS_INDEX = 6; // SlideJourneys position in slides array
