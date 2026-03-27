@@ -44,33 +44,6 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
     };
   }, []);
 
-  const getLineClassName = (line: typeof narrativeLines[number]) => {
-    const base = "text-lg md:text-xl leading-relaxed";
-
-    if (line.accent === "final") {
-      return `${base} text-stark-sunset font-semibold text-xl md:text-2xl mt-8`;
-    }
-    if (line.accent === "orange") {
-      return `${base} text-stark-sunset font-semibold text-xl md:text-2xl`;
-    }
-    return `${base} text-foreground/90`;
-  };
-
-  const getLineStyle = (line: typeof narrativeLines[number]): React.CSSProperties => {
-    if (line.accent === "final") {
-      return { textShadow: "0 0 20px hsl(var(--stark-sunset) / 0.5), 0 0 40px hsl(var(--stark-sunset) / 0.2)" };
-    }
-    if (line.accent === "orange") {
-      return { textShadow: "0 0 16px hsl(var(--stark-sunset) / 0.4), 0 0 32px hsl(var(--stark-sunset) / 0.15)" };
-    }
-    if (line.glow === "medium") {
-      return { textShadow: "0 0 12px hsl(var(--foreground) / 0.2)" };
-    }
-    if (line.glow === "subtle") {
-      return { textShadow: "0 0 8px hsl(var(--foreground) / 0.12)" };
-    }
-    return {};
-  };
 
   return (
     <div className="absolute inset-0 w-screen h-screen overflow-hidden bg-background">
