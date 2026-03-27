@@ -11,7 +11,7 @@ const SlideInsight = () => (
         src={brandWaveBg}
         alt=""
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ opacity: 0.15 }}
+        style={{ opacity: 0.3 }}
       />
       {/* Mask: hide pattern in centre, show at edges */}
       <div
@@ -43,7 +43,7 @@ const SlideInsight = () => (
           <motion.p
             key={line}
             className="text-lg md:text-xl lg:text-2xl"
-            style={{ color: "rgba(179, 147, 218, 0.9)" }}
+            style={{ color: "#b393da" }}
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.45, ease: "easeOut", delay: 1.0 + i * 0.5 }}
