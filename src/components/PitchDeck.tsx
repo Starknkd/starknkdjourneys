@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from "react";
+import EdgePattern from "@/components/EdgePattern";
 import ProgressBar from "@/components/ProgressBar";
 import SlideTitle from "@/components/slides/SlideTitle";
 import SlideHook from "@/components/slides/SlideHook";
