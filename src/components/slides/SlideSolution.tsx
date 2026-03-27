@@ -61,7 +61,7 @@ const SlideSolution = () => (
           animate={{ opacity: 1 }}
           transition={{ delay: 3.5, duration: 0.7 }}
         >
-          "You can't outthink a dysregulated system."
+          "You can't out-think a dysregulated system."
         </motion.p>
       </div>
     </div>
