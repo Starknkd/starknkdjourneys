@@ -3,8 +3,13 @@ import vrBg from "@/assets/vr-partner-bg.png";
 
 const SlidePartner = () => (
   <div className="absolute inset-0 w-screen h-screen overflow-hidden bg-background">
-    {/* Right-side image (55-60%) */}
-    <div className="absolute top-0 right-0 bottom-0 w-[60%]">
+    {/* Left text area — pure background, no image */}
+    <div className="absolute top-0 left-0 bottom-0 w-[58%] bg-background" />
+
+    {/* Right-side image container — fixed, clipped */}
+    <div
+      className="absolute top-0 right-0 bottom-0 w-[42%] overflow-hidden"
+    >
       <img
         src={vrBg}
         alt=""
@@ -13,22 +18,22 @@ const SlidePartner = () => (
           filter: "saturate(0.85) contrast(1.05) brightness(0.9)",
         }}
       />
+      {/* Inner left-edge fade within container */}
+      <div
+        className="absolute top-0 left-0 bottom-0 w-[35%]"
+        style={{
+          background: "linear-gradient(to right, hsl(var(--background)), transparent)",
+        }}
+      />
     </div>
 
-    {/* Left solid dark overlay (40-45%) */}
-    <div
-      className="absolute top-0 left-0 bottom-0 w-[45%]"
-      style={{ background: "hsl(var(--background) / 0.9)" }}
-    />
-
-    {/* Soft gradient blend between left and right */}
+    {/* Soft bleed fade ~5-10% into centre */}
     <div
       className="absolute top-0 bottom-0"
       style={{
-        left: "38%",
-        width: "18%",
-        background:
-          "linear-gradient(to right, hsl(var(--background) / 0.9), transparent)",
+        left: "53%",
+        width: "8%",
+        background: "linear-gradient(to right, hsl(var(--background)), transparent)",
       }}
     />
 
