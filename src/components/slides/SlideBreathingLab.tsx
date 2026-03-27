@@ -152,12 +152,12 @@ const SlideBreathingLab = () => (
         }}
       />
 
-      {/* Left edge fade into text panel */}
+      {/* Left edge fade into text panel — wide smooth blend */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background) / 0.6) 12%, transparent 35%)",
+            "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background) / 0.88) 8%, hsl(var(--background) / 0.5) 20%, transparent 40%)",
         }}
       />
 
