@@ -334,7 +334,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.75 }}
                 >
-                  <p className="text-base md:text-lg text-foreground/90">Into moments that catch you off guard —</p>
+                  <p className="text-base md:text-lg text-foreground/90">Into moments that catch you off guard -</p>
                   <p className="text-base md:text-lg text-foreground/90">in a good way.</p>
                   <p className="text-base md:text-lg text-foreground/90 mt-4">It's still breathing.</p>
                 </motion.div>
@@ -353,7 +353,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                       textShadow: "0 0 14px hsl(var(--stark-sunset) / 0.7), 0 0 32px hsl(var(--stark-sunset) / 0.35), 0 0 60px hsl(var(--stark-sunset) / 0.15)",
                     }}
                   >
-                    But this time —
+                    But this time -
                   </p>
                   <p
                     className="text-lg md:text-xl text-stark-sunset font-semibold"
