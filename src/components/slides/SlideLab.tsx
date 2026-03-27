@@ -2,14 +2,15 @@ import { motion } from "framer-motion";
 import speakerImg from "@/assets/speaker-orange.jpg";
 
 const narrativeLines = [
-  { text: "You don't follow a programme.", delay: 2.8, type: "main" as const },
-  { text: "You travel with a coach.", delay: 3.8, type: "accent" as const },
-  { text: "One that learns:", delay: 5.0, type: "main" as const },
-  { text: "how you think", delay: 6.0, type: "sub" as const },
-  { text: "how you react", delay: 6.5, type: "sub" as const },
-  { text: "how you stumble", delay: 7.0, type: "sub" as const },
-  { text: "And over time,", delay: 8.4, type: "main" as const },
-  { text: "it knows you better than you know yourself.", delay: 9.4, type: "emphasis" as const },
+  { text: "You travel with a coach.", delay: 2.8, type: "main" as const },
+  { text: "One that learns:", delay: 3.8, type: "accent" as const },
+  { text: "How you think. How you react. How you stumble.", delay: 5.0, type: "main" as const },
+  { text: "Biometrics show you what's happening underneath.", delay: 6.0, type: "sub" as const },
+  { text: "You're a striver. A doer. Not a meditator.", delay: 6.5, type: "sub" as const },
+  { text: "You feel it first. ", delay: 7.0, type: "sub" as const },
+  { text: "Less edge. Less noise. More control when it counts.\n\nYou handle things differently. ", delay: 8.4, type: "main" as const },
+  { text: "You handle things differently. Your numbers follow.", delay: 9.0, type: "main" as const },
+  { text: "You're closing the gap between not knowing how to switch off - and being told you need medication. \n\n\nBut its the characters you meet and the community you join that power you on.", delay: 10.0, type: "emphasis" as const },
 ];
 
 const supportingItems = [
