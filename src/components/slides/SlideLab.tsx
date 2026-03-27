@@ -2,8 +2,14 @@ import { motion } from "framer-motion";
 import speakerImg from "@/assets/speaker-orange.jpg";
 
 const narrativeLines = [
-  { text: "Supported by the characters you meet, the insight you collect & the community you join, you progress.\n\nYou're a striver. A doer. Not a meditator.\nYou feel it first. Less edge. Less noise. More control.\nWhen it counts.\n\nBiometrics show you what is happening underneath.", delay: 2.8, type: "main" as const },
-  { text: "And over time,", delay: 3.8, type: "accent" as const },
+  { text: "You don't follow a programme.", delay: 2.8, type: "main" as const },
+  { text: "You travel with a coach.", delay: 3.8, type: "accent" as const },
+  { text: "One that learns:", delay: 5.0, type: "main" as const },
+  { text: "how you think", delay: 6.0, type: "sub" as const },
+  { text: "how you react", delay: 6.5, type: "sub" as const },
+  { text: "how you stumble", delay: 7.0, type: "sub" as const },
+  { text: "And over time,", delay: 8.4, type: "main" as const },
+  { text: "it knows you better than you know yourself.", delay: 9.4, type: "emphasis" as const },
 ];
 
 const supportingItems = [
@@ -88,13 +94,19 @@ const SlideLab = () => (
               key={i}
               className={
                 line.type === "accent"
-                  ? "text-lg md:text-xl font-semibold text-accent mt-2 mb-2 whitespace-pre-line"
-                  : "text-base md:text-lg text-foreground/75 whitespace-pre-line"
+                  ? "text-lg md:text-xl font-semibold text-accent mt-2 mb-2"
+                  : line.type === "emphasis"
+                    ? "text-lg md:text-xl text-foreground/95 font-bold mt-5"
+                    : line.type === "sub"
+                      ? "text-base md:text-lg text-foreground/50 pl-4"
+                      : "text-base md:text-lg text-foreground/75"
               }
               style={
                 line.type === "accent"
                   ? { textShadow: "0 0 24px hsl(var(--accent) / 0.3)" }
-                  : undefined
+                  : line.type === "emphasis"
+                    ? { textShadow: "0 0 20px hsl(var(--foreground) / 0.15)" }
+                    : undefined
               }
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
