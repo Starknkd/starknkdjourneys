@@ -40,9 +40,10 @@ const SlideTitle = () => (
 
       {/* Tagline — appears immediately after logo */}
       <motion.p
-        className="text-[0.65rem] md:text-xs text-muted-foreground/50 tracking-[0.45em] uppercase font-light mt-3 mb-20"
+        className="text-[0.65rem] md:text-xs tracking-[0.45em] uppercase font-light mt-3 mb-20"
+        style={{ color: "#b393da" }}
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.55 }}
+        animate={{ opacity: 0.82 }}
         transition={{ duration: 0.3, ease: "easeOut", delay: 0.15 }}
       >
         Calm under pressure
