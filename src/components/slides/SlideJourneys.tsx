@@ -117,7 +117,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
 
             <div className="relative z-10 flex flex-col items-center justify-center h-full px-8">
               <motion.p
-                className="text-stark-periwinkle text-sm tracking-[0.4em] uppercase mb-6 font-medium px-[2px] bg-secondary"
+                className="text-stark-periwinkle tracking-[0.4em] uppercase mb-6 font-medium bg-secondary px-[5px] text-base"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
