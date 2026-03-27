@@ -3,7 +3,7 @@ import bgTexture from "@/assets/business-model-bg.jpg";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 12 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" as const } },
 };
 
 const SlideTraction = () => (
