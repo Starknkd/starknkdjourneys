@@ -49,9 +49,7 @@ const SlideBreathingLab = () => (
 
         {/* Body copy */}
         <div className="mt-10 space-y-1.5">
-          {bodyLines.map((line, i) => {
-            const isMiddleGroup = i >= 3 && i <= 5;
-            return (
+          {bodyLines.map((line, i) => (
             <motion.p
               key={i}
               className={[
@@ -60,7 +58,6 @@ const SlideBreathingLab = () => (
                   : line.type === "emphasis"
                     ? "text-lg md:text-xl font-extrabold text-foreground mt-4 tracking-wide"
                     : "text-base md:text-lg text-foreground/70",
-                isMiddleGroup ? "!my-0.5" : "",
               ].join(" ")}
               style={
                 line.type === "accent"
