@@ -1,8 +1,25 @@
 import SlideShell from "@/components/SlideShell";
 import { motion } from "framer-motion";
+import brandWaveBg from "@/assets/brand-wave-bg-2.jpg";
 
 const SlideHook = () => (
   <SlideShell slideKey={1}>
+    {/* Brand wave pattern — edges/border only at full opacity */}
+    <div className="absolute inset-0 z-[1] pointer-events-none">
+      <img
+        src={brandWaveBg}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ opacity: 1 }}
+      />
+      {/* Large centre cutout so pattern only shows at edges */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "radial-gradient(ellipse 70% 65% at 50% 50%, hsl(var(--background)) 0%, hsl(var(--background) / 0.85) 60%, transparent 100%)",
+        }}
+      />
+    </div>
     <div className="max-w-5xl w-full text-center flex flex-col items-center justify-center">
       {/* Line 1 */}
       <motion.h2
