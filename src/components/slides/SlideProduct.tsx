@@ -27,7 +27,7 @@ const stages = [
 
 const SlideProduct = () => (
   <SlideShell slideKey={6}>
-    <div className="max-w-5xl w-full flex flex-col items-center text-center gap-6 md:gap-8">
+    <div className="max-w-5xl w-full flex flex-col items-center text-center gap-6 md:gap-8 my-[20px] py-[20px]">
       {/* Headline */}
       <motion.h2
         className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground"
@@ -115,12 +115,12 @@ const SlideProduct = () => (
 
       {/* Closing line */}
       <motion.p
-        className="text-base md:text-lg tracking-[0.2em] uppercase text-accent font-medium"
+        className="text-base md:text-lg tracking-[0.2em] uppercase font-medium text-accent py-0 my-[20px]"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 3.2 }}
       >
-        Simple. Trainable. Scalable.
+        SIMPLE. SCALABLE. FEEL THE SHIFT - FAST.
       </motion.p>
     </div>
   </SlideShell>

@@ -12,7 +12,7 @@ const SlideShell = ({ children, slideKey, backgroundImage }: SlideShellProps) =>
   <AnimatePresence mode="wait">
     <motion.div
       key={slideKey}
-      className="absolute inset-0 w-screen h-screen flex items-center justify-center overflow-hidden"
+      className="absolute inset-0 w-screen h-screen flex items-center justify-center overflow-hidden my-[20px] py-[120px]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -29,7 +29,7 @@ const SlideShell = ({ children, slideKey, backgroundImage }: SlideShellProps) =>
           <div className="slide-overlay" />
         </>
       )}
-      <div className="relative z-10 w-full h-full flex items-center justify-center px-12 md:px-24 lg:px-32">
+      <div className="relative z-10 w-full h-full flex items-center justify-center px-12 md:px-24 lg:px-32 gap-0">
         {children}
       </div>
     </motion.div>
