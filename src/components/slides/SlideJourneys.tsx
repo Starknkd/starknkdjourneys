@@ -2,29 +2,8 @@ import { useState, useEffect, useRef, forwardRef, useImperativeHandle } from "re
 import { motion, AnimatePresence } from "framer-motion";
 import milfordImg from "@/assets/milford-bird.png";
 import mapImg from "@/assets/world-map.png";
-import climberImg from "@/assets/climber-journey.jpg";
-
-/* ─── narrative lines for Part 3 ─── */
-const narrativeLines = [
-  { text: "You begin at the southern tip of New Zealand.", delay: 0 },
-  { text: "Every breath moves you forward.", delay: 1.8 },
-  { text: "", delay: 3.8 },
-  { text: "The ocean is alive.", delay: 5.0 },
-  { text: "You hear whale calls in the distance.", delay: 7.0 },
-  { text: "A kiwi moves in the dark.", delay: 9.0 },
-  { text: "", delay: 11.0 },
-  { text: "You meet Friday.", delay: 12.5 },
-  { text: "He's been behind the bar on Stewart Island for 30 years.", delay: 14.5 },
-  { text: "", delay: 17.0 },
-  { text: "He gives you advice you didn't know you needed.", delay: 18.5, glow: "subtle" },
-  { text: "", delay: 21.0 },
-  { text: "This is your daily practice.", delay: 22.5, glow: "medium" },
-  { text: "", delay: 25.0 },
-  { text: "The more you return —", delay: 26.5 },
-  { text: "the further you travel.", delay: 28.5, glow: "strong", accent: "orange" },
-  { text: "", delay: 31.0 },
-  { text: "The best advice — at your fingertips", delay: 32.5, accent: "final" },
-];
+import hikerImg from "@/assets/hiker-journey.png";
+import keyImg from "@/assets/key-journey.png";
 
 /* ─── ambient dot nodes (dimmer, secondary) ─── */
 const ambientDots = [
@@ -65,33 +44,6 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
     };
   }, []);
 
-  const getLineClassName = (line: typeof narrativeLines[number]) => {
-    const base = "text-lg md:text-xl leading-relaxed";
-
-    if (line.accent === "final") {
-      return `${base} text-stark-sunset font-semibold text-xl md:text-2xl mt-8`;
-    }
-    if (line.accent === "orange") {
-      return `${base} text-stark-sunset font-semibold text-xl md:text-2xl`;
-    }
-    return `${base} text-foreground/90`;
-  };
-
-  const getLineStyle = (line: typeof narrativeLines[number]): React.CSSProperties => {
-    if (line.accent === "final") {
-      return { textShadow: "0 0 20px hsl(var(--stark-sunset) / 0.5), 0 0 40px hsl(var(--stark-sunset) / 0.2)" };
-    }
-    if (line.accent === "orange") {
-      return { textShadow: "0 0 16px hsl(var(--stark-sunset) / 0.4), 0 0 32px hsl(var(--stark-sunset) / 0.15)" };
-    }
-    if (line.glow === "medium") {
-      return { textShadow: "0 0 12px hsl(var(--foreground) / 0.2)" };
-    }
-    if (line.glow === "subtle") {
-      return { textShadow: "0 0 8px hsl(var(--foreground) / 0.12)" };
-    }
-    return {};
-  };
 
   return (
     <div className="absolute inset-0 w-screen h-screen overflow-hidden bg-background">
