@@ -35,6 +35,7 @@ const slides = [
   SlideVision,
   SlideMarket,
   SlideBiotravel,
+  SlidePartner,
   SlideClose,
 ];
 
