@@ -65,7 +65,7 @@ const SlidePartner = () => (
           transition={{ delay: 0.9, duration: 0.6 }}
         >
           <p className="text-xl md:text-2xl font-semibold text-primary mb-1">
-            £25k strategic partners
+            Seeking strategic partners
           </p>
           <p className="text-base md:text-lg text-foreground/80">
             Prototype build + launch
