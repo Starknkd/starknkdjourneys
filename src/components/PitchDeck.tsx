@@ -5,7 +5,7 @@ import SlideHook from "@/components/slides/SlideHook";
 import SlideInsight from "@/components/slides/SlideInsight";
 import SlideSolution from "@/components/slides/SlideSolution";
 import SlideProduct from "@/components/slides/SlideProduct";
-import SlideAI from "@/components/slides/SlideAI";
+
 import SlideJourneys, { SlideJourneysRef } from "@/components/slides/SlideJourneys";
 import SlideLab from "@/components/slides/SlideLab";
 import SlideBreathingLab from "@/components/slides/SlideBreathingLab";
@@ -15,7 +15,7 @@ import SlideTeam from "@/components/slides/SlideTeam";
 import SlideVision from "@/components/slides/SlideVision";
 import SlideClose from "@/components/slides/SlideClose";
 
-const JOURNEYS_INDEX = 7; // SlideJourneys position in slides array
+const JOURNEYS_INDEX = 6; // SlideJourneys position in slides array
 
 const slides = [
   SlideTitle,
@@ -24,7 +24,6 @@ const slides = [
   SlideSolution,
   SlideMarket,
   SlideProduct,
-  SlideAI,
   SlideJourneys,
   SlideLab,
   SlideBreathingLab,
