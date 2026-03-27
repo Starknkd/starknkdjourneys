@@ -97,7 +97,7 @@ const SlideLab = () => (
                 (line.type === "accent"
                   ? "text-lg md:text-xl font-semibold text-accent mt-2 mb-2"
                   : line.type === "emphasis"
-                    ? "text-lg md:text-xl text-foreground/95 font-bold mt-5"
+                    ? "text-lg md:text-xl text-foreground/95 font-bold mt-8"
                     : line.type === "sub"
                       ? "text-base md:text-lg text-foreground/50 pl-4"
                       : "text-base md:text-lg text-foreground/75") + " whitespace-pre-line"
