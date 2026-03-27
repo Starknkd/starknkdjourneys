@@ -107,7 +107,7 @@ const SlideBreathingLab = () => (
         alt="Person wearing VR headset in the Stark NKD breathing lab"
         className="absolute inset-0 w-full h-full object-cover object-center"
         style={{
-          filter: "brightness(0.72) contrast(1.15)",
+          filter: "brightness(0.65) contrast(1.25)",
         }}
       />
 
