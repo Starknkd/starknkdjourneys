@@ -77,6 +77,7 @@ const PitchDeck = () => {
   return (
     <div className="relative w-screen h-screen bg-background overflow-y-auto">
       <div className="grain-overlay" />
+      <EdgePattern opacity={0.3} />
       {current === JOURNEYS_INDEX ? (
         <SlideJourneys ref={journeysRef} />
       ) : (
