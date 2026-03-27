@@ -27,9 +27,9 @@ const SlideTeam = () => (
     />
 
     {/* Smooth left-to-right gradient for text legibility — wide soft transition */}
-    {/* Left image overlay — covers VR girl fully, flush with hiker edge */}
+    {/* Full-width overlay — covers both images */}
     <div
-      className="absolute top-0 left-0 bottom-0 w-[55%]"
+      className="absolute inset-0"
       style={{
         background: "hsl(var(--background) / 0.8)",
       }}
