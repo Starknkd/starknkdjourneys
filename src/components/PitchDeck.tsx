@@ -4,6 +4,7 @@ import SlideTitle from "@/components/slides/SlideTitle";
 import SlideHook from "@/components/slides/SlideHook";
 import SlideInsight from "@/components/slides/SlideInsight";
 import SlideSolution from "@/components/slides/SlideSolution";
+import SlideLandscape from "@/components/slides/SlideLandscape";
 import SlideProduct from "@/components/slides/SlideProduct";
 
 import SlideJourneys, { SlideJourneysRef } from "@/components/slides/SlideJourneys";
@@ -15,13 +16,14 @@ import SlideTeam from "@/components/slides/SlideTeam";
 import SlideVision from "@/components/slides/SlideVision";
 import SlideClose from "@/components/slides/SlideClose";
 
-const JOURNEYS_INDEX = 5; // SlideJourneys position in slides array
+const JOURNEYS_INDEX = 7; // SlideJourneys position in slides array
 
 const slides = [
   SlideTitle,
   SlideHook,
   SlideInsight,
   SlideSolution,
+  SlideLandscape,
   SlideProduct,
   SlideJourneys,
   SlideLab,
@@ -40,7 +42,6 @@ const PitchDeck = () => {
 
   const navigate = useCallback(
     (direction: 1 | -1) => {
-      // If on Journeys slide, try internal navigation first
       if (current === JOURNEYS_INDEX && journeysRef.current) {
         const consumed = direction === 1
           ? journeysRef.current.handleNext()
