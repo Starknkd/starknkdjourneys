@@ -278,7 +278,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                     <span className="relative inline-block">
                       <span
                         className="relative z-10 text-stark-sunset font-semibold"
-                        style={{ filter: "brightness(1.15)", textShadow: "0 0 18px hsl(var(--stark-sunset) / 0.5), 0 0 36px hsl(var(--stark-sunset) / 0.2)" }}
+                        style={{ filter: "brightness(1.25)", textShadow: "0 0 12px hsl(var(--stark-sunset) / 0.6), 0 0 28px hsl(var(--stark-sunset) / 0.3), 0 0 56px hsl(var(--stark-sunset) / 0.12)" }}
                       >
                         Your breath moves you forward.
                       </span>
