@@ -4,13 +4,11 @@ import labEnv from "@/assets/lab-environment.png";
 import bioGraph from "@/assets/biofeedback-graph.png";
 
 const bodyLines = [
-  { text: "A working pop-up breathing lab in central London.", delay: 2.0, type: "main" as const },
-  { text: "Simulated stress.", delay: 2.8, type: "main" as const },
-  { text: "Live physiological feedback", delay: 3.4, type: "accent" as const },
-  { text: "People see -", delay: 4.2, type: "main" as const },
-  { text: "in real time", delay: 4.6, type: "accent" as const },
-  { text: "- what pressure does to them.", delay: 4.8, type: "main" as const },
-  { text: "Then they learn to control it.", delay: 5.8, type: "emphasis" as const },
+  { text: "A working pop-up lab in central London.", delay: 2.0, type: "main" as const },
+  { text: "Wes imulate pressure.", delay: 2.8, type: "main" as const },
+  { text: "You watch your system respond- in real time.", delay: 3.4, type: "accent" as const },
+  { text: "Your breathing. Yoiur physiology. You see the shift.", delay: 4.8, type: "main" as const },
+  { text: "And once you've experienced it - yoiu don't question it.", delay: 5.8, type: "emphasis" as const },
 ];
 
 const SlideBreathingLab = () => (
@@ -51,9 +49,7 @@ const SlideBreathingLab = () => (
 
         {/* Body copy */}
         <div className="mt-10 space-y-1.5">
-          {bodyLines.map((line, i) => {
-            const isMiddleGroup = i >= 3 && i <= 5;
-            return (
+          {bodyLines.map((line, i) => (
             <motion.p
               key={i}
               className={[
@@ -62,7 +58,6 @@ const SlideBreathingLab = () => (
                   : line.type === "emphasis"
                     ? "text-lg md:text-xl font-extrabold text-foreground mt-4 tracking-wide"
                     : "text-base md:text-lg text-foreground/70",
-                isMiddleGroup ? "!my-0.5" : "",
               ].join(" ")}
               style={
                 line.type === "accent"
@@ -77,8 +72,8 @@ const SlideBreathingLab = () => (
             >
               {line.text}
             </motion.p>
-          );
-          })}
+            ))
+          }
         </div>
 
         {/* Supporting bottom */}
