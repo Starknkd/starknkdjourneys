@@ -7,7 +7,7 @@ const bodyLines = [
   { text: "A working pop-up lab in central London.", delay: 2.0, type: "main" as const },
   { text: "We simulate pressure.", delay: 2.8, type: "main" as const },
   { text: "You watch your system respond- in real time.", delay: 3.4, type: "accent" as const },
-  { text: "Your breathing. Yoiur physiology. You see the shift.", delay: 4.8, type: "main" as const },
+  { text: "Your breathing. Your physiology. You see the shift.", delay: 4.8, type: "main" as const },
   { text: "And once you've experienced it - you don't question it.", delay: 5.8, type: "emphasis" as const },
 ];
 
