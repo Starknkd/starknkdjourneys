@@ -39,18 +39,25 @@ const SlideProduct = () => (
       </motion.h2>
 
       {/* Sub */}
-      <motion.p
-        className="text-lg md:text-xl leading-relaxed text-stark-periwinkle opacity-80"
+      <motion.div
+        className="flex flex-col items-center text-center gap-3"
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.8 }}
       >
-        It starts with a 7-day control reset.<br />
-        <span className="text-foreground font-semibold px-[5px] my-0 py-[10px]">{"\n"}10 minutes a day. Built for real life. Ready for whats next.</span>
-      </motion.p>
+        <p className="text-lg md:text-xl leading-relaxed text-stark-periwinkle opacity-80">
+          It starts with a 7-day reset.
+        </p>
+        <p className="text-lg md:text-xl leading-relaxed text-muted-foreground opacity-70">
+          10 minutes a day. Built for real life.
+        </p>
+        <p className="text-lg md:text-xl leading-relaxed text-foreground font-medium opacity-95">
+          Ready for what's next.
+        </p>
+      </motion.div>
 
       {/* 3-Stage Flow */}
-      <div className="w-full flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0 mt-4">
+      <div className="w-full flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0 mt-8">
         {stages.map((stage, i) => (
           <div key={i} className="flex items-center">
             <motion.div
@@ -115,7 +122,7 @@ const SlideProduct = () => (
 
       {/* Closing line */}
       <motion.p
-        className="text-base md:text-lg tracking-[0.2em] uppercase font-medium text-accent py-0 my-[20px]"
+        className="text-base md:text-lg tracking-[0.2em] uppercase font-medium text-accent py-0 my-[20px] opacity-[0.72]"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 3.2 }}
