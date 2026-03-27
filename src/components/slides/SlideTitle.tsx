@@ -43,7 +43,7 @@ const SlideTitle = () => (
         className="text-[0.65rem] md:text-xs tracking-[0.45em] uppercase font-light mt-3 mb-20"
         style={{ color: "#b393da" }}
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.82 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.3, ease: "easeOut", delay: 0.15 }}
       >
         Calm under pressure
