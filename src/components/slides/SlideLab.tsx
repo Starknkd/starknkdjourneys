@@ -8,7 +8,7 @@ const narrativeLines = [
   { text: "Biometrics show you what's happening underneath.", delay: 6.0, type: "main" as const },
   { text: "\n\nYou're a striver. ", delay: 6.5, type: "main" as const },
   { text: "You feel it first. ", delay: 7.0, type: "accent" as const },
-  { text: "Less edge. Less noise. More control when it counts.", delay: 8.4, type: "benefit" as const },
+  { text: "Less edge. Less noise. More centred when it counts.", delay: 8.4, type: "benefit" as const },
   { text: "\nYou handle things differently. ", delay: 8.8, type: "main" as const },
   { text: "And over time your numbers follow.", delay: 9.0, type: "main" as const },
   { text: "You close the gap between overwhelm & control.", delay: 10.0, type: "anchor" as const },
