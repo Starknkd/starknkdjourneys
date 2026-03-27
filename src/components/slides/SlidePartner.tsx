@@ -3,22 +3,32 @@ import vrBg from "@/assets/vr-partner-bg.png";
 
 const SlidePartner = () => (
   <div className="absolute inset-0 w-screen h-screen overflow-hidden bg-background">
-    {/* Full-bleed image */}
-    <img
-      src={vrBg}
-      alt=""
-      className="absolute inset-0 w-full h-full object-cover object-[70%_center]"
-      style={{
-        filter: "saturate(0.85) contrast(1.05) brightness(0.9)",
-      }}
+    {/* Right-side image (55-60%) */}
+    <div className="absolute top-0 right-0 bottom-0 w-[60%]">
+      <img
+        src={vrBg}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover object-center"
+        style={{
+          filter: "saturate(0.85) contrast(1.05) brightness(0.9)",
+        }}
+      />
+    </div>
+
+    {/* Left solid dark overlay (40-45%) */}
+    <div
+      className="absolute top-0 left-0 bottom-0 w-[45%]"
+      style={{ background: "hsl(var(--background) / 0.9)" }}
     />
 
-    {/* Left gradient overlay — fades from solid to transparent */}
+    {/* Soft gradient blend between left and right */}
     <div
-      className="absolute inset-0"
+      className="absolute top-0 bottom-0"
       style={{
+        left: "38%",
+        width: "18%",
         background:
-          "linear-gradient(to right, hsl(var(--background) / 0.95) 30%, hsl(var(--background) / 0.7) 45%, transparent 65%)",
+          "linear-gradient(to right, hsl(var(--background) / 0.9), transparent)",
       }}
     />
 
