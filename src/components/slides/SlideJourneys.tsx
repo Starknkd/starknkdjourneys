@@ -106,7 +106,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
           >
-            <img src={diverImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+            <img src={milfordImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
             <div
               className="absolute inset-0"
               style={{
