@@ -90,41 +90,41 @@ const SlideTeam = () => (
       </motion.h2>
 
       {/* Body — Block 1: Individuals */}
-      <motion.div variants={fadeIn} className="space-y-1 mb-8">
-        <p className="text-base md:text-lg font-medium text-foreground/90">
+      <motion.div variants={fadeIn} className="space-y-1 mb-10">
+        <p className="text-base md:text-lg font-semibold text-foreground/95">
           Individuals start with a reset.
         </p>
-        <p className="text-base md:text-lg text-foreground/80">
+        <p className="text-base md:text-lg text-foreground/75">
           They stay for the journeys.
         </p>
       </motion.div>
 
       {/* Body — Block 2: Organisations */}
-      <motion.div variants={fadeIn} className="space-y-1 mb-8">
-        <p className="text-base md:text-lg font-medium text-foreground/90">
+      <motion.div variants={fadeIn} className="space-y-1 mb-10">
+        <p className="text-base md:text-lg font-semibold text-foreground/95">
           Organisations experience the lab.
         </p>
-        <p className="text-base md:text-lg text-foreground/80">
+        <p className="text-base md:text-lg text-foreground/75">
           They scale through the platform.
         </p>
       </motion.div>
 
       {/* Body — Block 3: Shared system */}
-      <motion.div variants={fadeIn} className="space-y-1 mb-14">
-        <p className="text-base md:text-lg text-foreground/85">
+      <motion.div variants={fadeIn} className="space-y-1 mb-16">
+        <p className="text-base md:text-lg text-foreground/80">
           Same system.
         </p>
-        <p className="text-base md:text-lg text-foreground/85">
+        <p className="text-base md:text-lg text-foreground/80">
           Deployed anywhere.
         </p>
       </motion.div>
 
-      {/* Closing anchor line */}
-      <motion.div variants={fadeIn} className="space-y-1">
-        <p className="text-xl md:text-2xl font-bold text-foreground/95">
+      {/* Closing anchor line — conceptual bridge */}
+      <motion.div variants={fadeIn} className="space-y-1 pt-2 border-t border-foreground/10" style={{ maxWidth: "380px" }}>
+        <p className="text-xl md:text-2xl font-extrabold text-foreground mt-4">
           From personal habit —
         </p>
-        <p className="text-xl md:text-2xl font-bold text-foreground/95">
+        <p className="text-xl md:text-2xl font-extrabold text-foreground">
           to organisational capability.
         </p>
       </motion.div>
