@@ -5,7 +5,7 @@ import SlideHook from "@/components/slides/SlideHook";
 import SlideInsight from "@/components/slides/SlideInsight";
 import SlideSolution from "@/components/slides/SlideSolution";
 import SlideProduct from "@/components/slides/SlideProduct";
-import SlideAI from "@/components/slides/SlideAI";
+
 import SlideJourneys, { SlideJourneysRef } from "@/components/slides/SlideJourneys";
 import SlideLab from "@/components/slides/SlideLab";
 import SlideBreathingLab from "@/components/slides/SlideBreathingLab";
