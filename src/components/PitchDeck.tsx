@@ -32,6 +32,8 @@ const slides = [
   SlideTraction,
   SlideTeam,
   SlideVision,
+  SlideCategory,
+  SlideBlank,
   SlideClose,
 ];
 
