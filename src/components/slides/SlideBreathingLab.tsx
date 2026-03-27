@@ -62,7 +62,7 @@ const SlideBreathingLab = () => (
               ].join(" ")}
               style={
                 line.type === "accent"
-                  ? { textShadow: "0 0 20px hsl(var(--accent) / 0.25)" }
+                  ? { textShadow: "0 0 24px hsl(var(--accent) / 0.35)", filter: "brightness(1.15)" }
                   : line.type === "emphasis"
                     ? { textShadow: "0 0 16px hsl(var(--foreground) / 0.1)" }
                     : undefined
@@ -107,7 +107,7 @@ const SlideBreathingLab = () => (
         alt="Person wearing VR headset in the Stark NKD breathing lab"
         className="absolute inset-0 w-full h-full object-cover object-center"
         style={{
-          filter: "brightness(0.72) contrast(1.15)",
+          filter: "brightness(0.65) contrast(1.25)",
         }}
       />
 
@@ -152,12 +152,12 @@ const SlideBreathingLab = () => (
         }}
       />
 
-      {/* Left edge fade into text panel */}
+      {/* Left edge fade into text panel — wide smooth blend */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background) / 0.6) 12%, transparent 35%)",
+            "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background) / 0.88) 8%, hsl(var(--background) / 0.5) 20%, transparent 40%)",
         }}
       />
 
