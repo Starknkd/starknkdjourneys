@@ -20,7 +20,7 @@ const SlideHook = () => (
         }}
       />
     </div>
-    <div className="max-w-5xl w-full text-center flex flex-col items-center justify-center">
+    <div className="relative z-10 max-w-5xl w-full text-center flex flex-col items-center justify-center">
       {/* Line 1 */}
       <motion.h2
         className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-foreground"
