@@ -13,8 +13,6 @@ import SlideMarket from "@/components/slides/SlideMarket";
 import SlideTraction from "@/components/slides/SlideTraction";
 import SlideTeam from "@/components/slides/SlideTeam";
 import SlideVision from "@/components/slides/SlideVision";
-import SlideCategory from "@/components/slides/SlideCategory";
-import SlideBlank from "@/components/slides/SlideBlank";
 import SlideClose from "@/components/slides/SlideClose";
 
 const JOURNEYS_INDEX = 6; // SlideJourneys position in slides array
@@ -32,8 +30,6 @@ const slides = [
   SlideTraction,
   SlideTeam,
   SlideVision,
-  SlideCategory,
-  SlideBlank,
   SlideClose,
 ];
 
