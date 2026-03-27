@@ -71,7 +71,7 @@ const SlideSolution = () => (
       <img
         src={femaleExec}
         alt=""
-        className="absolute inset-0 w-full h-full object-cover object-[30%_center] brightness-[0.6]"
+        className="absolute inset-0 w-full h-full object-cover object-[30%_center] brightness-[0.8]"
       />
       {/* Gradient fade from left */}
       <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
