@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, forwardRef, useImperativeHandle } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import milfordImg from "@/assets/milford-bird.png";
-import mapImg from "@/assets/world-map.jpg";
+import mapImg from "@/assets/world-map.png";
 import climberImg from "@/assets/climber-journey.jpg";
 
 /* ─── narrative lines for Part 3 ─── */
@@ -226,40 +226,51 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
               />
             </svg>
 
-            {/* Dim static ambient dots — suppressed, no animation */}
-            <svg
-              className="absolute inset-0 w-full h-full pointer-events-none"
-              viewBox="0 0 1920 1920"
-              preserveAspectRatio="xMidYMid slice"
-            >
-              {ambientDots.map((dot, i) => (
-                <circle
-                  key={i}
-                  cx={dot.cx * 1.92} cy={dot.cy * 1.92} r="3"
-                  fill="hsl(var(--stark-sunset))"
-                  opacity="0.05"
-                />
-              ))}
-            </svg>
 
-            {/* text */}
-            <div className="relative z-10 flex flex-col justify-end h-full px-12 md:px-24 pb-32">
-              <motion.p
-                className="text-2xl md:text-3xl font-bold text-foreground mb-4 px-0 py-0"
+            {/* text — bottom-left, stacked cleanly */}
+            <div className="relative z-10 flex flex-col justify-end h-full px-12 md:px-24 pb-28">
+              <motion.h2
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
               >
-                Choose your route.{" "}
-              </motion.p>
-              <motion.p
-                className="text-lg md:text-xl text-muted-foreground py-[8px]"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.6 }}
-              >
-                Keys unlock. Locals advise. Nature beckons.
-              </motion.p>
+                Your breathing practice just became a map.
+              </motion.h2>
+              <div className="space-y-2">
+                <motion.p
+                  className="text-lg md:text-xl text-foreground font-medium"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.2 }}
+                >
+                  Choose your route.
+                </motion.p>
+                <motion.p
+                  className="text-lg md:text-xl text-stark-periwinkle"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.8 }}
+                >
+                  Keys unlock. Locals advise. Nature beckons.
+                </motion.p>
+                <motion.p
+                  className="text-lg md:text-xl"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 2.4 }}
+                >
+                  <span className="relative inline-block">
+                    <span className="relative z-10 text-primary">Your breath moves you forward.</span>
+                    <motion.span
+                      className="absolute inset-0 -inset-x-4 -inset-y-2 rounded-full bg-primary/10 blur-2xl"
+                      initial={{ opacity: 0, scale: 0.7 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 1.2, ease: "easeOut", delay: 3.0 }}
+                    />
+                  </span>
+                </motion.p>
+              </div>
             </div>
           </motion.div>
         )}
