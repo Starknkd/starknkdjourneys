@@ -88,19 +88,13 @@ const SlideLab = () => (
               key={i}
               className={
                 line.type === "accent"
-                  ? "text-lg md:text-xl font-semibold text-accent mt-2 mb-2"
-                  : line.type === "emphasis"
-                    ? "text-lg md:text-xl text-foreground/95 font-bold mt-5"
-                    : line.type === "sub"
-                      ? "text-base md:text-lg text-foreground/50 pl-4"
-                      : "text-base md:text-lg text-foreground/75"
+                  ? "text-lg md:text-xl font-semibold text-accent mt-2 mb-2 whitespace-pre-line"
+                  : "text-base md:text-lg text-foreground/75 whitespace-pre-line"
               }
               style={
                 line.type === "accent"
                   ? { textShadow: "0 0 24px hsl(var(--accent) / 0.3)" }
-                  : line.type === "emphasis"
-                    ? { textShadow: "0 0 20px hsl(var(--foreground) / 0.15)" }
-                    : undefined
+                  : undefined
               }
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
