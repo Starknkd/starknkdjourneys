@@ -26,9 +26,9 @@ const SlideMarket = () => (
 
         <div className="mt-10 space-y-3">
           {[
-            { text: "one-size breathing techniques", delay: 1.2 },
-            { text: "focus on oxygen, not CO₂", delay: 1.7 },
-            { text: "more intensity, not regulation", delay: 2.2 },
+            { text: "One-size breathing techniques", delay: 1.2 },
+            { text: "Focus on oxygen, not CO₂", delay: 1.7 },
+            { text: "More intensity, not regulation", delay: 2.2 },
           ].map(({ text, delay }) => (
             <motion.p
               key={text}
