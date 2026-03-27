@@ -6,7 +6,7 @@ const narrativeLines = [
   { text: "One that learns:", delay: 3.8, type: "accent" as const },
   { text: "How you think. How you react. How you stumble.", delay: 5.0, type: "main" as const },
   { text: "Biometrics show you what's happening underneath.", delay: 6.0, type: "main" as const },
-  { text: "You're a striver. A doer. Not a meditator.", delay: 6.5, type: "main" as const },
+  { text: "\n\nYou're a striver. A doer. Not a meditator.", delay: 6.5, type: "main" as const },
   { text: "You feel it first. ", delay: 7.0, type: "accent" as const },
   { text: "Less edge. Less noise. More control when it counts.\n\nYou handle things differently. ", delay: 8.4, type: "main" as const },
   { text: "And over time your numbers follow.", delay: 9.0, type: "main" as const },
