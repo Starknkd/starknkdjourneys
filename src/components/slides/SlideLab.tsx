@@ -10,7 +10,7 @@ const narrativeLines = [
   { text: "You feel it first. ", delay: 7.0, type: "accent" as const },
   { text: "Less edge. Less noise. More control when it counts.\n\nYou handle things differently. ", delay: 8.4, type: "main" as const },
   { text: "And over time your numbers follow.", delay: 9.0, type: "main" as const },
-  { text: "You're closing the gap between overwhelm & control.\n\n\nThe characters you meet and the community you join power you on.", delay: 10.0, type: "emphasis" as const },
+  { text: "You're closing the gap between overwhelm & control.\n\n\n", delay: 10.0, type: "emphasis" as const },
 ];
 
 const supportingItems = [
