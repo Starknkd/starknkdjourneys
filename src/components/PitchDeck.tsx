@@ -16,7 +16,7 @@ import SlideTeam from "@/components/slides/SlideTeam";
 import SlideVision from "@/components/slides/SlideVision";
 import SlideClose from "@/components/slides/SlideClose";
 
-const JOURNEYS_INDEX = 7; // SlideJourneys position in slides array
+const JOURNEYS_INDEX = 6; // SlideJourneys position in slides array
 
 const slides = [
   SlideTitle,
