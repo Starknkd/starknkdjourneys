@@ -310,7 +310,8 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
                 >
-                  You and your breath — hand in hand —<br />
+                  You and your breath<br />
+                  - hand in hand -<br />
                   step off the beaten track.
                 </motion.h2>
 
