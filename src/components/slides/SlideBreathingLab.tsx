@@ -53,6 +53,7 @@ const SlideBreathingLab = () => (
             <motion.p
               key={i}
               className={[
+                "whitespace-pre-line",
                 line.type === "accent"
                   ? "text-lg md:text-xl font-semibold text-accent"
                   : line.type === "emphasis"
