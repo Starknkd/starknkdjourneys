@@ -46,7 +46,7 @@ const SlideProduct = () => (
         transition={{ duration: 0.5, delay: 0.8 }}
       >
         It starts with a 7-day control reset.<br />
-        <span className="text-foreground font-semibold px-[5px] my-0 py-[10px]">{"\n"}10 minutes a day. Built for real life.</span>
+        <span className="text-foreground font-semibold px-[5px] my-0 py-[10px]">{"\n"}10 minutes a day. Built for real life. Ready for whats next.</span>
       </motion.p>
 
       {/* 3-Stage Flow */}
