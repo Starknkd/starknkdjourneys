@@ -25,18 +25,18 @@ const SlideProduct = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          We train regulation.
+          Breathwork is not our bag. We train regulation.
         </motion.h2>
 
         {/* Sub */}
         <motion.p
-          className="text-lg md:text-xl text-muted-foreground leading-relaxed"
+          className="text-lg md:text-xl leading-relaxed text-stark-periwinkle"
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
         >
-          Not hacks. Not techniques.<br />
-          <span className="text-foreground font-semibold">A system.</span>
+          It starts with a 7-day control reset.<br />
+          <span className="text-foreground font-semibold">10 minutes a day. Built for real life.</span>
         </motion.p>
 
         {/* System Diagram */}
