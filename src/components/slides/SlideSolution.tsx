@@ -38,9 +38,9 @@ const SlideSolution = () => (
         {/* Staggered supporting lines */}
         <div className="mt-10 space-y-3">
           {[
-            { text: "breathing behaviour drives CO₂", delay: 1.8 },
+            { text: "Breathing behaviour drives CO₂", delay: 1.8 },
             { text: "CO₂ regulates oxygen delivery", delay: 2.3 },
-            { text: "disrupt it → system destabilises", delay: 2.8 },
+            { text: "Disrupt it → system destabilises", delay: 2.8 },
           ].map(({ text, delay }) => (
             <motion.p
               key={text}
