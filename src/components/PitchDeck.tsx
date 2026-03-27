@@ -15,14 +15,13 @@ import SlideTeam from "@/components/slides/SlideTeam";
 import SlideVision from "@/components/slides/SlideVision";
 import SlideClose from "@/components/slides/SlideClose";
 
-const JOURNEYS_INDEX = 6; // SlideJourneys position in slides array
+const JOURNEYS_INDEX = 5; // SlideJourneys position in slides array
 
 const slides = [
   SlideTitle,
   SlideHook,
   SlideInsight,
   SlideSolution,
-  SlideMarket,
   SlideProduct,
   SlideJourneys,
   SlideLab,
@@ -30,6 +29,7 @@ const slides = [
   SlideTraction,
   SlideTeam,
   SlideVision,
+  SlideMarket,
   SlideClose,
 ];
 
