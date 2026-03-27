@@ -82,15 +82,15 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 1.2 }}
               >
-                Your gateway to a new world.&nbsp;
+                Breathe your way around the world.&nbsp;
               </motion.h2>
               <motion.p
-                className="text-lg md:text-xl mt-6 text-accent-foreground"
+                className="text-lg md:text-xl mt-6 text-accent-foreground text-center"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.8 }}
               >
-                Where breathing takes you places
+                Get off the beaten track.<br />And follow what pulls you.
               </motion.p>
             </div>
           </motion.div>
