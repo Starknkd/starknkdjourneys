@@ -33,7 +33,7 @@ const slides = [
   SlideBreathingLab,
   SlideTraction,
   SlideTeam,
-  SlideVision,
+  
   SlideMarket,
   SlideBiotravel,
   SlidePartner,
