@@ -14,52 +14,33 @@ const SlideTeam = () => (
       alt=""
       className="absolute inset-0 w-full h-full object-cover"
       style={{
-        filter: "brightness(0.45) contrast(1.1) saturate(0.6)",
+        filter: "brightness(0.5) contrast(1.15) saturate(0.55)",
       }}
     />
 
-    {/* Unifying purple wash across entire image — one system feel */}
+    {/* Single unified purple wash — same tint both sides */}
     <div
       className="absolute inset-0"
       style={{
-        background: "hsl(var(--background) / 0.35)",
-        mixBlendMode: "multiply",
+        background: "hsl(var(--background) / 0.4)",
       }}
     />
 
-    {/* Smooth centre blend — eliminates any midline seam */}
-    <div
-      className="absolute inset-0"
-      style={{
-        background:
-          "linear-gradient(to right, hsl(var(--background) / 0.65) 0%, hsl(var(--background) / 0.4) 35%, hsl(var(--background) / 0.25) 50%, hsl(var(--background) / 0.15) 65%, transparent 85%)",
-      }}
-    />
-
-    {/* Vignette — soft edges */}
+    {/* Smooth left-to-right gradient for text legibility — wide soft transition */}
     <div
       className="absolute inset-0"
       style={{
         background:
-          "radial-gradient(ellipse at 50% 50%, transparent 30%, hsl(var(--background) / 0.45) 100%)",
+          "linear-gradient(to right, hsl(var(--background) / 0.75) 0%, hsl(var(--background) / 0.45) 30%, hsl(var(--background) / 0.15) 50%, transparent 70%)",
       }}
     />
 
-    {/* Text protection zone — left */}
+    {/* Soft vignette — no centre bias */}
     <div
       className="absolute inset-0"
       style={{
         background:
-          "linear-gradient(to right, hsl(var(--background) / 0.8) 0%, hsl(var(--background) / 0.5) 25%, transparent 50%)",
-      }}
-    />
-
-    {/* Bottom fade */}
-    <div
-      className="absolute inset-0"
-      style={{
-        background:
-          "linear-gradient(to top, hsl(var(--background) / 0.45) 0%, transparent 25%)",
+          "radial-gradient(ellipse at 50% 50%, transparent 40%, hsl(var(--background) / 0.35) 100%)",
       }}
     />
 
