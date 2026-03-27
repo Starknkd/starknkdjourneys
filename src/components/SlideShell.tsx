@@ -29,7 +29,7 @@ const SlideShell = ({ children, slideKey, backgroundImage }: SlideShellProps) =>
           <div className="slide-overlay" />
         </>
       )}
-      <div className="relative z-10 w-full h-full flex items-center justify-center px-12 md:px-24 lg:px-32">
+      <div className="relative z-10 w-full h-full flex items-center justify-center px-12 md:px-24 lg:px-32 gap-0">
         {children}
       </div>
     </motion.div>

@@ -115,12 +115,12 @@ const SlideProduct = () => (
 
       {/* Closing line */}
       <motion.p
-        className="text-base md:text-lg tracking-[0.2em] uppercase text-accent font-medium"
+        className="text-base md:text-lg tracking-[0.2em] uppercase font-medium text-accent py-0 my-[20px]"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 3.2 }}
       >
-        Simple. Trainable. Scalable.
+        SIMPLE. SCALABLE. FEEL THE SHIFT - FAST.
       </motion.p>
     </div>
   </SlideShell>
