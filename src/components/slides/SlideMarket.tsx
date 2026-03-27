@@ -32,7 +32,7 @@ const SlideMarket = () => (
           ].map(({ text, delay }) => (
             <motion.p
               key={text}
-              className="text-lg md:text-xl text-muted-foreground"
+              className="text-lg md:text-xl text-stark-periwinkle"
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay, duration: 0.5 }}
@@ -48,7 +48,7 @@ const SlideMarket = () => (
           animate={{ opacity: 1 }}
           transition={{ delay: 3.0, duration: 0.7 }}
         >
-          "For many people, it makes things worse."
+          "For many people, with maxed out systems & wired minds, it makes things worse."
         </motion.p>
       </div>
     </div>
