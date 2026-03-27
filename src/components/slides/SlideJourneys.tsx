@@ -2,29 +2,8 @@ import { useState, useEffect, useRef, forwardRef, useImperativeHandle } from "re
 import { motion, AnimatePresence } from "framer-motion";
 import milfordImg from "@/assets/milford-bird.png";
 import mapImg from "@/assets/world-map.png";
-import climberImg from "@/assets/climber-journey.jpg";
-
-/* ─── narrative lines for Part 3 ─── */
-const narrativeLines = [
-  { text: "You begin at the southern tip of New Zealand.", delay: 0 },
-  { text: "Every breath moves you forward.", delay: 1.8 },
-  { text: "", delay: 3.8 },
-  { text: "The ocean is alive.", delay: 5.0 },
-  { text: "You hear whale calls in the distance.", delay: 7.0 },
-  { text: "A kiwi moves in the dark.", delay: 9.0 },
-  { text: "", delay: 11.0 },
-  { text: "You meet Friday.", delay: 12.5 },
-  { text: "He's been behind the bar on Stewart Island for 30 years.", delay: 14.5 },
-  { text: "", delay: 17.0 },
-  { text: "He gives you advice you didn't know you needed.", delay: 18.5, glow: "subtle" },
-  { text: "", delay: 21.0 },
-  { text: "This is your daily practice.", delay: 22.5, glow: "medium" },
-  { text: "", delay: 25.0 },
-  { text: "The more you return —", delay: 26.5 },
-  { text: "the further you travel.", delay: 28.5, glow: "strong", accent: "orange" },
-  { text: "", delay: 31.0 },
-  { text: "The best advice — at your fingertips", delay: 32.5, accent: "final" },
-];
+import hikerImg from "@/assets/hiker-journey.png";
+import keyImg from "@/assets/key-journey.png";
 
 /* ─── ambient dot nodes (dimmer, secondary) ─── */
 const ambientDots = [
