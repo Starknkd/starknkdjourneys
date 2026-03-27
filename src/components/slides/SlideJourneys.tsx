@@ -248,7 +248,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
           </motion.div>
         )}
 
-        {/* ═══════ PART 3 — IMMERSIVE NARRATIVE (CLIMBER) ═══════ */}
+        {/* ═══════ PART 3 — IMMERSIVE NARRATIVE (HIKER + KEY) ═══════ */}
         {phase === 2 && (
           <motion.div
             key="journey-narrative"
@@ -258,12 +258,12 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
           >
-            {/* climber image */}
+            {/* hiker image — right-of-centre */}
             <img
-              src={climberImg}
+              src={hikerImg}
               alt=""
               className="absolute inset-0 w-full h-full object-cover"
-              style={{ filter: "brightness(0.85)" }}
+              style={{ filter: "brightness(0.85)", objectPosition: "65% center" }}
             />
             {/* darken overlay */}
             <div className="absolute inset-0 bg-background/15" />
@@ -271,7 +271,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             <div
               className="absolute inset-0"
               style={{
-                background: "linear-gradient(to right, hsl(var(--background) / 0.75) 0%, hsl(var(--background) / 0.45) 40%, transparent 70%)",
+                background: "linear-gradient(to right, hsl(var(--background) / 0.80) 0%, hsl(var(--background) / 0.50) 38%, transparent 65%)",
               }}
             />
             {/* vignette */}
@@ -282,25 +282,99 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
               }}
             />
 
-            {/* narrative text */}
+            {/* key image — lower-right quadrant */}
+            <motion.img
+              src={keyImg}
+              alt=""
+              className="absolute z-10"
+              style={{
+                width: "180px",
+                height: "180px",
+                objectFit: "contain",
+                bottom: "14%",
+                right: "12%",
+                filter: "brightness(1.1) drop-shadow(0 0 18px hsl(var(--stark-sunset) / 0.4)) drop-shadow(0 0 40px hsl(var(--stark-sunset) / 0.15))",
+              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 1.6 }}
+            />
+
+            {/* narrative text — left side */}
             <div className="relative z-10 flex items-center h-full px-12 md:px-24 lg:px-32">
-              <div className="max-w-2xl space-y-1">
-                {narrativeLines.filter(l => l.text).map((line, i) => (
-                  <motion.p
-                    key={i}
-                    className={getLineClassName(line)}
-                    style={getLineStyle(line)}
-                    initial={{ opacity: 0, y: 8, filter: "blur(2px)" }}
-                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                    transition={{
-                      duration: 1.0,
-                      delay: line.delay,
-                      ease: "easeOut",
+              <div className="max-w-2xl">
+                {/* Headline */}
+                <motion.h2
+                  className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-8"
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                  You and your breath — hand in hand —<br />
+                  step off the beaten track.
+                </motion.h2>
+
+                {/* Subhead */}
+                <motion.div
+                  className="mb-6 space-y-1"
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.55 }}
+                >
+                  <p className="text-lg md:text-xl text-foreground font-semibold">Your journey unfolds.</p>
+                  <p className="text-lg md:text-xl text-foreground font-semibold">Across landscapes.</p>
+                  <p className="text-lg md:text-xl text-foreground font-semibold">Through cultures you didn't expect.</p>
+                </motion.div>
+
+                {/* Body */}
+                <motion.div
+                  className="space-y-1"
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.75 }}
+                >
+                  <p className="text-base md:text-lg text-foreground/90">Into moments that catch you off guard —</p>
+                  <p className="text-base md:text-lg text-foreground/90">in a good way.</p>
+                  <p className="text-base md:text-lg text-foreground/90 mt-4">It's still breathing.</p>
+                </motion.div>
+
+                {/* Accent line */}
+                <motion.div
+                  className="mt-6 space-y-1"
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.95 }}
+                >
+                  <p
+                    className="text-lg md:text-xl text-stark-sunset font-semibold"
+                    style={{
+                      filter: "brightness(1.3)",
+                      textShadow: "0 0 14px hsl(var(--stark-sunset) / 0.7), 0 0 32px hsl(var(--stark-sunset) / 0.35), 0 0 60px hsl(var(--stark-sunset) / 0.15)",
                     }}
                   >
-                    {line.text}
-                  </motion.p>
-                ))}
+                    But this time —
+                  </p>
+                  <p
+                    className="text-lg md:text-xl text-stark-sunset font-semibold"
+                    style={{
+                      filter: "brightness(1.3)",
+                      textShadow: "0 0 14px hsl(var(--stark-sunset) / 0.7), 0 0 32px hsl(var(--stark-sunset) / 0.35), 0 0 60px hsl(var(--stark-sunset) / 0.15)",
+                    }}
+                  >
+                    you actually want to do it.
+                  </p>
+                </motion.div>
+
+                {/* Closing */}
+                <motion.div
+                  className="mt-6 space-y-1"
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 1.15 }}
+                >
+                  <p className="text-base md:text-lg text-foreground/90">With your first key in hand,</p>
+                  <p className="text-base md:text-lg text-foreground/90">you journey onward.</p>
+                </motion.div>
               </div>
             </div>
           </motion.div>
