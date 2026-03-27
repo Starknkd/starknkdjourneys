@@ -226,69 +226,71 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
               />
             </svg>
 
-            {/* text-safe darkening behind text area — bottom-left quiet zone */}
+            {/* text-safe darkening behind text area — right-side quiet zone */}
             <div
               className="absolute inset-0 pointer-events-none"
               style={{
-                background: "linear-gradient(to right, hsl(var(--background) / 0.55) 0%, hsl(var(--background) / 0.30) 38%, transparent 60%)",
+                background: "linear-gradient(to left, hsl(var(--background) / 0.55) 0%, hsl(var(--background) / 0.30) 32%, transparent 55%)",
               }}
             />
             <div
               className="absolute inset-0 pointer-events-none"
               style={{
-                background: "linear-gradient(to top, hsl(var(--background) / 0.45) 0%, hsl(var(--background) / 0.20) 45%, transparent 65%)",
+                background: "linear-gradient(to top, hsl(var(--background) / 0.35) 0%, hsl(var(--background) / 0.15) 40%, transparent 60%)",
               }}
             />
 
-            {/* text — bottom-left, shifted up and left */}
-            <div className="relative z-10 flex flex-col justify-end h-full pl-10 md:pl-20 pb-36">
-              <motion.h2
-                className="text-2xl md:text-3xl lg:text-[2.7rem] font-bold text-foreground leading-tight mb-6 max-w-xl"
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-              >
-                Your breathing practice just became a map.
-              </motion.h2>
-              <div>
-                <motion.p
-                  className="text-lg md:text-xl text-foreground font-semibold mb-4"
-                  initial={{ opacity: 0, y: 6 }}
+            {/* text — right side, same vertical position */}
+            <div className="relative z-10 flex flex-col items-end h-full pb-36">
+              <div className="flex flex-col justify-end h-full pr-10 md:pr-20 max-w-xl text-left">
+                <motion.h2
+                  className="text-2xl md:text-3xl lg:text-[2.7rem] font-bold text-foreground leading-tight mb-8"
+                  initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.55 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
                 >
-                  Choose your route.
-                </motion.p>
-                <motion.p
-                  className="text-lg md:text-xl text-stark-periwinkle font-medium mb-5"
-                  style={{ filter: "brightness(1.25)" }}
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.75 }}
-                >
-                  Keys unlock. Locals advise. Nature beckons.
-                </motion.p>
-                <motion.p
-                  className="text-lg md:text-xl mt-3"
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.95 }}
-                >
-                  <span className="relative inline-block">
-                    <span
-                      className="relative z-10 text-stark-sunset font-semibold"
-                      style={{ filter: "brightness(1.15)", textShadow: "0 0 18px hsl(var(--stark-sunset) / 0.5), 0 0 36px hsl(var(--stark-sunset) / 0.2)" }}
-                    >
-                      Your breath moves you forward.
+                  Your breathing practice just became a map.
+                </motion.h2>
+                <div>
+                  <motion.p
+                    className="text-base md:text-lg lg:text-xl text-foreground font-semibold mb-5"
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 0.55 }}
+                  >
+                    Choose your route.
+                  </motion.p>
+                  <motion.p
+                    className="text-base md:text-lg text-stark-periwinkle font-medium mb-6"
+                    style={{ filter: "brightness(1.25)" }}
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 0.75 }}
+                  >
+                    Keys unlock. Locals advise. Nature beckons.
+                  </motion.p>
+                  <motion.p
+                    className="text-base md:text-lg mt-4"
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 0.95 }}
+                  >
+                    <span className="relative inline-block">
+                      <span
+                        className="relative z-10 text-stark-sunset font-semibold"
+                        style={{ filter: "brightness(1.15)", textShadow: "0 0 18px hsl(var(--stark-sunset) / 0.5), 0 0 36px hsl(var(--stark-sunset) / 0.2)" }}
+                      >
+                        Your breath moves you forward.
+                      </span>
+                      <motion.span
+                        className="absolute inset-0 -inset-x-4 -inset-y-2 rounded-full bg-primary/12 blur-2xl"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, ease: "easeOut", delay: 1.1 }}
+                      />
                     </span>
-                    <motion.span
-                      className="absolute inset-0 -inset-x-4 -inset-y-2 rounded-full bg-primary/12 blur-2xl"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.8, ease: "easeOut", delay: 1.1 }}
-                    />
-                  </span>
-                </motion.p>
+                  </motion.p>
+                </div>
               </div>
             </div>
           </motion.div>
