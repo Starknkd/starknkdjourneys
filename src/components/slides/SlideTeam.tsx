@@ -27,6 +27,15 @@ const SlideTeam = () => (
     />
 
     {/* Smooth left-to-right gradient for text legibility — wide soft transition */}
+    {/* Left image opacity reduction — 50% darker on left half */}
+    <div
+      className="absolute top-0 left-0 bottom-0 w-[50%]"
+      style={{
+        background: "hsl(var(--background) / 0.5)",
+      }}
+    />
+
+    {/* Smooth left-to-right gradient for text legibility — wide soft transition */}
     <div
       className="absolute inset-0"
       style={{
