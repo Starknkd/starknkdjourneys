@@ -157,7 +157,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             <img src={mapImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-background/10" />
 
-            {/* NZ glow — anchored exactly to white circle center (1811, 901), circle r≈70 */}
+            {/* NZ glow — reduced intensity ~25-30% */}
             <svg
               className="absolute inset-0 w-full h-full pointer-events-none"
               viewBox="0 0 1920 1920"
@@ -174,99 +174,118 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                   <feGaussianBlur stdDeviation="32" />
                 </filter>
                 <radialGradient id="nz-glow-core">
-                  <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.95" />
-                  <stop offset="58%" stopColor="hsl(var(--foreground))" stopOpacity="0.26" />
+                  <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.65" />
+                  <stop offset="58%" stopColor="hsl(var(--foreground))" stopOpacity="0.18" />
                   <stop offset="100%" stopColor="hsl(var(--foreground))" stopOpacity="0" />
                 </radialGradient>
                 <radialGradient id="nz-glow-primary">
-                  <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.72" />
-                  <stop offset="48%" stopColor="hsl(var(--foreground))" stopOpacity="0.16" />
+                  <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.50" />
+                  <stop offset="48%" stopColor="hsl(var(--foreground))" stopOpacity="0.11" />
                   <stop offset="100%" stopColor="hsl(var(--foreground))" stopOpacity="0" />
                 </radialGradient>
                 <radialGradient id="nz-glow-outer">
-                  <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.42" />
-                  <stop offset="42%" stopColor="hsl(var(--foreground))" stopOpacity="0.08" />
+                  <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.30" />
+                  <stop offset="42%" stopColor="hsl(var(--foreground))" stopOpacity="0.05" />
                   <stop offset="100%" stopColor="hsl(var(--foreground))" stopOpacity="0" />
                 </radialGradient>
               </defs>
 
-              {/* Layer 3: outer halo — 2.4x radius, dominant circular signal */}
+              {/* Layer 3: outer halo — reduced */}
               <motion.circle
                 cx="1781" cy="939" r="168"
                 fill="url(#nz-glow-outer)"
                 filter="url(#nz-blur-wide)"
-                animate={{ r: [168, 198, 168], opacity: [0.92, 0.74, 0.92] }}
+                animate={{ r: [168, 192, 168], opacity: [0.65, 0.50, 0.65] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               />
-              {/* Layer 2: primary glow — 1.8x radius */}
+              {/* Layer 2: primary glow — reduced */}
               <motion.circle
                 cx="1781" cy="939" r="126"
                 fill="url(#nz-glow-primary)"
                 filter="url(#nz-blur-medium)"
-                animate={{ r: [126, 148, 126], opacity: [0.98, 0.78, 0.98] }}
+                animate={{ r: [126, 144, 126], opacity: [0.70, 0.55, 0.70] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               />
-              {/* Layer 1: core halo — 1.2x radius, clearly beyond circle boundary */}
+              {/* Layer 1: core halo — reduced */}
               <motion.circle
                 cx="1781" cy="939" r="84"
                 fill="url(#nz-glow-core)"
                 filter="url(#nz-blur-soft)"
-                animate={{ r: [84, 99, 84], opacity: [1, 0.8, 1] }}
+                animate={{ r: [84, 96, 84], opacity: [0.72, 0.56, 0.72] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               />
-              {/* Secondary ring — expands from circle edge to ~2.5x radius */}
+              {/* Secondary ring — softer */}
               <motion.circle
                 cx="1781" cy="939" r="70"
                 fill="none"
                 stroke="hsl(var(--foreground))"
-                strokeWidth="3"
+                strokeWidth="2"
                 filter="url(#nz-blur-soft)"
-                animate={{ r: [70, 175, 70], opacity: [0.36, 0, 0.36] }}
+                animate={{ r: [70, 165, 70], opacity: [0.24, 0, 0.24] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               />
             </svg>
 
+            {/* text-safe darkening behind text area — bottom-left quiet zone */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background: "linear-gradient(to right, hsl(var(--background) / 0.55) 0%, hsl(var(--background) / 0.30) 38%, transparent 60%)",
+              }}
+            />
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background: "linear-gradient(to top, hsl(var(--background) / 0.45) 0%, hsl(var(--background) / 0.20) 45%, transparent 65%)",
+              }}
+            />
 
-            {/* text — bottom-left, stacked cleanly */}
-            <div className="relative z-10 flex flex-col justify-end h-full px-12 md:px-24 pb-28">
+            {/* text — bottom-left, shifted up and left */}
+            <div className="relative z-10 flex flex-col justify-end h-full pl-10 md:pl-20 pb-36">
               <motion.h2
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8"
-                initial={{ opacity: 0, y: 10 }}
+                className="text-2xl md:text-3xl lg:text-[2.7rem] font-bold text-foreground leading-tight mb-6 max-w-xl"
+                initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
               >
                 Your breathing practice just became a map.
               </motion.h2>
-              <div className="space-y-2">
+              <div>
                 <motion.p
-                  className="text-lg md:text-xl text-foreground font-medium"
-                  initial={{ opacity: 0, y: 10 }}
+                  className="text-lg md:text-xl text-foreground font-semibold mb-4"
+                  initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.2 }}
+                  transition={{ duration: 0.4, delay: 0.55 }}
                 >
                   Choose your route.
                 </motion.p>
                 <motion.p
-                  className="text-lg md:text-xl text-stark-periwinkle"
-                  initial={{ opacity: 0, y: 10 }}
+                  className="text-lg md:text-xl text-stark-periwinkle font-medium mb-5"
+                  style={{ filter: "brightness(1.25)" }}
+                  initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.8 }}
+                  transition={{ duration: 0.4, delay: 0.75 }}
                 >
                   Keys unlock. Locals advise. Nature beckons.
                 </motion.p>
                 <motion.p
-                  className="text-lg md:text-xl"
-                  initial={{ opacity: 0, y: 10 }}
+                  className="text-lg md:text-xl mt-3"
+                  initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 2.4 }}
+                  transition={{ duration: 0.4, delay: 0.95 }}
                 >
                   <span className="relative inline-block">
-                    <span className="relative z-10 text-primary">Your breath moves you forward.</span>
+                    <span
+                      className="relative z-10 text-stark-sunset font-semibold"
+                      style={{ filter: "brightness(1.15)", textShadow: "0 0 18px hsl(var(--stark-sunset) / 0.5), 0 0 36px hsl(var(--stark-sunset) / 0.2)" }}
+                    >
+                      Your breath moves you forward.
+                    </span>
                     <motion.span
-                      className="absolute inset-0 -inset-x-4 -inset-y-2 rounded-full bg-primary/10 blur-2xl"
-                      initial={{ opacity: 0, scale: 0.7 }}
+                      className="absolute inset-0 -inset-x-4 -inset-y-2 rounded-full bg-primary/12 blur-2xl"
+                      initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 1.2, ease: "easeOut", delay: 3.0 }}
+                      transition={{ duration: 0.8, ease: "easeOut", delay: 1.1 }}
                     />
                   </span>
                 </motion.p>
