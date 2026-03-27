@@ -14,7 +14,34 @@ const SlideTeam = () => (
       alt=""
       className="absolute inset-0 w-full h-full object-cover"
       style={{
-        filter: "brightness(0.55) contrast(1.1) saturate(0.85)",
+        filter: "brightness(0.5) contrast(1.15) saturate(0.7)",
+      }}
+    />
+
+    {/* Unifying purple tint across both images */}
+    <div
+      className="absolute inset-0"
+      style={{
+        background: "hsl(var(--background) / 0.3)",
+        mixBlendMode: "multiply",
+      }}
+    />
+
+    {/* Left VR subject suppression — stronger purple overlay */}
+    <div
+      className="absolute top-0 left-0 bottom-0 w-[50%]"
+      style={{
+        background:
+          "linear-gradient(to right, hsl(var(--background) / 0.85) 0%, hsl(var(--background) / 0.7) 60%, transparent 100%)",
+      }}
+    />
+
+    {/* Right hiker visibility lift */}
+    <div
+      className="absolute top-0 right-0 bottom-0 w-[50%]"
+      style={{
+        background:
+          "linear-gradient(to left, hsl(var(--foreground) / 0.04) 0%, transparent 50%)",
       }}
     />
 
@@ -23,16 +50,16 @@ const SlideTeam = () => (
       className="absolute inset-0"
       style={{
         background:
-          "radial-gradient(ellipse at 35% 45%, transparent 20%, hsl(var(--background) / 0.55) 100%)",
+          "radial-gradient(ellipse at 35% 45%, transparent 20%, hsl(var(--background) / 0.5) 100%)",
       }}
     />
 
-    {/* Left-side text legibility gradient */}
+    {/* Hard text protection zone — central-left */}
     <div
       className="absolute inset-0"
       style={{
         background:
-          "linear-gradient(to right, hsl(var(--background) / 0.75) 0%, hsl(var(--background) / 0.45) 35%, transparent 60%)",
+          "linear-gradient(to right, hsl(var(--background) / 0.8) 0%, hsl(var(--background) / 0.55) 30%, transparent 55%)",
       }}
     />
 
@@ -42,15 +69,6 @@ const SlideTeam = () => (
       style={{
         background:
           "linear-gradient(to top, hsl(var(--background) / 0.5) 0%, transparent 30%)",
-      }}
-    />
-
-    {/* Subtle top-right brightness lift for progression feel */}
-    <div
-      className="absolute inset-0"
-      style={{
-        background:
-          "radial-gradient(ellipse at 90% 10%, hsl(var(--foreground) / 0.04) 0%, transparent 50%)",
       }}
     />
 
@@ -73,35 +91,35 @@ const SlideTeam = () => (
       {/* Headline */}
       <motion.h2
         variants={fadeIn}
-        className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight text-foreground mb-10"
+        className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight text-foreground mb-12"
       >
         One system.
         <br />
         Choose your pathway
       </motion.h2>
 
-      {/* Body — cluster 1: individuals */}
-      <motion.div variants={fadeIn} className="space-y-1 mb-6">
-        <p className="text-base md:text-lg text-foreground/85 whitespace-pre-line">
+      {/* Body — Block 1: Individuals */}
+      <motion.div variants={fadeIn} className="space-y-1 mb-8">
+        <p className="text-base md:text-lg font-medium text-foreground/90">
           Individuals start with a reset.
         </p>
-        <p className="text-base md:text-lg text-foreground/85 whitespace-pre-line">
+        <p className="text-base md:text-lg text-foreground/80">
           They stay for the journeys.
         </p>
       </motion.div>
 
-      {/* Body — cluster 2: organisations */}
-      <motion.div variants={fadeIn} className="space-y-1 mb-6">
-        <p className="text-base md:text-lg text-foreground/85 whitespace-pre-line">
+      {/* Body — Block 2: Organisations */}
+      <motion.div variants={fadeIn} className="space-y-1 mb-8">
+        <p className="text-base md:text-lg font-medium text-foreground/90">
           Organisations experience the lab.
         </p>
-        <p className="text-base md:text-lg text-foreground/85 whitespace-pre-line">
+        <p className="text-base md:text-lg text-foreground/80">
           They scale through the platform.
         </p>
       </motion.div>
 
-      {/* Body — cluster 3: shared */}
-      <motion.div variants={fadeIn} className="space-y-1 mb-10">
+      {/* Body — Block 3: Shared system */}
+      <motion.div variants={fadeIn} className="space-y-1 mb-14">
         <p className="text-base md:text-lg text-foreground/85">
           Same system.
         </p>
@@ -110,12 +128,12 @@ const SlideTeam = () => (
         </p>
       </motion.div>
 
-      {/* Closing line */}
-      <motion.div variants={fadeIn} className="space-y-0.5">
-        <p className="text-lg md:text-xl font-semibold text-foreground/95">
+      {/* Closing anchor line */}
+      <motion.div variants={fadeIn} className="space-y-1">
+        <p className="text-xl md:text-2xl font-bold text-foreground/95">
           From personal habit —
         </p>
-        <p className="text-lg md:text-xl font-semibold text-foreground/95">
+        <p className="text-xl md:text-2xl font-bold text-foreground/95">
           to organisational capability.
         </p>
       </motion.div>
