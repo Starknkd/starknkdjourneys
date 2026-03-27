@@ -13,8 +13,16 @@ const SlideTitle = () => (
         alt=""
         className="absolute inset-0 w-full h-full object-cover"
         style={{
-          opacity: 0.2,
-          filter: "contrast(1.25)",
+          opacity: 0.25,
+          filter: "contrast(1.3)",
+        }}
+      />
+      {/* Subtle darker zone behind central text for legibility */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 42% 50% at 50% 50%, hsl(var(--background) / 0.55) 0%, transparent 100%)",
         }}
       />
     </div>
