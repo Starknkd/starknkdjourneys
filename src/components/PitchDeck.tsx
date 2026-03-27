@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from "react";
+import EdgePattern from "@/components/EdgePattern";
 import ProgressBar from "@/components/ProgressBar";
 import SlideTitle from "@/components/slides/SlideTitle";
 import SlideHook from "@/components/slides/SlideHook";
@@ -76,6 +77,7 @@ const PitchDeck = () => {
   return (
     <div className="relative w-screen h-screen bg-background overflow-y-auto">
       <div className="grain-overlay" />
+      <EdgePattern opacity={0.3} />
       {current === JOURNEYS_INDEX ? (
         <SlideJourneys ref={journeysRef} />
       ) : (
