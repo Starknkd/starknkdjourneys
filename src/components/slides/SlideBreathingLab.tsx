@@ -62,7 +62,7 @@ const SlideBreathingLab = () => (
               ].join(" ")}
               style={
                 line.type === "accent"
-                  ? { textShadow: "0 0 20px hsl(var(--accent) / 0.25)" }
+                  ? { textShadow: "0 0 24px hsl(var(--accent) / 0.35)", filter: "brightness(1.15)" }
                   : line.type === "emphasis"
                     ? { textShadow: "0 0 16px hsl(var(--foreground) / 0.1)" }
                     : undefined
