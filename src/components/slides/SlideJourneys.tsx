@@ -156,7 +156,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                 cx="1781" cy="939" r="168"
                 fill="url(#nz-glow-outer)"
                 filter="url(#nz-blur-wide)"
-                animate={{ r: [168, 192, 168], opacity: [0.65, 0.50, 0.65] }}
+                animate={{ r: [168, 192, 168], opacity: [0.35, 0.25, 0.35] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               />
               {/* Layer 2: primary glow — reduced */}
@@ -164,7 +164,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                 cx="1781" cy="939" r="126"
                 fill="url(#nz-glow-primary)"
                 filter="url(#nz-blur-medium)"
-                animate={{ r: [126, 144, 126], opacity: [0.70, 0.55, 0.70] }}
+                animate={{ r: [126, 144, 126], opacity: [0.35, 0.28, 0.35] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               />
               {/* Layer 1: core halo — reduced */}
@@ -172,7 +172,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                 cx="1781" cy="939" r="84"
                 fill="url(#nz-glow-core)"
                 filter="url(#nz-blur-soft)"
-                animate={{ r: [84, 96, 84], opacity: [0.72, 0.56, 0.72] }}
+                animate={{ r: [84, 96, 84], opacity: [0.36, 0.28, 0.36] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               />
               {/* Secondary ring — softer */}
@@ -182,7 +182,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                 stroke="hsl(var(--foreground))"
                 strokeWidth="2"
                 filter="url(#nz-blur-soft)"
-                animate={{ r: [70, 165, 70], opacity: [0.24, 0, 0.24] }}
+                animate={{ r: [70, 165, 70], opacity: [0.12, 0, 0.12] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               />
             </svg>
