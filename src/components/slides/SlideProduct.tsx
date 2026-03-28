@@ -35,7 +35,7 @@ const SlideProduct = () => (
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
       >
-        Breathwork is not our bag. We train regulation.
+        Breathwork is not our bag. <span className="text-primary">We train regulation.</span>
       </motion.h2>
 
       {/* Sub */}
