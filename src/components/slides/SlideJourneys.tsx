@@ -272,12 +272,12 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
               className="absolute inset-0 w-full h-full object-cover"
               style={{ filter: "brightness(0.84)" }}
             />
+            {/* Local dark gradient behind text area */}
             <div
-              className="absolute inset-y-0 pointer-events-none"
+              className="absolute inset-y-0 left-0 pointer-events-none"
               style={{
-                left: "4%",
-                width: "40%",
-                background: "radial-gradient(ellipse at 35% 50%, hsl(var(--background) / 0.10) 0%, hsl(var(--background) / 0.06) 38%, transparent 72%)",
+                width: "55%",
+                background: "linear-gradient(to right, hsl(var(--background) / 0.65) 0%, hsl(var(--background) / 0.45) 40%, hsl(var(--background) / 0.15) 75%, transparent 100%)",
               }}
             />
 
