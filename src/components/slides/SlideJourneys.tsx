@@ -272,12 +272,12 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
               className="absolute inset-0 w-full h-full object-cover"
               style={{ filter: "brightness(0.84)" }}
             />
+            {/* Local dark gradient behind text area */}
             <div
-              className="absolute inset-y-0 pointer-events-none"
+              className="absolute inset-y-0 left-0 pointer-events-none"
               style={{
-                left: "4%",
-                width: "40%",
-                background: "radial-gradient(ellipse at 35% 50%, hsl(var(--background) / 0.10) 0%, hsl(var(--background) / 0.06) 38%, transparent 72%)",
+                width: "55%",
+                background: "linear-gradient(to right, hsl(var(--background) / 0.65) 0%, hsl(var(--background) / 0.45) 40%, hsl(var(--background) / 0.15) 75%, transparent 100%)",
               }}
             />
 
@@ -287,6 +287,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                 {/* Headline */}
                 <motion.h2
                   className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-8"
+                  style={{ textShadow: "0 2px 8px hsl(var(--background) / 0.5), 0 1px 3px hsl(var(--background) / 0.3)" }}
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
@@ -302,9 +303,9 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.55 }}
                 >
-                  <p className="text-lg md:text-xl text-foreground font-semibold"><br /></p>
-                  <p className="text-lg md:text-xl text-foreground font-semibold">Across landscapes.</p>
-                  <p className="text-lg md:text-xl text-foreground font-semibold">Through cultures you didn't expect.</p>
+                  <p className="text-lg md:text-xl text-foreground font-semibold" style={{ textShadow: "0 1px 6px hsl(var(--background) / 0.4)" }}><br /></p>
+                  <p className="text-lg md:text-xl text-foreground font-semibold" style={{ textShadow: "0 1px 6px hsl(var(--background) / 0.4)" }}>Across landscapes.</p>
+                  <p className="text-lg md:text-xl text-foreground font-semibold" style={{ textShadow: "0 1px 6px hsl(var(--background) / 0.4)" }}>Through cultures you didn't expect.</p>
                 </motion.div>
 
                 {/* Body */}
@@ -314,9 +315,9 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.75 }}
                 >
-                  <p className="text-base md:text-lg text-foreground/90">Into moments that catch you off guard -</p>
-                  <p className="text-base md:text-lg text-foreground/90">in a good way.</p>
-                  <p className="text-base md:text-lg text-foreground/90 mt-4">It's still breathing.</p>
+                  <p className="text-base md:text-lg text-foreground" style={{ textShadow: "0 1px 6px hsl(var(--background) / 0.4)" }}>Into moments that catch you off guard -</p>
+                  <p className="text-base md:text-lg text-foreground" style={{ textShadow: "0 1px 6px hsl(var(--background) / 0.4)" }}>in a good way.</p>
+                  <p className="text-base md:text-lg text-foreground mt-4" style={{ textShadow: "0 1px 6px hsl(var(--background) / 0.4)" }}>It's still breathing.</p>
                 </motion.div>
 
                 {/* Accent line */}
@@ -353,8 +354,8 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 1.15 }}
                 >
-                  <p className="text-base md:text-lg text-foreground/90">With your first key in hand,</p>
-                  <p className="text-base md:text-lg text-foreground/90">you journey onward.</p>
+                  <p className="text-base md:text-lg text-foreground" style={{ textShadow: "0 1px 6px hsl(var(--background) / 0.4)" }}>With your first key in hand,</p>
+                  <p className="text-base md:text-lg text-foreground" style={{ textShadow: "0 1px 6px hsl(var(--background) / 0.4)" }}>you journey onward.</p>
                 </motion.div>
               </div>
             </div>
