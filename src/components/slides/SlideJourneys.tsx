@@ -290,22 +290,24 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
               }}
             />
 
-            {/* key image — anchored bottom-right edge */}
+            {/* key image — blended into background, positioned over pink/dark area */}
             <motion.img
               src={keyImg}
               alt=""
-              className="absolute z-10"
+              className="absolute"
               style={{
-                width: "140px",
-                height: "140px",
+                width: "200px",
+                height: "200px",
                 objectFit: "contain",
-                bottom: "5%",
-                right: "4%",
-                filter: "brightness(1.05) drop-shadow(0 0 10px hsl(var(--stark-sunset) / 0.2))",
+                bottom: "8%",
+                right: "30%",
+                opacity: 0.45,
+                filter: "brightness(0.7) contrast(1.2) saturate(0.4) sepia(0.3) hue-rotate(280deg)",
+                mixBlendMode: "luminosity",
               }}
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.85 }}
-              transition={{ duration: 0.8, delay: 1.6 }}
+              animate={{ opacity: 0.45 }}
+              transition={{ duration: 1.2, delay: 1.6 }}
             />
 
             {/* narrative text — left side, consistent margin */}
