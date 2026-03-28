@@ -329,8 +329,8 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                   <p
                     className="text-lg md:text-xl text-stark-sunset font-semibold"
                     style={{
-                      filter: "brightness(1.3)",
-                      textShadow: "0 0 14px hsl(var(--stark-sunset) / 0.7), 0 0 32px hsl(var(--stark-sunset) / 0.35), 0 0 60px hsl(var(--stark-sunset) / 0.15)",
+                      filter: "brightness(1.45) saturate(1.2)",
+                      textShadow: "0 0 18px hsl(var(--stark-sunset) / 0.8), 0 0 40px hsl(var(--stark-sunset) / 0.45), 0 0 70px hsl(var(--stark-sunset) / 0.2)",
                     }}
                   >
                     But you actually look forward to it.
