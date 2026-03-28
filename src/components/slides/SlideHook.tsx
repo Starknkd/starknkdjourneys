@@ -58,7 +58,7 @@ const SlideHook = () => (
         animate={{ opacity: 0.7 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 2.0 }}
       >
-        Your system is overdriven — not broken.
+        Your system is overdriven - not broken.
       </motion.p>
     </div>
   </SlideShell>
