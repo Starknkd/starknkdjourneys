@@ -266,21 +266,11 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
           >
-            {/* hiker image — single continuous full-bleed background */}
             <img
               src={hikerImg}
               alt=""
-              className="absolute w-full h-full object-cover"
-              style={{ inset: 0, filter: "brightness(0.84)", objectPosition: "45% center" }}
-            />
-            {/* subtle localized text-safe fade only */}
-            <div
-              className="absolute inset-y-0 pointer-events-none"
-              style={{
-                left: "4%",
-                width: "40%",
-                background: "radial-gradient(ellipse at 35% 50%, hsl(var(--background) / 0.10) 0%, hsl(var(--background) / 0.06) 38%, transparent 72%)",
-              }}
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ filter: "brightness(0.84)" }}
             />
 
             {/* narrative text — left side, consistent margin */}
