@@ -31,7 +31,7 @@ const SlideLandscape = () => (
         <div className="mt-12 space-y-4">
           {[
             { text: "One-size breathing techniques", delay: 1.2 },
-            { text: "Focus on oxygen, not CO₂", delay: 1.6 },
+            { text: "Focus on Oxygen, not CO₂", delay: 1.6 },
             { text: "More intensity, not regulation", delay: 2.0 },
           ].map(({ text, delay }) => (
             <motion.p
