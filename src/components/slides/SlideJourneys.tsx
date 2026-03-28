@@ -271,7 +271,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
               src={hikerImg}
               alt=""
               className="absolute inset-0 w-full h-full object-cover"
-              style={{ filter: "brightness(0.85)", objectPosition: "65% center" }}
+              style={{ filter: "brightness(0.82)", objectPosition: "60% center" }}
             />
             {/* darken overlay */}
             <div className="absolute inset-0 bg-background/15" />
@@ -279,37 +279,37 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             <div
               className="absolute inset-0"
               style={{
-                background: "linear-gradient(to right, hsl(var(--background) / 0.80) 0%, hsl(var(--background) / 0.50) 38%, transparent 65%)",
+                background: "linear-gradient(to right, hsl(var(--background) / 0.78) 0%, hsl(var(--background) / 0.45) 35%, transparent 60%)",
               }}
             />
             {/* vignette */}
             <div
               className="absolute inset-0"
               style={{
-                background: "radial-gradient(ellipse at center, transparent 30%, hsl(var(--background) / 0.4) 100%)",
+                background: "radial-gradient(ellipse at center, transparent 30%, hsl(var(--background) / 0.35) 100%)",
               }}
             />
 
-            {/* key image — lower-right quadrant */}
+            {/* key image — anchored bottom-right edge */}
             <motion.img
               src={keyImg}
               alt=""
               className="absolute z-10"
               style={{
-                width: "180px",
-                height: "180px",
+                width: "140px",
+                height: "140px",
                 objectFit: "contain",
-                bottom: "14%",
-                right: "12%",
-                filter: "brightness(1.1) drop-shadow(0 0 18px hsl(var(--stark-sunset) / 0.4)) drop-shadow(0 0 40px hsl(var(--stark-sunset) / 0.15))",
+                bottom: "5%",
+                right: "4%",
+                filter: "brightness(1.05) drop-shadow(0 0 10px hsl(var(--stark-sunset) / 0.2))",
               }}
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              animate={{ opacity: 0.85 }}
               transition={{ duration: 0.8, delay: 1.6 }}
             />
 
-            {/* narrative text — left side */}
-            <div className="relative z-10 flex items-center h-full px-12 md:px-24 lg:px-32">
+            {/* narrative text — left side, consistent margin */}
+            <div className="relative z-10 flex items-center h-full" style={{ paddingLeft: "8%" }}>
               <div className="max-w-2xl">
                 {/* Headline */}
                 <motion.h2
