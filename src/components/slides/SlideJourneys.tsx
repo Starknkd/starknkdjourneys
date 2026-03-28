@@ -283,7 +283,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
 
             {/* narrative text — left side, consistent margin */}
             <div className="relative z-10 flex items-center h-full" style={{ paddingLeft: "8%" }}>
-              <div className="max-w-2xl">
+              <div className="max-w-2xl" style={{ textShadow: "0 2px 10px hsl(var(--background) / 0.6), 0 1px 4px hsl(var(--background) / 0.4)" }}>
                 {/* Headline */}
                 <motion.h2
                   className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-8"
