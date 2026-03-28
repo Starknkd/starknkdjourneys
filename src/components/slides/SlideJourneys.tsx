@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import milfordImg from "@/assets/milford-bird.png";
 import mapImg from "@/assets/world-map.png";
 import hikerImg from "@/assets/hiker-journey.png";
-import keyImg from "@/assets/key-journey.png";
+
 
 /* ─── ambient dot nodes (dimmer, secondary) ─── */
 const ambientDots = [
@@ -266,12 +266,12 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
           >
-            {/* hiker image — right-of-centre */}
+            {/* hiker image — true full bleed, no gaps */}
             <img
               src={hikerImg}
               alt=""
-              className="absolute inset-0 w-full h-full object-cover"
-              style={{ filter: "brightness(0.82)", objectPosition: "60% center" }}
+              className="absolute w-full h-full object-cover"
+              style={{ inset: 0, filter: "brightness(0.82)", objectPosition: "60% center" }}
             />
             {/* darken overlay */}
             <div className="absolute inset-0 bg-background/15" />
@@ -288,26 +288,6 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
               style={{
                 background: "radial-gradient(ellipse at center, transparent 30%, hsl(var(--background) / 0.35) 100%)",
               }}
-            />
-
-            {/* key image — blended into background, positioned over pink/dark area */}
-            <motion.img
-              src={keyImg}
-              alt=""
-              className="absolute"
-              style={{
-                width: "200px",
-                height: "200px",
-                objectFit: "contain",
-                bottom: "8%",
-                right: "30%",
-                opacity: 0.45,
-                filter: "brightness(0.7) contrast(1.2) saturate(0.4) sepia(0.3) hue-rotate(280deg)",
-                mixBlendMode: "luminosity",
-              }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.45 }}
-              transition={{ duration: 1.2, delay: 1.6 }}
             />
 
             {/* narrative text — left side, consistent margin */}
