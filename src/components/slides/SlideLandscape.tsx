@@ -65,13 +65,13 @@ const SlideLandscape = () => (
       <img
         src={landscapeImg}
         alt=""
-        className="absolute inset-0 w-full h-full object-cover brightness-[0.7] contrast-[1.05] saturate-[0.9]"
+        className="absolute inset-0 w-full h-full object-cover brightness-[0.7] contrast-[1.18] saturate-[0.9]"
       />
       {/* Purple overlay */}
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(to right, hsl(var(--background) / 0.8) 0%, hsl(var(--background) / 0.45) 40%, hsl(var(--background) / 0.4) 100%)",
+          background: "linear-gradient(to right, hsl(var(--background) / 0.75) 0%, hsl(var(--background) / 0.35) 40%, hsl(var(--background) / 0.3) 100%)",
         }}
       />
       {/* Gradient fade from left */}
