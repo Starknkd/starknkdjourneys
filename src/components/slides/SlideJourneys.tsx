@@ -276,8 +276,8 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             <div
               className="absolute inset-y-0 left-0 pointer-events-none"
               style={{
-                width: "55%",
-                background: "linear-gradient(to right, hsl(var(--background) / 0.75) 0%, hsl(var(--background) / 0.50) 40%, hsl(var(--background) / 0.15) 75%, transparent 100%)",
+                width: "58%",
+                background: "linear-gradient(to right, hsl(var(--background) / 0.88) 0%, hsl(var(--background) / 0.70) 35%, hsl(var(--background) / 0.30) 70%, transparent 100%)",
               }}
             />
 
