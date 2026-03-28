@@ -275,13 +275,6 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             />
             {/* darken overlay */}
             <div className="absolute inset-0 bg-background/15" />
-            {/* text-safe gradient: deep purple from left */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background: "linear-gradient(to right, hsl(var(--background) / 0.78) 0%, hsl(var(--background) / 0.45) 35%, transparent 60%)",
-              }}
-            />
             {/* vignette */}
             <div
               className="absolute inset-0"
