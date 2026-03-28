@@ -42,7 +42,7 @@ const SlideInsight = () => (
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut", delay: 2.8 }}
       >
-        Most people don't know why.
+        Most people don't know why this is happening.
       </motion.p>
     </div>
   </SlideShell>
