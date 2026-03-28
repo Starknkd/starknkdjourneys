@@ -271,10 +271,17 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
               src={hikerImg}
               alt=""
               className="absolute w-full h-full object-cover"
-              style={{ inset: 0, filter: "brightness(0.82)", objectPosition: "60% center" }}
+              style={{ inset: 0, filter: "brightness(0.82)", objectPosition: "45% center" }}
             />
             {/* darken overlay */}
             <div className="absolute inset-0 bg-background/15" />
+            {/* text-safe gradient: readable left side */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background: "linear-gradient(to right, hsl(var(--background) / 0.75) 0%, hsl(var(--background) / 0.40) 30%, transparent 55%)",
+              }}
+            />
             {/* vignette */}
             <div
               className="absolute inset-0"
