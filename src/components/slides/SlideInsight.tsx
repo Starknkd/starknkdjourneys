@@ -18,9 +18,9 @@ const SlideInsight = () => (
       {/* Staggered symptoms */}
       <div className="space-y-4 mb-14">
         {[
-          "tight chest, shallow breathing",
-          "reactive under pressure",
-          "fatigue, poor focus",
+          "Tight chest, shallow breathing",
+          "Reactive under pressure",
+          "Fatigue, poor focus",
         ].map((line, i) => (
           <motion.p
             key={line}
@@ -30,7 +30,7 @@ const SlideInsight = () => (
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.45, ease: "easeOut", delay: 1.0 + i * 0.5 }}
           >
-            — {line}
+            {line}
           </motion.p>
         ))}
       </div>
