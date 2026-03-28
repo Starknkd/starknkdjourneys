@@ -58,18 +58,26 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
           >
-            <img src={milfordImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+            <img src={milfordImg} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ filter: "contrast(1.08)" }} />
             <div
               className="absolute inset-0"
               style={{
-                background: "radial-gradient(ellipse at center, transparent 30%, hsl(var(--background) / 0.7) 100%)",
+                background: "radial-gradient(ellipse at center, transparent 30%, hsl(var(--background) / 0.65) 100%)",
               }}
             />
-            <div className="absolute inset-0 bg-background/30" />
+            <div className="absolute inset-0 bg-background/22" />
+            {/* darken bottom-right bird area */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background: "radial-gradient(ellipse at 85% 85%, hsl(var(--background) / 0.45) 0%, transparent 50%)",
+              }}
+            />
 
             <div className="relative z-10 flex flex-col items-center justify-center h-full px-8">
               <motion.p
-                className="text-stark-periwinkle tracking-[0.4em] uppercase mb-6 font-medium bg-secondary px-[5px] text-base"
+                className="text-stark-periwinkle tracking-[0.4em] uppercase mb-6 font-semibold bg-secondary px-[5px] text-base"
+                style={{ filter: "brightness(1.15)" }}
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
@@ -82,15 +90,16 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 1.2 }}
               >
-                Breathe your way around the world.&nbsp;
+                Breathe your way<br />around the world.
               </motion.h2>
               <motion.p
-                className="text-lg md:text-xl mt-6 text-accent-foreground text-center"
+                className="text-xl md:text-2xl mt-6 text-accent-foreground text-center leading-snug"
+                style={{ filter: "brightness(1.15)" }}
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.8 }}
               >
-                Get off the beaten track.<br />And follow what pulls you.
+                Get off the beaten track.<br />Follow what pulls you.
               </motion.p>
             </div>
           </motion.div>
