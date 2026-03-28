@@ -40,7 +40,7 @@ const SlideSolution = () => (
           {[
             { text: "Breathing behaviour drives CO₂", delay: 1.8 },
             { text: "CO₂ regulates oxygen delivery", delay: 2.3 },
-            { text: "Disrupt it → system destabilises", delay: 2.8 },
+            { text: "Disrupt it → the system destabilises", delay: 2.8 },
           ].map(({ text, delay }) => (
             <motion.p
               key={text}
