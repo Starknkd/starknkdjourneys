@@ -7,12 +7,12 @@ import hikerImg from "@/assets/hiker-journey.png";
 
 /* ─── ambient dot nodes (dimmer, secondary) ─── */
 const ambientDots = [
-  { cx: 780, cy: 280, delay: 0 },
-  { cx: 620, cy: 350, delay: 1.5 },
-  { cx: 350, cy: 420, delay: 3 },
-  { cx: 150, cy: 520, delay: 2 },
-  { cx: 880, cy: 480, delay: 4 },
-];
+{ cx: 780, cy: 280, delay: 0 },
+{ cx: 620, cy: 350, delay: 1.5 },
+{ cx: 350, cy: 420, delay: 3 },
+{ cx: 150, cy: 520, delay: 2 },
+{ cx: 880, cy: 480, delay: 4 }];
+
 
 /* ─── main component ─── */
 export interface SlideJourneysRef {
@@ -26,13 +26,13 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
 
   useImperativeHandle(ref, () => ({
     handleNext: () => {
-      if (phase < 2) { setPhase(p => p + 1); return true; }
+      if (phase < 2) {setPhase((p) => p + 1);return true;}
       return false;
     },
     handlePrev: () => {
-      if (phase > 0) { setPhase(p => p - 1); return true; }
+      if (phase > 0) {setPhase((p) => p - 1);return true;}
       return false;
-    },
+    }
   }));
 
   useEffect(() => {
@@ -49,92 +49,92 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
     <div className="absolute inset-0 w-screen h-screen overflow-hidden bg-background z-10">
       <AnimatePresence mode="wait">
         {/* ═══════ PART 1 — DIVER TITLE ═══════ */}
-        {phase === 0 && (
-          <motion.div
-            key="journey-title"
-            className="absolute inset-0"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
-          >
+        {phase === 0 &&
+        <motion.div
+          key="journey-title"
+          className="absolute inset-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}>
+          
             <img src={milfordImg} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ filter: "contrast(1.08)" }} />
             {/* lighter central darkening — restored image detail */}
             <div
-              className="absolute inset-0"
-              style={{
-                background: "radial-gradient(ellipse at center, hsl(var(--background) / 0.22) 0%, hsl(var(--background) / 0.55) 100%)",
-              }}
-            />
+            className="absolute inset-0"
+            style={{
+              background: "radial-gradient(ellipse at center, hsl(var(--background) / 0.22) 0%, hsl(var(--background) / 0.55) 100%)"
+            }} />
+          
             <div className="absolute inset-0 bg-background/18" />
             {/* darken bottom-right bird area */}
             <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background: "radial-gradient(ellipse at 85% 85%, hsl(var(--background) / 0.45) 0%, transparent 50%)",
-              }}
-            />
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: "radial-gradient(ellipse at 85% 85%, hsl(var(--background) / 0.45) 0%, transparent 50%)"
+            }} />
+          
 
             <div className="relative z-10 flex flex-col items-center justify-center h-full px-8" style={{ textShadow: "0 2px 14px hsl(var(--background) / 0.8), 0 1px 5px hsl(var(--background) / 0.6)" }}>
               <motion.div
-                className="flex flex-col items-center mb-8"
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-              >
+              className="flex flex-col items-center mb-8"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}>
+              
                 <p
-                  className="text-stark-periwinkle tracking-[0.32em] uppercase font-light text-lg"
-                  style={{ filter: "brightness(1.15)" }}
-                >
+                className="text-stark-periwinkle tracking-[0.32em] uppercase text-lg font-normal"
+                style={{ filter: "brightness(1.15)" }}>
+                
                   NKD Journeys
                 </p>
                 <p
-                  className="text-stark-periwinkle tracking-[0.18em] uppercase font-light mt-1.5 text-[0.7rem]"
-                  style={{ filter: "brightness(1.15)" }}
-                >
+                className="text-stark-periwinkle tracking-[0.18em] uppercase mt-1.5 text-[0.7rem] font-normal"
+                style={{ filter: "brightness(1.15)" }}>
+                
                   Immersive audio × breathing
                 </p>
               </motion.div>
               <motion.h2
-                className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground text-center leading-tight"
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, delay: 1.2 }}
-              >
+              className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground text-center leading-tight"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 1.2 }}>
+              
                 Breathe your way<br />around the world.
               </motion.h2>
               <motion.p
-                className="text-[1.35rem] md:text-[1.7rem] mt-12 text-foreground text-center leading-relaxed"
-                style={{ filter: "brightness(1.05)" }}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.8 }}
-              >
+              className="text-[1.35rem] md:text-[1.7rem] mt-12 text-foreground text-center leading-relaxed"
+              style={{ filter: "brightness(1.05)" }}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.8 }}>
+              
                 Choose your destination.<br />Move with your breath.
               </motion.p>
             </div>
           </motion.div>
-        )}
+        }
 
         {/* ═══════ PART 2 — MAP ═══════ */}
-        {phase === 1 && (
-          <motion.div
-            key="journey-map"
-            className="absolute inset-0"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
-          >
+        {phase === 1 &&
+        <motion.div
+          key="journey-map"
+          className="absolute inset-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}>
+          
             <img src={mapImg} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ filter: "brightness(0.7) contrast(0.92) saturate(0.9)" }} />
             <div className="absolute inset-0 bg-background/20" />
 
             {/* NZ glow — reduced intensity ~25-30% */}
             <svg
-              className="absolute inset-0 w-full h-full pointer-events-none"
-              viewBox="0 0 1920 1920"
-              preserveAspectRatio="xMidYMid slice"
-            >
+            className="absolute inset-0 w-full h-full pointer-events-none"
+            viewBox="0 0 1920 1920"
+            preserveAspectRatio="xMidYMid slice">
+            
               <defs>
                 <filter id="nz-blur-soft" x="-50%" y="-50%" width="200%" height="200%">
                   <feGaussianBlur stdDeviation="8" />
@@ -164,155 +164,155 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
 
               {/* Layer 3: outer halo — reduced */}
               <motion.circle
-                cx="1781" cy="939" r="168"
-                fill="url(#nz-glow-outer)"
-                filter="url(#nz-blur-wide)"
-                animate={{ r: [168, 192, 168], opacity: [0.35, 0.25, 0.35] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              />
+              cx="1781" cy="939" r="168"
+              fill="url(#nz-glow-outer)"
+              filter="url(#nz-blur-wide)"
+              animate={{ r: [168, 192, 168], opacity: [0.35, 0.25, 0.35] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} />
+            
               {/* Layer 2: primary glow — reduced */}
               <motion.circle
-                cx="1781" cy="939" r="126"
-                fill="url(#nz-glow-primary)"
-                filter="url(#nz-blur-medium)"
-                animate={{ r: [126, 144, 126], opacity: [0.35, 0.28, 0.35] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              />
+              cx="1781" cy="939" r="126"
+              fill="url(#nz-glow-primary)"
+              filter="url(#nz-blur-medium)"
+              animate={{ r: [126, 144, 126], opacity: [0.35, 0.28, 0.35] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} />
+            
               {/* Layer 1: core halo — reduced */}
               <motion.circle
-                cx="1781" cy="939" r="84"
-                fill="url(#nz-glow-core)"
-                filter="url(#nz-blur-soft)"
-                animate={{ r: [84, 96, 84], opacity: [0.36, 0.28, 0.36] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              />
+              cx="1781" cy="939" r="84"
+              fill="url(#nz-glow-core)"
+              filter="url(#nz-blur-soft)"
+              animate={{ r: [84, 96, 84], opacity: [0.36, 0.28, 0.36] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} />
+            
               {/* Secondary ring — softer */}
               <motion.circle
-                cx="1781" cy="939" r="70"
-                fill="none"
-                stroke="hsl(var(--foreground))"
-                strokeWidth="2"
-                filter="url(#nz-blur-soft)"
-                animate={{ r: [70, 165, 70], opacity: [0.12, 0, 0.12] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              />
+              cx="1781" cy="939" r="70"
+              fill="none"
+              stroke="hsl(var(--foreground))"
+              strokeWidth="2"
+              filter="url(#nz-blur-soft)"
+              animate={{ r: [70, 165, 70], opacity: [0.12, 0, 0.12] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} />
+            
             </svg>
 
             {/* text-safe darkening behind text area — right-side quiet zone */}
             <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background: "linear-gradient(to left, hsl(var(--background) / 0.55) 0%, hsl(var(--background) / 0.30) 32%, transparent 55%)",
-              }}
-            />
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: "linear-gradient(to left, hsl(var(--background) / 0.55) 0%, hsl(var(--background) / 0.30) 32%, transparent 55%)"
+            }} />
+          
             <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background: "linear-gradient(to top, hsl(var(--background) / 0.35) 0%, hsl(var(--background) / 0.15) 40%, transparent 60%)",
-              }}
-            />
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: "linear-gradient(to top, hsl(var(--background) / 0.35) 0%, hsl(var(--background) / 0.15) 40%, transparent 60%)"
+            }} />
+          
 
             {/* text — right side, same vertical position */}
             <div className="relative z-10 flex flex-col items-end h-full pb-36">
               <div className="flex flex-col justify-end h-full pr-10 md:pr-20 max-w-xl text-left">
                  <motion.h2
-                  className="text-2xl md:text-3xl lg:text-[2.7rem] font-bold text-foreground leading-[0.95] mb-8"
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                >
+                className="text-2xl md:text-3xl lg:text-[2.7rem] font-bold text-foreground leading-[0.95] mb-8"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}>
+                
                   Your breath now guides the journey.
                 </motion.h2>
                 <div>
                   <motion.p
-                    className="text-base md:text-lg lg:text-xl text-foreground/85 font-semibold mb-5"
-                    initial={{ opacity: 0, y: 6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: 0.55 }}
-                  >
+                  className="text-base md:text-lg lg:text-xl text-foreground/85 font-semibold mb-5"
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.55 }}>
+                  
                     Choose your route.
                   </motion.p>
                   <motion.p
-                    className="text-base md:text-lg text-foreground/70 font-medium mb-6"
-                    initial={{ opacity: 0, y: 6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: 0.75 }}
-                  >
+                  className="text-base md:text-lg text-foreground/70 font-medium mb-6"
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.75 }}>
+                  
                     Keys unlock. Locals advise. Nature beckons.
                   </motion.p>
                   <motion.p
-                    className="text-base md:text-lg mt-4"
-                    initial={{ opacity: 0, y: 6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: 0.95 }}
-                  >
+                  className="text-base md:text-lg mt-4"
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.95 }}>
+                  
                     <span className="relative inline-block">
                       <span
-                        className="relative z-10 text-primary font-semibold"
-                        style={{ filter: "brightness(1.25)", textShadow: "0 0 12px hsl(var(--stark-sunset) / 0.6), 0 0 28px hsl(var(--stark-sunset) / 0.3), 0 0 56px hsl(var(--stark-sunset) / 0.12)" }}
-                      >
+                      className="relative z-10 text-primary font-semibold"
+                      style={{ filter: "brightness(1.25)", textShadow: "0 0 12px hsl(var(--stark-sunset) / 0.6), 0 0 28px hsl(var(--stark-sunset) / 0.3), 0 0 56px hsl(var(--stark-sunset) / 0.12)" }}>
+                      
                         Your breath moves you forward.
                       </span>
                       <motion.span
-                        className="absolute inset-0 -inset-x-4 -inset-y-2 rounded-full bg-primary/12 blur-2xl"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, ease: "easeOut", delay: 1.1 }}
-                      />
+                      className="absolute inset-0 -inset-x-4 -inset-y-2 rounded-full bg-primary/12 blur-2xl"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.8, ease: "easeOut", delay: 1.1 }} />
+                    
                     </span>
                   </motion.p>
                 </div>
               </div>
             </div>
           </motion.div>
-        )}
+        }
 
         {/* ═══════ PART 3 — IMMERSIVE NARRATIVE (HIKER + KEY) ═══════ */}
-        {phase === 2 && (
-          <motion.div
-            key="journey-narrative"
-            className="absolute inset-0"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
-          >
+        {phase === 2 &&
+        <motion.div
+          key="journey-narrative"
+          className="absolute inset-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}>
+          
             <img
-              src={hikerImg}
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover"
-              style={{ filter: "brightness(0.84)" }}
-            />
+            src={hikerImg}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ filter: "brightness(0.84)" }} />
+          
             {/* Local dark gradient behind text area */}
             <div
-              className="absolute inset-y-0 left-0 pointer-events-none"
-              style={{
-                width: "58%",
-                background: "linear-gradient(to right, hsl(var(--background) / 0.88) 0%, hsl(var(--background) / 0.70) 35%, hsl(var(--background) / 0.30) 70%, transparent 100%)",
-              }}
-            />
+            className="absolute inset-y-0 left-0 pointer-events-none"
+            style={{
+              width: "58%",
+              background: "linear-gradient(to right, hsl(var(--background) / 0.88) 0%, hsl(var(--background) / 0.70) 35%, hsl(var(--background) / 0.30) 70%, transparent 100%)"
+            }} />
+          
 
             {/* narrative text — left side, consistent margin */}
             <div className="relative z-10 flex items-center h-full" style={{ paddingLeft: "8%" }}>
               <div className="max-w-2xl" style={{ textShadow: "0 2px 10px hsl(var(--background) / 0.6), 0 1px 4px hsl(var(--background) / 0.4)" }}>
                 {/* Headline */}
                 <motion.h2
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-8"
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                >
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-8"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}>
+                
                   You and your breath -<br />
                   step off the beaten track.
                 </motion.h2>
 
                 {/* Subhead */}
                 <motion.div
-                  className="mb-6 space-y-1"
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.55 }}
-                >
+                className="mb-6 space-y-1"
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.55 }}>
+                
                   <p className="text-lg md:text-xl text-foreground font-semibold"><br /></p>
                   <p className="text-lg md:text-xl text-foreground font-semibold">Across landscapes.</p>
                   <p className="text-lg md:text-xl text-foreground font-semibold">Through cultures you didn't expect.</p>
@@ -320,11 +320,11 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
 
                 {/* Body */}
                 <motion.div
-                  className="space-y-1"
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.75 }}
-                >
+                className="space-y-1"
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.75 }}>
+                
                   <p className="text-base md:text-lg text-foreground">Into moments that catch you off guard -</p>
                   <p className="text-base md:text-lg text-foreground">in a good way.</p>
                   <p className="text-base md:text-lg text-foreground mt-4">It's still breathing.</p>
@@ -332,48 +332,48 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
 
                 {/* Accent line */}
                 <motion.div
-                  className="mt-6 space-y-1"
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.95 }}
-                >
+                className="mt-6 space-y-1"
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.95 }}>
+                
                   <p
-                    className="text-lg md:text-xl text-stark-sunset font-semibold"
-                    style={{
-                      filter: "brightness(1.45) saturate(1.2)",
-                      textShadow: "0 0 18px hsl(var(--stark-sunset) / 0.8), 0 0 40px hsl(var(--stark-sunset) / 0.45), 0 0 70px hsl(var(--stark-sunset) / 0.2)",
-                    }}
-                  >
+                  className="text-lg md:text-xl text-stark-sunset font-semibold"
+                  style={{
+                    filter: "brightness(1.45) saturate(1.2)",
+                    textShadow: "0 0 18px hsl(var(--stark-sunset) / 0.8), 0 0 40px hsl(var(--stark-sunset) / 0.45), 0 0 70px hsl(var(--stark-sunset) / 0.2)"
+                  }}>
+                  
                     But you actually look forward to it.
                   </p>
                   <p
-                    className="text-lg md:text-xl text-stark-sunset font-semibold"
-                    style={{
-                      filter: "brightness(1.45) saturate(1.2)",
-                      textShadow: "0 0 18px hsl(var(--stark-sunset) / 0.8), 0 0 40px hsl(var(--stark-sunset) / 0.45), 0 0 70px hsl(var(--stark-sunset) / 0.2)",
-                    }}
-                  >
+                  className="text-lg md:text-xl text-stark-sunset font-semibold"
+                  style={{
+                    filter: "brightness(1.45) saturate(1.2)",
+                    textShadow: "0 0 18px hsl(var(--stark-sunset) / 0.8), 0 0 40px hsl(var(--stark-sunset) / 0.45), 0 0 70px hsl(var(--stark-sunset) / 0.2)"
+                  }}>
+                  
                     {"\n"}
                   </p>
                 </motion.div>
 
                 {/* Closing */}
                 <motion.div
-                  className="mt-6 space-y-1"
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 1.15 }}
-                >
+                className="mt-6 space-y-1"
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 1.15 }}>
+                
                   <p className="text-base md:text-lg text-foreground">With your first key in hand,</p>
                   <p className="text-base md:text-lg text-foreground">you journey onward.</p>
                 </motion.div>
               </div>
             </div>
           </motion.div>
-        )}
+        }
       </AnimatePresence>
-    </div>
-  );
+    </div>);
+
 });
 
 SlideJourneys.displayName = "SlideJourneys";
