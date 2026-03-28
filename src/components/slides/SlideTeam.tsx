@@ -64,7 +64,8 @@ const SlideTeam = () => (
       {/* Label */}
       <motion.p
         variants={fadeIn}
-        className="text-sm tracking-[0.3em] uppercase text-primary mb-8"
+        className="text-xs tracking-[0.4em] uppercase text-primary font-light mb-8"
+        style={{ opacity: 0.85 }}
       >
         Scale
       </motion.p>
@@ -72,7 +73,7 @@ const SlideTeam = () => (
       {/* Headline */}
       <motion.h2
         variants={fadeIn}
-        className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight text-foreground mb-12"
+        className="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] text-foreground mb-12"
       >
         One system.
         <br />

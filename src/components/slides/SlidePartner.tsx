@@ -42,7 +42,7 @@ const SlidePartner = () => (
       <div className="pl-12 md:pl-20 lg:pl-28 pr-8 max-w-[42%] flex flex-col justify-center h-full py-16">
         {/* Headline */}
         <motion.h2
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6"
+          className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[0.92] tracking-[-0.01em] text-foreground mb-6"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}

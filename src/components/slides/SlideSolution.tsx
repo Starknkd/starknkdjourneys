@@ -8,9 +8,9 @@ const SlideSolution = () => (
       <div className="pl-12 md:pl-24 lg:pl-32 pr-8 max-w-2xl">
         {/* Section label */}
         <motion.p
-          className="text-primary text-sm tracking-[0.35em] uppercase mb-6 font-semibold"
+          className="text-primary text-xs tracking-[0.4em] uppercase mb-6 font-light"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{ opacity: 0.85 }}
           transition={{ delay: 0.2, duration: 0.5 }}
           style={{ filter: "brightness(1.1)" }}
         >
@@ -18,7 +18,7 @@ const SlideSolution = () => (
         </motion.p>
 
         <motion.h2
-          className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight text-foreground"
+          className="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] text-foreground"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
@@ -27,7 +27,7 @@ const SlideSolution = () => (
         </motion.h2>
 
         <motion.h2
-          className="text-5xl md:text-6xl lg:text-8xl font-extrabold leading-tight text-primary mt-2"
+          className="text-5xl md:text-6xl lg:text-8xl font-extrabold leading-[0.92] tracking-[-0.01em] text-primary mt-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0, duration: 0.6 }}

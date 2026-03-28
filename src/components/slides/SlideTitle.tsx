@@ -40,10 +40,10 @@ const SlideTitle = () => (
 
       {/* Tagline — appears immediately after logo */}
       <motion.p
-        className="text-[0.65rem] md:text-xs tracking-[0.45em] uppercase font-light mt-3 mb-20"
-        style={{ color: "#b393da" }}
+        className="text-[0.65rem] md:text-xs tracking-[0.5em] uppercase font-light mt-3 mb-20"
+        style={{ color: "#b393da", opacity: 0.75 }}
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={{ opacity: 0.75 }}
         transition={{ duration: 0.3, ease: "easeOut", delay: 0.15 }}
       >
         Calm under pressure
@@ -51,15 +51,15 @@ const SlideTitle = () => (
 
       {/* Headline — fades in last with slight upward motion */}
       <motion.div
-        className="text-xl md:text-2xl lg:text-[1.7rem] uppercase tracking-[0.14em]"
+        className="text-xl md:text-2xl lg:text-[1.7rem] uppercase tracking-[0.18em] font-medium"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: "easeOut", delay: 0.3 }}
       >
-        <p className="text-foreground/90 leading-[2.2]">
+        <p className="text-foreground/80 leading-[2.2]">
           Journey into the unknown.
         </p>
-        <p className="text-foreground/70 leading-[2.2]">
+        <p className="text-foreground/60 leading-[2.2]">
           Train your way back to control.
         </p>
       </motion.div>

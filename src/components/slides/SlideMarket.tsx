@@ -44,8 +44,8 @@ const SlideMarket = () => (
         {/* Section label */}
         <motion.p
           variants={fade}
-          className="text-sm tracking-[0.3em] uppercase mb-6"
-          style={{ color: "hsl(var(--primary))" }}
+          className="text-xs tracking-[0.4em] uppercase mb-6 font-light"
+          style={{ color: "hsl(var(--primary))", opacity: 0.85 }}
         >
           Category
         </motion.p>
@@ -53,7 +53,7 @@ const SlideMarket = () => (
         {/* Headline */}
         <motion.h2
           variants={fade}
-          className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight text-foreground mb-10"
+          className="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] text-foreground mb-10"
           style={{ maxWidth: "90%" }}
         >
           A new category

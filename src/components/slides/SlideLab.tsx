@@ -79,7 +79,7 @@ const SlideLab = () => (
       {/* LEFT: headline + bridge */}
       <div className="flex flex-col justify-center w-1/2 px-12 md:px-20 lg:px-28">
         <motion.h2
-          className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground/95 mb-3"
+          className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[0.92] tracking-[-0.01em] text-foreground/95 mb-3"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.15 }}

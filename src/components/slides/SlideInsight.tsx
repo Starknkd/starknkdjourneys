@@ -7,7 +7,7 @@ const SlideInsight = () => (
     <div className="max-w-5xl w-full text-left relative z-10">
       {/* Headline */}
       <motion.h2
-        className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-foreground mb-12"
+        className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] text-foreground mb-12"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
