@@ -354,8 +354,8 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 1.15 }}
                 >
-                  <p className="text-base md:text-lg text-foreground/90">With your first key in hand,</p>
-                  <p className="text-base md:text-lg text-foreground/90">you journey onward.</p>
+                  <p className="text-base md:text-lg text-foreground" style={{ textShadow: "0 1px 6px hsl(var(--background) / 0.4)" }}>With your first key in hand,</p>
+                  <p className="text-base md:text-lg text-foreground" style={{ textShadow: "0 1px 6px hsl(var(--background) / 0.4)" }}>you journey onward.</p>
                 </motion.div>
               </div>
             </div>
