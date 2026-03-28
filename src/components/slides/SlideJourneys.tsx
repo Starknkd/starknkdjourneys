@@ -272,6 +272,14 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
               className="absolute inset-0 w-full h-full object-cover"
               style={{ filter: "brightness(0.84)" }}
             />
+            <div
+              className="absolute inset-y-0 pointer-events-none"
+              style={{
+                left: "4%",
+                width: "40%",
+                background: "radial-gradient(ellipse at 35% 50%, hsl(var(--background) / 0.10) 0%, hsl(var(--background) / 0.06) 38%, transparent 72%)",
+              }}
+            />
 
             {/* narrative text — left side, consistent margin */}
             <div className="relative z-10 flex items-center h-full" style={{ paddingLeft: "8%" }}>
