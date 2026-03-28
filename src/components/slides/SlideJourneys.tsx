@@ -89,7 +89,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                   NKD Journeys
                 </p>
                 <p
-                className="text-stark-periwinkle tracking-[0.18em] uppercase mt-1.5 text-[0.7rem] font-normal"
+                className="text-stark-periwinkle tracking-[0.18em] uppercase mt-1.5 text-[0.7rem] font-medium"
                 style={{ filter: "brightness(1.15)" }}>
                 
                   Immersive audio × breathing
