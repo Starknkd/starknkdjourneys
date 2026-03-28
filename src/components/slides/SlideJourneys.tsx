@@ -135,18 +135,18 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                   <feGaussianBlur stdDeviation="32" />
                 </filter>
                 <radialGradient id="nz-glow-core">
-                  <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.65" />
-                  <stop offset="58%" stopColor="hsl(var(--foreground))" stopOpacity="0.18" />
+                  <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.32" />
+                  <stop offset="58%" stopColor="hsl(var(--foreground))" stopOpacity="0.09" />
                   <stop offset="100%" stopColor="hsl(var(--foreground))" stopOpacity="0" />
                 </radialGradient>
                 <radialGradient id="nz-glow-primary">
-                  <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.50" />
-                  <stop offset="48%" stopColor="hsl(var(--foreground))" stopOpacity="0.11" />
+                  <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.25" />
+                  <stop offset="48%" stopColor="hsl(var(--foreground))" stopOpacity="0.06" />
                   <stop offset="100%" stopColor="hsl(var(--foreground))" stopOpacity="0" />
                 </radialGradient>
                 <radialGradient id="nz-glow-outer">
-                  <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.30" />
-                  <stop offset="42%" stopColor="hsl(var(--foreground))" stopOpacity="0.05" />
+                  <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.15" />
+                  <stop offset="42%" stopColor="hsl(var(--foreground))" stopOpacity="0.03" />
                   <stop offset="100%" stopColor="hsl(var(--foreground))" stopOpacity="0" />
                 </radialGradient>
               </defs>
