@@ -20,8 +20,12 @@ const EdgePattern = ({ opacity = 0.3 }: EdgePatternProps) => (
         backgroundPosition: "left center",
         opacity,
         filter: "contrast(1.1) brightness(0.9)",
-        maskImage: "linear-gradient(to right, black 30%, transparent 100%)",
-        WebkitMaskImage: "linear-gradient(to right, black 30%, transparent 100%)",
+        maskImage:
+          "linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%), linear-gradient(to right, black 30%, transparent 100%)",
+        WebkitMaskImage:
+          "linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%), linear-gradient(to right, black 30%, transparent 100%)",
+        maskComposite: "intersect",
+        WebkitMaskComposite: "source-in" as any,
       }}
     />
 
@@ -34,8 +38,12 @@ const EdgePattern = ({ opacity = 0.3 }: EdgePatternProps) => (
         backgroundPosition: "right center",
         opacity,
         filter: "contrast(1.1) brightness(0.9)",
-        maskImage: "linear-gradient(to left, black 30%, transparent 100%)",
-        WebkitMaskImage: "linear-gradient(to left, black 30%, transparent 100%)",
+        maskImage:
+          "linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%), linear-gradient(to left, black 30%, transparent 100%)",
+        WebkitMaskImage:
+          "linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%), linear-gradient(to left, black 30%, transparent 100%)",
+        maskComposite: "intersect",
+        WebkitMaskComposite: "source-in" as any,
       }}
     />
   </>
