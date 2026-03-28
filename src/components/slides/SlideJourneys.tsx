@@ -293,8 +293,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
                 >
-                  You and your breath<br />
-                  - hand in hand -<br />
+                  You and your breath -<br />
                   step off the beaten track.
                 </motion.h2>
 
@@ -305,7 +304,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.55 }}
                 >
-                  <p className="text-lg md:text-xl text-foreground font-semibold">Your journey unfolds.</p>
+                  <p className="text-lg md:text-xl text-foreground font-semibold"><br /></p>
                   <p className="text-lg md:text-xl text-foreground font-semibold">Across landscapes.</p>
                   <p className="text-lg md:text-xl text-foreground font-semibold">Through cultures you didn't expect.</p>
                 </motion.div>
