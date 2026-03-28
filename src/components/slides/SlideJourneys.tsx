@@ -204,8 +204,8 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             {/* text — right side, same vertical position */}
             <div className="relative z-10 flex flex-col items-end h-full pb-36">
               <div className="flex flex-col justify-end h-full pr-10 md:pr-20 max-w-xl text-left">
-                <motion.h2
-                  className="text-2xl md:text-3xl lg:text-[2.7rem] font-bold text-foreground leading-tight mb-8"
+                 <motion.h2
+                  className="text-2xl md:text-3xl lg:text-[2.7rem] font-bold text-foreground leading-[0.95] mb-8"
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
@@ -214,7 +214,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                 </motion.h2>
                 <div>
                   <motion.p
-                    className="text-base md:text-lg lg:text-xl text-foreground font-semibold mb-5"
+                    className="text-base md:text-lg lg:text-xl text-foreground/85 font-semibold mb-5"
                     initial={{ opacity: 0, y: 6 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.55 }}
@@ -222,8 +222,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                     Choose your route.
                   </motion.p>
                   <motion.p
-                    className="text-base md:text-lg text-stark-periwinkle font-medium mb-6"
-                    style={{ filter: "brightness(1.25)" }}
+                    className="text-base md:text-lg text-foreground/70 font-medium mb-6"
                     initial={{ opacity: 0, y: 6 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.75 }}
@@ -238,7 +237,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                   >
                     <span className="relative inline-block">
                       <span
-                        className="relative z-10 text-stark-sunset font-semibold"
+                        className="relative z-10 text-primary font-semibold"
                         style={{ filter: "brightness(1.25)", textShadow: "0 0 12px hsl(var(--stark-sunset) / 0.6), 0 0 28px hsl(var(--stark-sunset) / 0.3), 0 0 56px hsl(var(--stark-sunset) / 0.12)" }}
                       >
                         Your breath moves you forward.
