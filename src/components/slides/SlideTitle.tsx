@@ -6,31 +6,29 @@ import diverCover from "@/assets/diver-cover.jpg";
 
 const SlideTitle = () => (
   <SlideShell slideKey={0}>
-    {/* Diver background — reduced intensity, faded toward centre */}
+    {/* Diver background — full coverage, cinematic depth */}
     <div className="absolute inset-0 overflow-hidden">
       <img
         src={diverCover}
         alt=""
         className="absolute inset-0 w-full h-full object-cover"
         style={{
-          opacity: 0.2,
-          filter: "contrast(1.2)",
-          maskImage: "radial-gradient(ellipse 70% 70% at 50% 50%, transparent 20%, black 70%)",
-          WebkitMaskImage: "radial-gradient(ellipse 70% 70% at 50% 50%, transparent 20%, black 70%)",
+          opacity: 0.28,
+          filter: "contrast(1.35)",
         }}
       />
-      {/* Calm focal zone — darker centre for logo + text readability */}
+      {/* Subtle darkening behind headline area only — keeps image alive elsewhere */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 50% 55% at 50% 48%, hsl(var(--background) / 0.7) 0%, hsl(var(--background) / 0.3) 60%, transparent 100%)",
+            "radial-gradient(ellipse 44% 30% at 50% 62%, hsl(var(--background) / 0.45) 0%, transparent 100%)",
         }}
       />
     </div>
     <FingerprintOverlay />
     <div className="relative z-10 flex flex-col items-center justify-center text-center w-full h-full">
-      {/* Logo — fades in first */}
+      {/* Logo */}
       <motion.img
         src={logoWhite}
         alt="Stark NKD"
@@ -40,9 +38,9 @@ const SlideTitle = () => (
         transition={{ duration: 0.35, ease: "easeOut" }}
       />
 
-      {/* Tagline — tighter to logo */}
+      {/* Tagline */}
       <motion.p
-        className="text-[0.65rem] md:text-xs tracking-[0.5em] uppercase font-light mt-2 mb-16"
+        className="text-[0.65rem] md:text-xs tracking-[0.5em] uppercase font-light mt-2 mb-20"
         style={{ color: "#b393da" }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.7 }}
@@ -53,15 +51,15 @@ const SlideTitle = () => (
 
       {/* Headline */}
       <motion.div
-        className="text-xl md:text-2xl lg:text-[1.7rem] uppercase tracking-[0.19em] font-semibold"
+        className="text-xl md:text-2xl lg:text-[1.7rem] uppercase tracking-[0.16em] font-semibold"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: "easeOut", delay: 0.3 }}
       >
-        <p className="text-foreground/90 leading-[1.8]">
+        <p className="text-foreground/90 leading-[1.7]">
           Journey into the unknown.
         </p>
-        <p className="text-foreground/65 leading-[1.8]">
+        <p className="text-foreground/70 leading-[1.7]">
           Train your way back to control.
         </p>
       </motion.div>
