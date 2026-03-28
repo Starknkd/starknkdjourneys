@@ -32,7 +32,8 @@ const SlideTraction = () => (
       {/* Slide label */}
       <motion.p
         variants={fadeIn}
-        className="text-sm tracking-[0.3em] uppercase text-primary mb-8 text-center"
+        className="text-xs tracking-[0.4em] uppercase text-primary font-light mb-8 text-center"
+        style={{ opacity: 0.85 }}
       >
         Business Model
       </motion.p>

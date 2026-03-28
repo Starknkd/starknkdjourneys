@@ -75,7 +75,7 @@ const SlideBiotravel = () => (
 
       {/* Category claim */}
       <motion.p
-        className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mt-10"
+        className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-primary mt-10"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2.0, duration: 0.6 }}
