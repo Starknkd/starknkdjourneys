@@ -56,10 +56,10 @@ const SlideTitle = () => (
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: "easeOut", delay: 0.3 }}
       >
-        <p className="text-foreground/90 leading-[1.7]">
+        <p className="text-foreground/90 leading-[1.5]">
           Journey into the unknown.
         </p>
-        <p className="text-foreground/70 leading-[1.7]">
+        <p className="text-primary leading-[1.5] mt-1" style={{ opacity: 0.85 }}>
           Train your way back to control.
         </p>
       </motion.div>
