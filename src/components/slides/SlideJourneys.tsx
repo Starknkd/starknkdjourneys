@@ -99,7 +99,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.8 }}
               >
-                Get off the beaten track.<br />Follow what pulls you.
+                Choose your destination.<br />Move with your breath.
               </motion.p>
             </div>
           </motion.div>
