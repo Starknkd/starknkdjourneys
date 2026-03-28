@@ -8,10 +8,11 @@ const SlideLandscape = () => (
       <div className="pl-12 md:pl-24 lg:pl-32 pr-8 max-w-2xl">
         {/* Section label */}
         <motion.p
-          className="text-primary text-sm tracking-[0.3em] uppercase mb-6"
+          className="text-primary text-sm tracking-[0.3em] uppercase mb-6 font-semibold"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
+          style={{ filter: "brightness(1.1)" }}
         >
           The Landscape
         </motion.p>
@@ -27,7 +28,7 @@ const SlideLandscape = () => (
         </motion.h2>
 
         {/* Body lines */}
-        <div className="mt-10 space-y-3">
+        <div className="mt-12 space-y-4">
           {[
             { text: "One-size breathing techniques", delay: 1.2 },
             { text: "Focus on oxygen, not CO₂", delay: 1.6 },
@@ -35,9 +36,10 @@ const SlideLandscape = () => (
           ].map(({ text, delay }) => (
             <motion.p
               key={text}
-              className="text-lg md:text-xl text-foreground/85"
+              className="text-lg md:text-xl text-foreground font-medium"
+              style={{ opacity: 0.92 }}
               initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
+              animate={{ opacity: 0.92, x: 0 }}
               transition={{ delay, duration: 0.5 }}
             >
               {text}
@@ -47,9 +49,10 @@ const SlideLandscape = () => (
 
         {/* Quote */}
         <motion.p
-          className="mt-10 text-xl md:text-2xl text-foreground font-semibold italic"
+          className="mt-14 text-xl md:text-2xl text-foreground font-bold italic"
+          style={{ opacity: 0.95 }}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{ opacity: 0.95 }}
           transition={{ delay: 2.8, duration: 0.7 }}
         >
           "For many people with maxed out systems and wired minds, it makes things worse."
