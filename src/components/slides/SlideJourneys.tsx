@@ -115,8 +115,8 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
           >
-            <img src={mapImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-background/10" />
+            <img src={mapImg} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ filter: "brightness(0.7) contrast(0.92) saturate(0.9)" }} />
+            <div className="absolute inset-0 bg-background/20" />
 
             {/* NZ glow — reduced intensity ~25-30% */}
             <svg
