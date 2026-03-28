@@ -115,8 +115,8 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
           >
-            <img src={mapImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-background/10" />
+            <img src={mapImg} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ filter: "brightness(0.7) contrast(0.92) saturate(0.9)" }} />
+            <div className="absolute inset-0 bg-background/20" />
 
             {/* NZ glow — reduced intensity ~25-30% */}
             <svg
@@ -135,18 +135,18 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                   <feGaussianBlur stdDeviation="32" />
                 </filter>
                 <radialGradient id="nz-glow-core">
-                  <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.65" />
-                  <stop offset="58%" stopColor="hsl(var(--foreground))" stopOpacity="0.18" />
+                  <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.32" />
+                  <stop offset="58%" stopColor="hsl(var(--foreground))" stopOpacity="0.09" />
                   <stop offset="100%" stopColor="hsl(var(--foreground))" stopOpacity="0" />
                 </radialGradient>
                 <radialGradient id="nz-glow-primary">
-                  <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.50" />
-                  <stop offset="48%" stopColor="hsl(var(--foreground))" stopOpacity="0.11" />
+                  <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.25" />
+                  <stop offset="48%" stopColor="hsl(var(--foreground))" stopOpacity="0.06" />
                   <stop offset="100%" stopColor="hsl(var(--foreground))" stopOpacity="0" />
                 </radialGradient>
                 <radialGradient id="nz-glow-outer">
-                  <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.30" />
-                  <stop offset="42%" stopColor="hsl(var(--foreground))" stopOpacity="0.05" />
+                  <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.15" />
+                  <stop offset="42%" stopColor="hsl(var(--foreground))" stopOpacity="0.03" />
                   <stop offset="100%" stopColor="hsl(var(--foreground))" stopOpacity="0" />
                 </radialGradient>
               </defs>
@@ -156,7 +156,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                 cx="1781" cy="939" r="168"
                 fill="url(#nz-glow-outer)"
                 filter="url(#nz-blur-wide)"
-                animate={{ r: [168, 192, 168], opacity: [0.65, 0.50, 0.65] }}
+                animate={{ r: [168, 192, 168], opacity: [0.35, 0.25, 0.35] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               />
               {/* Layer 2: primary glow — reduced */}
@@ -164,7 +164,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                 cx="1781" cy="939" r="126"
                 fill="url(#nz-glow-primary)"
                 filter="url(#nz-blur-medium)"
-                animate={{ r: [126, 144, 126], opacity: [0.70, 0.55, 0.70] }}
+                animate={{ r: [126, 144, 126], opacity: [0.35, 0.28, 0.35] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               />
               {/* Layer 1: core halo — reduced */}
@@ -172,7 +172,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                 cx="1781" cy="939" r="84"
                 fill="url(#nz-glow-core)"
                 filter="url(#nz-blur-soft)"
-                animate={{ r: [84, 96, 84], opacity: [0.72, 0.56, 0.72] }}
+                animate={{ r: [84, 96, 84], opacity: [0.36, 0.28, 0.36] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               />
               {/* Secondary ring — softer */}
@@ -182,7 +182,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                 stroke="hsl(var(--foreground))"
                 strokeWidth="2"
                 filter="url(#nz-blur-soft)"
-                animate={{ r: [70, 165, 70], opacity: [0.24, 0, 0.24] }}
+                animate={{ r: [70, 165, 70], opacity: [0.12, 0, 0.12] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               />
             </svg>
@@ -204,8 +204,8 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             {/* text — right side, same vertical position */}
             <div className="relative z-10 flex flex-col items-end h-full pb-36">
               <div className="flex flex-col justify-end h-full pr-10 md:pr-20 max-w-xl text-left">
-                <motion.h2
-                  className="text-2xl md:text-3xl lg:text-[2.7rem] font-bold text-foreground leading-tight mb-8"
+                 <motion.h2
+                  className="text-2xl md:text-3xl lg:text-[2.7rem] font-bold text-foreground leading-[0.95] mb-8"
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
@@ -214,7 +214,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                 </motion.h2>
                 <div>
                   <motion.p
-                    className="text-base md:text-lg lg:text-xl text-foreground font-semibold mb-5"
+                    className="text-base md:text-lg lg:text-xl text-foreground/85 font-semibold mb-5"
                     initial={{ opacity: 0, y: 6 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.55 }}
@@ -222,8 +222,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                     Choose your route.
                   </motion.p>
                   <motion.p
-                    className="text-base md:text-lg text-stark-periwinkle font-medium mb-6"
-                    style={{ filter: "brightness(1.25)" }}
+                    className="text-base md:text-lg text-foreground/70 font-medium mb-6"
                     initial={{ opacity: 0, y: 6 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.75 }}
@@ -238,7 +237,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                   >
                     <span className="relative inline-block">
                       <span
-                        className="relative z-10 text-stark-sunset font-semibold"
+                        className="relative z-10 text-primary font-semibold"
                         style={{ filter: "brightness(1.25)", textShadow: "0 0 12px hsl(var(--stark-sunset) / 0.6), 0 0 28px hsl(var(--stark-sunset) / 0.3), 0 0 56px hsl(var(--stark-sunset) / 0.12)" }}
                       >
                         Your breath moves you forward.
