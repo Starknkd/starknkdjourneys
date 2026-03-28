@@ -302,9 +302,9 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.55 }}
                 >
-                  <p className="text-lg md:text-xl text-foreground font-semibold" style={{ textShadow: "0 1px 6px hsl(var(--background) / 0.4)" }}><br /></p>
-                  <p className="text-lg md:text-xl text-foreground font-semibold" style={{ textShadow: "0 1px 6px hsl(var(--background) / 0.4)" }}>Across landscapes.</p>
-                  <p className="text-lg md:text-xl text-foreground font-semibold" style={{ textShadow: "0 1px 6px hsl(var(--background) / 0.4)" }}>Through cultures you didn't expect.</p>
+                  <p className="text-lg md:text-xl text-foreground font-semibold"><br /></p>
+                  <p className="text-lg md:text-xl text-foreground font-semibold">Across landscapes.</p>
+                  <p className="text-lg md:text-xl text-foreground font-semibold">Through cultures you didn't expect.</p>
                 </motion.div>
 
                 {/* Body */}
