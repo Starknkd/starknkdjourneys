@@ -8,9 +8,9 @@ const SlideSolution = () => (
       <div className="pl-12 md:pl-24 lg:pl-32 pr-8 max-w-2xl">
         {/* Section label */}
         <motion.p
-          className="text-primary text-sm tracking-[0.35em] uppercase mb-6 font-semibold"
+          className="text-primary text-xs tracking-[0.4em] uppercase mb-6 font-light"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{ opacity: 0.85 }}
           transition={{ delay: 0.2, duration: 0.5 }}
           style={{ filter: "brightness(1.1)" }}
         >
