@@ -210,7 +210,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
                 >
-                  Your breathing practice just became a map.
+                  Your breath now guides the journey.
                 </motion.h2>
                 <div>
                   <motion.p
