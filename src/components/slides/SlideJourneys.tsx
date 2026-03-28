@@ -59,23 +59,23 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
             transition={{ duration: 1.2, ease: "easeInOut" }}
           >
             <img src={milfordImg} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ filter: "contrast(1.08)" }} />
-            {/* consistent central darkening */}
+            {/* lighter central darkening — restored image detail */}
             <div
               className="absolute inset-0"
               style={{
-                background: "radial-gradient(ellipse at center, hsl(var(--background) / 0.35) 0%, hsl(var(--background) / 0.70) 100%)",
+                background: "radial-gradient(ellipse at center, hsl(var(--background) / 0.22) 0%, hsl(var(--background) / 0.55) 100%)",
               }}
             />
-            <div className="absolute inset-0 bg-background/30" />
+            <div className="absolute inset-0 bg-background/18" />
             {/* darken bottom-right bird area */}
             <div
               className="absolute inset-0 pointer-events-none"
               style={{
-                background: "radial-gradient(ellipse at 85% 85%, hsl(var(--background) / 0.55) 0%, transparent 50%)",
+                background: "radial-gradient(ellipse at 85% 85%, hsl(var(--background) / 0.45) 0%, transparent 50%)",
               }}
             />
 
-            <div className="relative z-10 flex flex-col items-center justify-center h-full px-8" style={{ textShadow: "0 2px 12px hsl(var(--background) / 0.7), 0 1px 4px hsl(var(--background) / 0.5)" }}>
+            <div className="relative z-10 flex flex-col items-center justify-center h-full px-8" style={{ textShadow: "0 2px 14px hsl(var(--background) / 0.8), 0 1px 5px hsl(var(--background) / 0.6)" }}>
               <motion.div
                 className="flex flex-col items-center mb-8"
                 initial={{ opacity: 0, y: 12 }}
@@ -83,19 +83,20 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 <p
-                  className="text-stark-periwinkle tracking-[0.35em] uppercase font-light text-base"
+                  className="text-stark-periwinkle tracking-[0.32em] uppercase font-light text-lg"
+                  style={{ filter: "brightness(1.15)" }}
                 >
                   NKD Journeys
                 </p>
                 <p
-                  className="text-stark-periwinkle/80 tracking-[0.2em] uppercase font-light mt-1"
-                  style={{ fontSize: "0.55em" }}
+                  className="text-stark-periwinkle tracking-[0.18em] uppercase font-light mt-1.5 text-[0.7rem]"
+                  style={{ filter: "brightness(1.15)" }}
                 >
                   Immersive audio × breathing
                 </p>
               </motion.div>
               <motion.h2
-                className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground text-center leading-tight"
+                className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground text-center leading-tight"
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 1.2 }}
@@ -103,7 +104,8 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
                 Breathe your way<br />around the world.
               </motion.h2>
               <motion.p
-                className="text-xl md:text-2xl mt-10 text-foreground text-center leading-relaxed"
+                className="text-[1.35rem] md:text-[1.7rem] mt-12 text-foreground text-center leading-relaxed"
+                style={{ filter: "brightness(1.05)" }}
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.8 }}
