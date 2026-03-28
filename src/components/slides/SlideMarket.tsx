@@ -53,7 +53,7 @@ const SlideMarket = () => (
         {/* Headline */}
         <motion.h2
           variants={fade}
-          className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight text-foreground mb-10"
+          className="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] text-foreground mb-10"
           style={{ maxWidth: "90%" }}
         >
           A new category

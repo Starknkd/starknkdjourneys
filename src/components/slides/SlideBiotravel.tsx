@@ -51,7 +51,7 @@ const SlideBiotravel = () => (
 
       {/* Anchor line */}
       <motion.h2
-        className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground max-w-4xl"
+        className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-[0.92] tracking-[-0.01em] text-foreground max-w-4xl"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7, duration: 0.7 }}

@@ -33,7 +33,7 @@ const SlideHook = () => (
 
       {/* Line 2 — second beat */}
       <motion.h2
-        className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mt-4 md:mt-6"
+        className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] mt-4 md:mt-6"
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut", delay: 1.0 }}
@@ -41,7 +41,6 @@ const SlideHook = () => (
         <span className="text-foreground">You have a </span>
         <span className="relative inline-block">
           <span className="relative z-10 text-primary">breathing problem.</span>
-          {/* Spotlight glow */}
           <motion.span
             className="absolute inset-0 -inset-x-4 -inset-y-2 rounded-full bg-primary/10 blur-2xl"
             initial={{ opacity: 0, scale: 0.7 }}

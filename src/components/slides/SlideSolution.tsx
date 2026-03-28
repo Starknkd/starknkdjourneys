@@ -18,7 +18,7 @@ const SlideSolution = () => (
         </motion.p>
 
         <motion.h2
-          className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight text-foreground"
+          className="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] text-foreground"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
@@ -27,7 +27,7 @@ const SlideSolution = () => (
         </motion.h2>
 
         <motion.h2
-          className="text-5xl md:text-6xl lg:text-8xl font-extrabold leading-tight text-primary mt-2"
+          className="text-5xl md:text-6xl lg:text-8xl font-extrabold leading-[0.92] tracking-[-0.01em] text-primary mt-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0, duration: 0.6 }}
