@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import milfordImg from "@/assets/milford-bird.png";
 import mapImg from "@/assets/world-map.png";
 import hikerImg from "@/assets/hiker-journey.png";
-import keyImg from "@/assets/key-journey.png";
+
 
 /* ─── ambient dot nodes (dimmer, secondary) ─── */
 const ambientDots = [
