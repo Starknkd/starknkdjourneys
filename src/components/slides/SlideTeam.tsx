@@ -64,7 +64,8 @@ const SlideTeam = () => (
       {/* Label */}
       <motion.p
         variants={fadeIn}
-        className="text-sm tracking-[0.3em] uppercase text-primary mb-8"
+        className="text-xs tracking-[0.4em] uppercase text-primary font-light mb-8"
+        style={{ opacity: 0.85 }}
       >
         Scale
       </motion.p>
