@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import vrBg from "@/assets/vr-partner-bg.png";
 
 const SlidePartner = () => (
-  <div className="absolute inset-0 w-screen h-screen overflow-hidden bg-background">
+  <div className="slide-root absolute inset-0 w-screen h-screen overflow-hidden bg-background">
     {/* Left text area — pure background, no image */}
     <div className="absolute top-0 left-0 bottom-0 w-[58%] bg-background" />
 

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import surferBg from "@/assets/surfer-wave-bg.png";
 
 const SlideBiotravel = () => (
-  <div className="absolute inset-0 w-screen h-screen overflow-hidden bg-background">
+  <div className="slide-root absolute inset-0 w-screen h-screen overflow-hidden bg-background">
     {/* Full-bleed background */}
     <img
       src={surferBg}

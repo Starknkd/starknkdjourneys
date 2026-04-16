@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import EdgePattern from "@/components/EdgePattern";
 import ProgressBar from "@/components/ProgressBar";
 import SlideTitle from "@/components/slides/SlideTitle";
@@ -19,7 +20,7 @@ import SlideBiotravel from "@/components/slides/SlideBiotravel";
 import SlidePartner from "@/components/slides/SlidePartner";
 import SlideClose from "@/components/slides/SlideClose";
 
-const JOURNEYS_INDEX = 6; // SlideJourneys position in slides array
+const JOURNEYS_INDEX = 6;
 
 const slides = [
   SlideTitle,
@@ -33,7 +34,6 @@ const slides = [
   SlideBreathingLab,
   SlideTraction,
   SlideTeam,
-  
   SlideMarket,
   SlideBiotravel,
   SlidePartner,
@@ -44,6 +44,7 @@ const PitchDeck = () => {
   const [current, setCurrent] = useState(0);
   const total = slides.length;
   const journeysRef = useRef<SlideJourneysRef>(null);
+  const isMobile = useIsMobile();
 
   const navigate = useCallback(
     (direction: 1 | -1) => {
@@ -59,6 +60,7 @@ const PitchDeck = () => {
   );
 
   useEffect(() => {
+    if (isMobile) return; // No keyboard nav on mobile
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "ArrowRight" || e.key === " " || e.key === "ArrowDown") {
         e.preventDefault();
@@ -70,8 +72,27 @@ const PitchDeck = () => {
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [navigate]);
+  }, [navigate, isMobile]);
 
+  // Mobile: render all slides stacked vertically
+  if (isMobile) {
+    return (
+      <div className="relative w-full bg-background">
+        <div className="grain-overlay" />
+        {slides.map((Slide, i) => (
+          <div key={i} className="relative w-full min-h-screen">
+            {i === JOURNEYS_INDEX ? (
+              <SlideJourneys ref={journeysRef} />
+            ) : (
+              <Slide />
+            )}
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  // Desktop: single slide at a time
   const CurrentSlide = slides[current];
 
   return (
