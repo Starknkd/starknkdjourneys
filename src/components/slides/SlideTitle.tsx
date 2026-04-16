@@ -6,18 +6,16 @@ import diverCover from "@/assets/diver-cover.jpg";
 
 const SlideTitle = () => (
   <SlideShell slideKey={0}>
-    {/* Diver background — full coverage, cinematic depth */}
     <div className="absolute inset-0 overflow-hidden">
       <img
         src={diverCover}
-        alt=""
+        alt="Deep-sea diver descending into dark water, representing the journey into the unknown"
         className="absolute inset-0 w-full h-full object-cover"
         style={{
           opacity: 0.28,
           filter: "contrast(1.35)",
         }}
       />
-      {/* Subtle darkening behind headline area only — keeps image alive elsewhere */}
       <div
         className="absolute inset-0"
         style={{
@@ -27,12 +25,12 @@ const SlideTitle = () => (
       />
     </div>
     <FingerprintOverlay />
-    <div className="relative z-10 flex flex-col items-center justify-center text-center w-full h-full">
+    <div className="relative z-10 flex flex-col items-center justify-center text-center w-full h-full px-6">
       {/* Logo */}
       <motion.img
         src={logoWhite}
-        alt="Stark NKD"
-        className="mx-auto h-24 md:h-32 lg:h-40 w-auto"
+        alt="Stark NKD logo"
+        className="mx-auto h-16 md:h-32 lg:h-40 w-auto"
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.95 }}
         transition={{ duration: 0.35, ease: "easeOut" }}
@@ -40,7 +38,7 @@ const SlideTitle = () => (
 
       {/* Tagline */}
       <motion.p
-        className="text-[0.65rem] md:text-xs tracking-[0.5em] uppercase font-light mt-2 mb-20"
+        className="text-[0.6rem] md:text-xs tracking-[0.5em] uppercase font-light mt-2 mb-12 md:mb-20"
         style={{ color: "#b393da" }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.7 }}
@@ -51,14 +49,14 @@ const SlideTitle = () => (
 
       {/* Headline */}
       <motion.div
-        className="text-xl md:text-2xl lg:text-[1.7rem] uppercase tracking-[0.16em] font-semibold"
+        className="text-lg md:text-2xl lg:text-[1.7rem] uppercase tracking-[0.16em] font-semibold"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: "easeOut", delay: 0.3 }}
       >
-        <p className="text-foreground/90 leading-[1.5]">
+        <h1 className="text-foreground/90 leading-[1.5]">
           Journey into the unknown.
-        </p>
+        </h1>
         <p className="text-primary leading-[1.5] mt-1" style={{ opacity: 0.85 }}>
           Train your way back to control.
         </p>

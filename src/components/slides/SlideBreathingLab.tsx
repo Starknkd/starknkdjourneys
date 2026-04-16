@@ -12,9 +12,9 @@ const bodyLines = [
 ];
 
 const SlideBreathingLab = () => (
-  <div className="slide-root absolute inset-0 w-screen h-screen flex overflow-hidden bg-background">
-    {/* LEFT: headline + copy — 55% */}
-    <div className="relative w-[55%] h-full flex items-center z-10">
+  <div className="slide-root absolute inset-0 w-screen h-screen flex flex-col md:flex-row overflow-hidden bg-background">
+    {/* LEFT: headline + copy */}
+    <div className="relative w-full md:w-[55%] h-auto md:h-full flex items-center z-10">
       {/* Subtle lab environment bleed from left edge */}
       <img
         src={labEnv}
@@ -24,7 +24,7 @@ const SlideBreathingLab = () => (
       />
       <div className="absolute inset-0 bg-background/90" />
 
-      <div className="relative z-10 pl-12 md:pl-24 lg:pl-32 pr-10 max-w-2xl">
+      <div className="relative z-10 px-6 py-10 md:py-0 md:pl-24 lg:pl-32 md:pr-10 max-w-2xl">
         {/* Micro-line */}
         <motion.p
           className="text-sm tracking-[0.3em] uppercase text-foreground/50 mb-6"
@@ -37,7 +37,7 @@ const SlideBreathingLab = () => (
 
         {/* Headline */}
         <motion.h2
-          className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight text-foreground"
+          className="text-3xl md:text-5xl lg:text-7xl font-bold leading-tight text-foreground"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.7 }}
@@ -48,17 +48,17 @@ const SlideBreathingLab = () => (
         </motion.h2>
 
         {/* Body copy */}
-        <div className="mt-10 space-y-1.5">
+        <div className="mt-8 md:mt-10 space-y-1.5">
           {bodyLines.map((line, i) => (
             <motion.p
               key={i}
               className={[
                 "whitespace-pre-line",
                 line.type === "accent"
-                  ? "text-lg md:text-xl font-semibold text-accent"
+                  ? "text-base md:text-xl font-semibold text-accent"
                   : line.type === "emphasis"
-                    ? "text-lg md:text-xl font-extrabold text-foreground mt-4 tracking-wide"
-                    : "text-base md:text-lg text-foreground/70",
+                    ? "text-base md:text-xl font-extrabold text-foreground mt-4 tracking-wide"
+                    : "text-sm md:text-lg text-foreground/70",
               ].join(" ")}
               style={
                 line.type === "accent"
@@ -78,7 +78,7 @@ const SlideBreathingLab = () => (
         </div>
 
         {/* Supporting bottom */}
-        <div className="mt-16 space-y-1">
+        <div className="mt-10 md:mt-16 space-y-1">
           <motion.p
             className="text-xs tracking-[0.2em] uppercase text-foreground/60"
             initial={{ opacity: 0 }}
@@ -99,19 +99,15 @@ const SlideBreathingLab = () => (
       </div>
     </div>
 
-    {/* RIGHT: image — 45% */}
-    <div className="relative w-[45%] h-full">
-      {/* VR headset image — primary */}
+    {/* RIGHT: image (hidden on mobile) */}
+    <div className="relative hidden md:block w-[45%] h-full">
       <img
         src={labVR}
         alt="Person wearing VR headset in the Stark NKD breathing lab"
         className="absolute inset-0 w-full h-full object-cover object-center"
-        style={{
-          filter: "brightness(0.65) contrast(1.25)",
-        }}
+        style={{ filter: "brightness(0.65) contrast(1.25)" }}
       />
 
-      {/* Grain texture to match other slides */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -122,25 +118,20 @@ const SlideBreathingLab = () => (
         }}
       />
 
-      {/* Top-right corner darken (wall text) */}
       <div
         className="absolute inset-0"
         style={{
-          background:
-            "radial-gradient(ellipse at 95% 5%, hsl(var(--background) / 0.6) 0%, transparent 40%)",
+          background: "radial-gradient(ellipse at 95% 5%, hsl(var(--background) / 0.6) 0%, transparent 40%)",
         }}
       />
 
-      {/* Vignette */}
       <div
         className="absolute inset-0"
         style={{
-          background:
-            "radial-gradient(ellipse at 60% 50%, transparent 30%, hsl(var(--background) / 0.5) 100%)",
+          background: "radial-gradient(ellipse at 60% 50%, transparent 30%, hsl(var(--background) / 0.5) 100%)",
         }}
       />
 
-      {/* Biofeedback data signal — lifted above darkening overlays so it stays visible */}
       <img
         src={bioGraph}
         alt=""
@@ -152,21 +143,17 @@ const SlideBreathingLab = () => (
         }}
       />
 
-      {/* Left edge fade into text panel — wide smooth blend */}
       <div
         className="absolute inset-0"
         style={{
-          background:
-            "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background) / 0.88) 8%, hsl(var(--background) / 0.5) 20%, transparent 40%)",
+          background: "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background) / 0.88) 8%, hsl(var(--background) / 0.5) 20%, transparent 40%)",
         }}
       />
 
-      {/* Bottom fade */}
       <div
         className="absolute inset-0"
         style={{
-          background:
-            "linear-gradient(to top, hsl(var(--background) / 0.35) 0%, transparent 24%)",
+          background: "linear-gradient(to top, hsl(var(--background) / 0.35) 0%, transparent 24%)",
         }}
       />
     </div>

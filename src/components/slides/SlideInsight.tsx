@@ -4,10 +4,10 @@ import execStress from "@/assets/exec-stress.png";
 
 const SlideInsight = () => (
   <SlideShell slideKey={2} backgroundImage={execStress}>
-    <div className="max-w-5xl w-full text-left relative z-10">
+    <div className="max-w-5xl w-full text-left relative z-10 px-2">
       {/* Headline */}
       <motion.h2
-        className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] text-foreground mb-12"
+        className="text-3xl md:text-6xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] text-foreground mb-8 md:mb-12"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
@@ -16,7 +16,7 @@ const SlideInsight = () => (
       </motion.h2>
 
       {/* Staggered symptoms */}
-      <div className="space-y-4 mb-14">
+      <div className="space-y-3 md:space-y-4 mb-10 md:mb-14">
         {[
           "Tight chest, shallow breathing",
           "Reactive under pressure",
@@ -24,7 +24,7 @@ const SlideInsight = () => (
         ].map((line, i) => (
           <motion.p
             key={line}
-            className="text-lg md:text-xl lg:text-2xl"
+            className="text-base md:text-xl lg:text-2xl"
             style={{ color: "#b393da", opacity: 1 }}
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
@@ -37,7 +37,7 @@ const SlideInsight = () => (
 
       {/* Final line */}
       <motion.p
-        className="text-xl md:text-2xl lg:text-3xl font-medium text-foreground/90"
+        className="text-lg md:text-2xl lg:text-3xl font-medium text-foreground/90"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut", delay: 2.8 }}
