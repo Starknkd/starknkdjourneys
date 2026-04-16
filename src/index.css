@@ -116,6 +116,19 @@
   .progress-segment.past {
     background-color: hsl(var(--stark-periwinkle));
   }
+
+  /* Mobile slide stacking */
+  @media (max-width: 767px) {
+    .slide-root {
+      position: relative !important;
+      inset: auto !important;
+      width: 100% !important;
+      min-height: 100vh;
+      height: auto !important;
+      overflow: visible !important;
+      touch-action: pan-y;
+    }
+  }
 }
 
 @layer utilities {
@@ -125,8 +138,20 @@
 }
 html,
 body {
-  overflow-x: hidden; /* Prevents side-to-side scrolling */
-  overflow-y: auto; /* Ensures vertical scrolling works */
+  overflow-x: hidden;
   width: 100%;
   position: relative;
+}
+
+@media (max-width: 767px) {
+  body {
+    overflow-y: auto !important;
+    overflow: auto !important;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    overflow: hidden;
+  }
 }
