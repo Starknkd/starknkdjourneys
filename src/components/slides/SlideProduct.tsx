@@ -27,10 +27,10 @@ const stages = [
 
 const SlideProduct = () => (
   <SlideShell slideKey={6}>
-    <div className="max-w-5xl w-full flex flex-col items-center text-center gap-6 md:gap-8 my-[20px] py-[20px]">
+    <div className="max-w-5xl w-full flex flex-col items-center text-center gap-4 md:gap-8 px-2 py-6 md:my-[20px] md:py-[20px]">
       {/* Headline */}
       <motion.h2
-        className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] text-foreground"
+        className="text-2xl md:text-6xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] text-foreground"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
@@ -40,28 +40,28 @@ const SlideProduct = () => (
 
       {/* Sub */}
       <motion.div
-        className="flex flex-col items-center text-center gap-3"
+        className="flex flex-col items-center text-center gap-2 md:gap-3"
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.8 }}
       >
-        <p className="text-lg md:text-xl leading-relaxed text-stark-periwinkle opacity-80">
+        <p className="text-base md:text-xl leading-relaxed text-stark-periwinkle opacity-80">
           It starts with a 7-day reset.
         </p>
-        <p className="text-lg md:text-xl leading-relaxed text-muted-foreground opacity-70">
+        <p className="text-base md:text-xl leading-relaxed text-muted-foreground opacity-70">
           10 minutes a day. Built for real life.
         </p>
-        <p className="text-lg md:text-xl leading-relaxed text-foreground font-medium opacity-95">
+        <p className="text-base md:text-xl leading-relaxed text-foreground font-medium opacity-95">
           Ready for what's next.
         </p>
       </motion.div>
 
       {/* 3-Stage Flow */}
-      <div className="w-full flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0 mt-8">
+      <div className="w-full flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0 mt-6 md:mt-8">
         {stages.map((stage, i) => (
-          <div key={i} className="flex items-center">
+          <div key={i} className="flex flex-col md:flex-row items-center">
             <motion.div
-              className="relative w-48 md:w-56 h-40 md:h-44 rounded-2xl border flex flex-col items-center justify-center gap-3 overflow-hidden"
+              className="relative w-40 h-32 md:w-56 md:h-44 rounded-2xl border flex flex-col items-center justify-center gap-2 md:gap-3 overflow-hidden"
               style={{ borderColor: stage.color, borderWidth: "1px" }}
               initial={{ opacity: 0, scale: 0.85, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -71,6 +71,7 @@ const SlideProduct = () => (
                 className="absolute inset-0 w-full h-full pointer-events-none"
                 viewBox="0 0 200 180"
                 preserveAspectRatio="xMidYMid slice"
+                aria-hidden="true"
               >
                 <circle cx="100" cy="90" r="70" fill="none" stroke={stage.color} strokeWidth="0.5" opacity="0.06" />
                 <circle cx="100" cy="90" r="55" fill="none" stroke={stage.color} strokeWidth="0.4" opacity="0.05" />
@@ -82,12 +83,12 @@ const SlideProduct = () => (
                 style={{ background: `radial-gradient(circle at center, ${stage.glowColor}, transparent 70%)` }}
               />
               <span
-                className="text-xl md:text-2xl font-semibold tracking-wide relative z-10"
+                className="text-lg md:text-2xl font-semibold tracking-wide relative z-10"
                 style={{ color: stage.color }}
               >
                 {stage.title}
               </span>
-              <span className="text-xs md:text-sm text-muted-foreground tracking-wider relative z-10">
+              <span className="text-[0.65rem] md:text-sm text-muted-foreground tracking-wider relative z-10">
                 {stage.sub}
               </span>
               <motion.div
@@ -122,7 +123,7 @@ const SlideProduct = () => (
 
       {/* Closing line */}
       <motion.p
-        className="text-base md:text-lg tracking-[0.2em] uppercase font-medium text-accent py-0 my-[20px] opacity-[0.72]"
+        className="text-sm md:text-lg tracking-[0.2em] uppercase font-medium text-accent py-0 my-4 md:my-[20px] opacity-[0.72]"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 3.2 }}

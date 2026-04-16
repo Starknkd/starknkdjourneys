@@ -25,14 +25,13 @@ const SlideLab = () => (
     {/* Background image */}
     <img
       src={speakerImg}
-      alt=""
+      alt="Speaker presenting adaptive coaching methodology"
       className="absolute inset-0 w-full h-full object-cover"
       style={{ filter: "brightness(0.77) contrast(1.1)" }}
     />
 
     {/* Overlays */}
     <div className="absolute inset-0 bg-background/20" />
-    {/* Left-side darken for headline readability */}
     <div
       className="absolute inset-0"
       style={{
@@ -40,7 +39,6 @@ const SlideLab = () => (
           "linear-gradient(to right, hsl(var(--background) / 0.82) 0%, hsl(var(--background) / 0.55) 40%, hsl(var(--background) / 0.25) 60%, transparent 100%)",
       }}
     />
-    {/* Right-side darken for narrative readability */}
     <div
       className="absolute inset-0"
       style={{
@@ -48,16 +46,14 @@ const SlideLab = () => (
           "linear-gradient(to left, hsl(var(--background) / 0.78) 0%, hsl(var(--background) / 0.55) 35%, transparent 55%)",
       }}
     />
-    {/* Text safe zone — subtle extra darken behind right column only */}
     <div
-      className="absolute top-0 bottom-0 right-0"
+      className="absolute top-0 bottom-0 right-0 hidden md:block"
       style={{
         width: "50%",
         background:
           "linear-gradient(to left, hsl(var(--background) / 0.12) 0%, hsl(var(--background) / 0.10) 80%, transparent 100%)",
       }}
     />
-    {/* Bottom gradient */}
     <div
       className="absolute inset-0"
       style={{
@@ -65,7 +61,6 @@ const SlideLab = () => (
           "linear-gradient(to top, hsl(var(--background) / 0.6) 0%, transparent 40%)",
       }}
     />
-    {/* Vignette */}
     <div
       className="absolute inset-0"
       style={{
@@ -74,12 +69,12 @@ const SlideLab = () => (
       }}
     />
 
-    {/* Content — split layout */}
-    <div className="relative z-10 flex h-full">
+    {/* Content — stacked on mobile, side-by-side on desktop */}
+    <div className="relative z-10 flex flex-col md:flex-row h-full">
       {/* LEFT: headline + bridge */}
-      <div className="flex flex-col justify-center w-1/2 px-12 md:px-20 lg:px-28">
+      <div className="flex flex-col justify-center w-full md:w-1/2 px-6 py-10 md:py-0 md:px-20 lg:px-28">
         <motion.h2
-          className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[0.92] tracking-[-0.01em] text-foreground/95 mb-3"
+          className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-[0.92] tracking-[-0.01em] text-foreground/95 mb-3"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.15 }}
@@ -88,7 +83,7 @@ const SlideLab = () => (
         </motion.h2>
 
         <motion.p
-          className="text-lg md:text-xl text-foreground/45 mt-1"
+          className="text-base md:text-xl text-foreground/45 mt-1"
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
@@ -97,20 +92,20 @@ const SlideLab = () => (
         </motion.p>
       </div>
 
-      {/* RIGHT: narrative — nudged down 3–5% */}
-      <div className="flex flex-col justify-center w-1/2 px-12 md:px-16 lg:px-20" style={{ paddingTop: "4vh" }}>
+      {/* RIGHT: narrative */}
+      <div className="flex flex-col justify-center w-full md:w-1/2 px-6 pb-10 md:py-0 md:px-16 lg:px-20" style={{ paddingTop: "4vh" }}>
         <div className="space-y-3 max-w-lg">
           {narrativeLines.map((line, i) => (
             <motion.p
               key={i}
               className={
                 (line.type === "accent"
-                  ? "text-lg md:text-xl font-semibold text-accent mt-2 mb-2"
+                  ? "text-base md:text-xl font-semibold text-accent mt-2 mb-2"
                   : line.type === "benefit"
-                    ? "text-base md:text-lg text-foreground/90 whitespace-pre-line"
+                    ? "text-sm md:text-lg text-foreground/90 whitespace-pre-line"
                     : line.type === "anchor"
-                      ? "text-xl md:text-2xl text-foreground/95 font-bold mt-10 whitespace-pre-line"
-                      : "text-base md:text-lg text-foreground/75 whitespace-pre-line")
+                      ? "text-lg md:text-2xl text-foreground/95 font-bold mt-10 whitespace-pre-line"
+                      : "text-sm md:text-lg text-foreground/75 whitespace-pre-line")
               }
               style={
                 line.type === "accent"
@@ -131,7 +126,7 @@ const SlideLab = () => (
         </div>
 
         {/* Supporting */}
-        <div className="flex gap-10 mt-14 mb-4">
+        <div className="flex flex-wrap gap-4 md:gap-10 mt-10 md:mt-14 mb-4">
           {supportingItems.map((item, i) => (
             <motion.span
               key={i}

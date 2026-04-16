@@ -10,12 +10,12 @@ const SlideClose = () => (
       <SlideItem>
         <img
           src={logoWhite}
-          alt="Stark NKD"
-          className="mx-auto h-20 md:h-28 lg:h-36 w-auto mb-10 opacity-95"
+          alt="Stark NKD logo"
+          className="mx-auto h-16 md:h-28 lg:h-36 w-auto mb-8 md:mb-10 opacity-95"
         />
       </SlideItem>
       <SlideItem>
-        <p className="text-lg text-muted-foreground tracking-[0.3em] uppercase">
+        <p className="text-base md:text-lg text-muted-foreground tracking-[0.3em] uppercase">
           #breathetolead
         </p>
       </SlideItem>
