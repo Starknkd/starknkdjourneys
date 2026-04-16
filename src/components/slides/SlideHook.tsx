@@ -12,7 +12,6 @@ const SlideHook = () => (
         className="absolute inset-0 w-full h-full object-cover"
         style={{ opacity: 1 }}
       />
-      {/* Large centre cutout so pattern only shows at edges */}
       <div
         className="absolute inset-0"
         style={{
@@ -20,10 +19,10 @@ const SlideHook = () => (
         }}
       />
     </div>
-    <div className="relative z-10 max-w-5xl w-full text-center flex flex-col items-center justify-center">
+    <div className="relative z-10 max-w-5xl w-full text-center flex flex-col items-center justify-center px-4">
       {/* Line 1 */}
       <motion.h2
-        className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] text-foreground"
+        className="text-2xl md:text-6xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] text-foreground"
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
@@ -33,7 +32,7 @@ const SlideHook = () => (
 
       {/* Line 2 — second beat */}
       <motion.h2
-        className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] mt-4 md:mt-6"
+        className="text-2xl md:text-6xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] mt-3 md:mt-6"
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut", delay: 1.0 }}
@@ -52,7 +51,7 @@ const SlideHook = () => (
 
       {/* Supporting line */}
       <motion.p
-        className="text-muted-foreground text-lg md:text-xl tracking-wide mt-10 md:mt-14"
+        className="text-muted-foreground text-base md:text-xl tracking-wide mt-8 md:mt-14"
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.7 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 2.0 }}
