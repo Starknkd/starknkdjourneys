@@ -7,7 +7,7 @@ const fadeIn = {
 };
 
 const SlideTeam = () => (
-  <div className="absolute inset-0 w-screen h-screen overflow-hidden bg-background">
+  <div className="slide-root absolute inset-0 w-screen h-screen overflow-hidden bg-background">
     {/* Background image — single unified layer */}
     <img
       src={scaleBg}

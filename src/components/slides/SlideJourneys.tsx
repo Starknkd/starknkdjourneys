@@ -46,7 +46,7 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
 
 
   return (
-    <div className="absolute inset-0 w-screen h-screen overflow-hidden bg-background z-10">
+    <div className="slide-root absolute inset-0 w-screen h-screen overflow-hidden bg-background z-10">
       <AnimatePresence mode="wait">
         {/* ═══════ PART 1 — DIVER TITLE ═══════ */}
         {phase === 0 &&
