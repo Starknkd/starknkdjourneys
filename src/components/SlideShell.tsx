@@ -12,7 +12,7 @@ const SlideShell = ({ children, slideKey, backgroundImage }: SlideShellProps) =>
   <AnimatePresence mode="wait">
     <motion.div
       key={slideKey}
-      className="absolute inset-0 w-screen h-screen flex items-center justify-center overflow-hidden"
+      className="slide-root absolute inset-0 w-screen h-screen flex items-center justify-center overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
