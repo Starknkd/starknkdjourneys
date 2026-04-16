@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import landscapeImg from "@/assets/landscape-wim.webp";
 
 const SlideLandscape = () => (
-  <div className="absolute inset-0 w-screen h-screen flex overflow-hidden">
+  <div className="slide-root absolute inset-0 w-screen h-screen flex overflow-hidden">
     {/* Left side — 60% text */}
     <div className="relative w-[60%] h-full flex items-center bg-background z-10">
       <div className="pl-12 md:pl-24 lg:pl-32 pr-8 max-w-2xl">

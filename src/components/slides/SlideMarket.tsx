@@ -7,7 +7,7 @@ const fade = {
 };
 
 const SlideMarket = () => (
-  <div className="absolute inset-0 w-screen h-screen overflow-hidden bg-background">
+  <div className="slide-root absolute inset-0 w-screen h-screen overflow-hidden bg-background">
     {/* Background texture — LEFT edge */}
     <img
       src={categoryBg}

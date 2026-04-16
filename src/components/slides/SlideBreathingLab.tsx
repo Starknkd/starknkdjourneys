@@ -12,7 +12,7 @@ const bodyLines = [
 ];
 
 const SlideBreathingLab = () => (
-  <div className="absolute inset-0 w-screen h-screen flex overflow-hidden bg-background">
+  <div className="slide-root absolute inset-0 w-screen h-screen flex overflow-hidden bg-background">
     {/* LEFT: headline + copy — 55% */}
     <div className="relative w-[55%] h-full flex items-center z-10">
       {/* Subtle lab environment bleed from left edge */}

@@ -7,7 +7,7 @@ const fadeIn = {
 };
 
 const SlideTraction = () => (
-  <div className="absolute inset-0 w-screen h-screen flex items-center justify-center overflow-hidden bg-background">
+  <div className="slide-root absolute inset-0 w-screen h-screen flex items-center justify-center overflow-hidden bg-background">
     {/* Edge background textures */}
     <img
       src={bgTexture}
