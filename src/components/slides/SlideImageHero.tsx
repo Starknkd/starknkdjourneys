@@ -17,7 +17,14 @@ const SlideImageHero = ({ src, alt, caption, objectPosition = "center", imageSty
       style={{ objectPosition, ...imageStyle }}
       loading="lazy"
     />
-
+{/* TOP GRADIENT (glare control) */}
+<div
+  className="absolute inset-x-0 top-0 h-1/3 pointer-events-none z-[1]"
+  style={{
+    background:
+      "linear-gradient(to bottom, rgba(20,10,40,0.28) 0%, rgba(20,10,40,0.12) 40%, transparent 100%)",
+  }}
+/>
     {caption && (
       <div
         className="absolute inset-x-0 bottom-0 h-1/3 pointer-events-none z-[1]"
@@ -30,7 +37,7 @@ const SlideImageHero = ({ src, alt, caption, objectPosition = "center", imageSty
 
     {caption && (
       <div className="absolute inset-x-0 bottom-0 z-10 px-6 pb-10 sm:px-8 sm:pb-12">
-        <p className="text-sm tracking-[0.3em] uppercase text-foreground/90 font-light">{caption}</p>
+        <p className="text-[0.8rem] tracking-[0.25em] uppercase text-foreground/80 font-light">
       </div>
     )}
   </section>
