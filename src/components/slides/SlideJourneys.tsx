@@ -92,8 +92,8 @@ const PhaseMap = () => (
           "linear-gradient(to top, hsl(var(--background) / 0.55) 0%, hsl(var(--background) / 0.25) 40%, transparent 60%)",
       }}
     />
-    <div className="relative z-10 flex flex-col items-center md:items-end h-full pb-10 md:pb-36 px-6 justify-end md:justify-end">
-      <div className="flex flex-col justify-end md:h-full md:pr-10 lg:pr-20 max-w-xl text-center md:text-left">
+<div className="relative z-10 flex flex-col items-center md:items-end h-full pb-10 md:pb-36 px-6 justify-end md:justify-end">
+      <div className="flex flex-col justify-start md:h-full md:pr-10 lg:pr-20 max-w-xl text-center md:text-left">
         <h2 className="text-2xl md:text-3xl lg:text-[2.7rem] font-bold text-foreground leading-[0.95] mb-6 md:mb-8">
           Your breath now guides the journey.
         </h2>
