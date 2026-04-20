@@ -95,7 +95,7 @@ const PhaseMap = () => (
       }}
     />
     <div className="absolute z-10 top-[18vh] left-1/2 -translate-x-1/2 w-full max-w-[720px] px-6 md:top-[22vh] md:left-auto md:right-[12%] md:translate-x-0 md:max-w-[520px] md:px-0">
-      <div className="max-w-xl text-center md:ml-auto md:pr-[12vw] lg:pr-[14vw] md:text-left">
+      <div className="text-center md:text-left">
         <h2 className="text-2xl md:text-3xl lg:text-[2.7rem] font-bold text-foreground leading-[0.95] mb-6 md:mb-8">
           Your breath now guides the journey.
         </h2>
