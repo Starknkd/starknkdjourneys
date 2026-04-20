@@ -26,7 +26,7 @@ const SlideHook = () => (
       <div className="w-full max-w-xl">
         {/* Line 1 */}
         <motion.h2
-          className="text-2xl md:text-6xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] text-foreground"
+          className="text-[1.85rem] md:text-6xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] text-foreground"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
