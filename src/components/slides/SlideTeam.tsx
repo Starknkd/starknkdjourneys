@@ -34,8 +34,7 @@ const SlideTeam = () => (
 
     {/* Content */}
     <motion.div
-      className="relative z-10 h-full flex flex-col justify-center px-6 md:pl-24 lg:pl-32 md:pr-8"
-      style={{ maxWidth: "min(60%, 100%)" }}
+      className="relative z-10 h-full flex flex-col justify-center px-6 md:pl-24 lg:pl-32 md:pr-8 w-full md:max-w-[60%]"
       variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}
       initial="hidden"
       animate="show"

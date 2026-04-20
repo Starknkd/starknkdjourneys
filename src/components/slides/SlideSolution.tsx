@@ -4,7 +4,7 @@ import femaleExec from "@/assets/female-exec.png";
 const SlideSolution = () => (
   <div className="slide-root absolute inset-0 w-screen h-screen flex flex-col md:flex-row overflow-hidden">
     {/* Left side — text */}
-    <div className="relative w-full md:w-[60%] h-auto md:h-full flex items-center bg-background z-10">
+    <div className="relative w-full md:w-[60%] h-auto md:h-full flex items-center bg-transparent md:bg-background z-10">
       <div className="px-6 py-10 md:py-0 md:pl-24 lg:pl-32 md:pr-8 max-w-2xl">
         {/* Section label */}
         <motion.p
@@ -67,18 +67,18 @@ const SlideSolution = () => (
       </div>
     </div>
 
-    {/* Right side — image (hidden on mobile to avoid squeeze) */}
-    <div className="relative hidden md:block w-[40%] h-full">
+    {/* Right side — image. On desktop: 40% panel. On mobile: low-opacity background bleed */}
+    <div className="absolute md:relative inset-0 md:inset-auto w-full md:w-[40%] h-full pointer-events-none md:pointer-events-auto z-0 md:z-auto">
       <img
         src={femaleExec}
         alt="Professional experiencing stress and breathing difficulty"
-        className="absolute inset-0 w-full h-full object-cover object-[30%_center]"
+        className="absolute inset-0 w-full h-full object-cover object-[30%_center] opacity-20 md:opacity-100"
         style={{ filter: "brightness(0.75) contrast(1.12)" }}
       />
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background) / 0.5) 25%, transparent 55%)",
+          background: "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background) / 0.85) 35%, hsl(var(--background) / 0.5) 65%, hsl(var(--background) / 0.3) 100%)",
         }}
       />
     </div>

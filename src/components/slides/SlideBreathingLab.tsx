@@ -13,16 +13,26 @@ const bodyLines = [
 
 const SlideBreathingLab = () => (
   <div className="slide-root absolute inset-0 w-screen h-screen flex flex-col md:flex-row overflow-hidden bg-background">
+    {/* Mobile-only background image bleed */}
+    <img
+      src={labVR}
+      alt=""
+      aria-hidden="true"
+      className="md:hidden absolute inset-0 w-full h-full object-cover opacity-[0.18] z-0 pointer-events-none"
+      style={{ filter: "brightness(0.65) contrast(1.25)" }}
+    />
+    <div className="md:hidden absolute inset-0 bg-background/70 z-0 pointer-events-none" />
+
     {/* LEFT: headline + copy */}
     <div className="relative w-full md:w-[55%] h-auto md:h-full flex items-center z-10">
-      {/* Subtle lab environment bleed from left edge */}
+      {/* Subtle lab environment bleed from left edge (desktop) */}
       <img
         src={labEnv}
         alt=""
-        className="absolute inset-0 w-full h-full object-cover object-right opacity-[0.10]"
+        className="hidden md:block absolute inset-0 w-full h-full object-cover object-right opacity-[0.10]"
         style={{ filter: "saturate(0.3) brightness(0.5)" }}
       />
-      <div className="absolute inset-0 bg-background/90" />
+      <div className="hidden md:block absolute inset-0 bg-background/90" />
 
       <div className="relative z-10 px-6 py-10 md:py-0 md:pl-24 lg:pl-32 md:pr-10 max-w-2xl">
         {/* Micro-line */}
