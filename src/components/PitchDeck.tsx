@@ -106,8 +106,8 @@ const PitchDeck = () => {
   caption: "Dangerous media hype.",
   imageStyle: { filter: "brightness(0.9) contrast(0.98) saturate(0.9)" },
   captionStyle: {
-    fontSize: "0.9rem",   // ↓ slightly reduced
-    opacity: 0.85,
+    fontSize: "0.85rem",   // ↓ slightly reduced
+    opacity: 0.8,
   },
   key: "img-landscape",
 });
