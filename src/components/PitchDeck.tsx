@@ -103,7 +103,7 @@ const PitchDeck = () => {
   kind: "image",
   src: landscapeImg,
   alt: "Extreme cold exposure training — the industry's default answer",
-  caption: "Dangerous media hype.",
+  caption: "Media hype misleads.",
   imageStyle: { filter: "brightness(0.9) contrast(0.98) saturate(0.9)" },
   captionStyle: {
     fontSize: "0.85rem",   // ↓ slightly reduced
