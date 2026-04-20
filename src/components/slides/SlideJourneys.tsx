@@ -271,9 +271,10 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
-  );
-});
+     </div>
+</div>
+</div>
+);
 
 SlideJourneys.displayName = "SlideJourneys";
 
