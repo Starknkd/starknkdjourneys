@@ -8,7 +8,7 @@ interface SlideImageHeroProps {
   imageStyle?: CSSProperties;
 }
 
-const SlideImageHero = ({ src, alt, caption, objectPosition = "center" }: SlideImageHeroProps) => (
+const SlideImageHero = ({ src, alt, caption, objectPosition = "center", imageStyle }: SlideImageHeroProps) => (
   <section className="slide-root image-hero relative w-full min-h-screen overflow-hidden bg-background">
     <img
       src={src}
