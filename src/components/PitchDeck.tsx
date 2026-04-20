@@ -103,7 +103,7 @@ const PitchDeck = () => {
           kind: "image",
           src: landscapeImg,
           alt: "Extreme cold exposure training — the industry's default answer",
-          caption: "Media hype misleads.",
+          caption: "Media hype. Misleads.",
           key: "img-landscape",
         });
       } else if (Slide === SlideBreathingLab) {
