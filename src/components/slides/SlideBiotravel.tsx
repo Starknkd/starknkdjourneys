@@ -10,14 +10,11 @@ const SlideBiotravel = () => (
       style={{ filter: "brightness(0.55) contrast(1.1)" }}
     />
 
-    <div className="absolute inset-0" style={{ background: "hsl(var(--background) / 0.6)" }} />
+    <div className="absolute inset-0 hidden md:block" style={{ background: "hsl(var(--background) / 0.6)" }} />
+    <div className="absolute inset-0 md:hidden" style={{ background: "hsl(var(--background) / 0.4)" }} />
     <div
       className="absolute inset-0"
-      style={{ background: "radial-gradient(ellipse at 50% 50%, transparent 20%, hsl(var(--background) / 0.5) 70%)" }}
-    />
-    <div
-      className="absolute inset-0"
-      style={{ background: "radial-gradient(ellipse at center, transparent 30%, hsl(var(--background) / 0.55) 100%)" }}
+      style={{ background: "radial-gradient(ellipse at 50% 50%, transparent 25%, hsl(var(--background) / 0.55) 80%)" }}
     />
 
     <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6 md:px-16 lg:px-24">
