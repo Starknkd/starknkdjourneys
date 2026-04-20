@@ -119,7 +119,7 @@ const PitchDeck = () => {
           kind: "image",
           src: vrBg,
           alt: "VR breathing regulation experience — what partners help us scale",
-          caption: "Build it with us",
+          caption: "Try it out",
           key: "img-partner",
         });
       }
