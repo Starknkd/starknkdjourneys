@@ -55,14 +55,12 @@ const PitchDeck = () => {
   const navigate = useCallback(
     (direction: 1 | -1) => {
       if (current === JOURNEYS_INDEX && journeysRef.current) {
-        const consumed = direction === 1
-          ? journeysRef.current.handleNext()
-          : journeysRef.current.handlePrev();
+        const consumed = direction === 1 ? journeysRef.current.handleNext() : journeysRef.current.handlePrev();
         if (consumed) return;
       }
       setCurrent((prev) => Math.max(0, Math.min(total - 1, prev + direction)));
     },
-    [total, current]
+    [total, current],
   );
 
   useEffect(() => {
@@ -106,6 +104,7 @@ const PitchDeck = () => {
           src: landscapeImg,
           alt: "Extreme cold exposure training — the industry's default answer",
           caption: "Where the industry takes you",
+          imageStyle: { filter: "brightness(0.88) contrast(1.02) saturate(0.9)" },
           key: "img-landscape",
         });
       } else if (Slide === SlideBreathingLab) {
@@ -159,11 +158,7 @@ const PitchDeck = () => {
     <div className="relative w-screen h-screen bg-background overflow-y-auto">
       <div className="grain-overlay" />
       <EdgePattern opacity={0.3} />
-      {current === JOURNEYS_INDEX ? (
-        <SlideJourneys ref={journeysRef} />
-      ) : (
-        <CurrentSlide />
-      )}
+      {current === JOURNEYS_INDEX ? <SlideJourneys ref={journeysRef} /> : <CurrentSlide />}
       <ProgressBar current={current} total={total} />
     </div>
   );
