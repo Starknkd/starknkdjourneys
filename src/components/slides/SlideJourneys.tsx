@@ -92,34 +92,33 @@ const PhaseMap = () => (
           "linear-gradient(to top, hsl(var(--background) / 0.55) 0%, hsl(var(--background) / 0.25) 40%, transparent 60%)",
       }}
     />
-<div className="relative z-10 flex flex-col items-center md:items-end h-full pb-10 md:pb-36 px-6 justify-end md:justify-end">
-      <div className="flex flex-col justify-start md:h-full md:pr-10 lg:pr-20 max-w-xl text-center md:text-left">
-        <h2 className="text-2xl md:text-3xl lg:text-[2.7rem] font-bold text-foreground leading-[0.95] mb-6 md:mb-8">
-          Your breath now guides the journey.
-        </h2>
-        <div>
-          <p className="text-base md:text-lg lg:text-xl text-foreground/95 font-semibold mb-4 md:mb-5">
-            Choose your route.
-          </p>
-          <p className="text-sm md:text-lg text-foreground/80 font-medium mb-4 md:mb-6">
-            Keys unlock. Locals advise. Nature beckons.
-          </p>
-          <p className="text-base md:text-lg mt-4">
-            <span
-              className="text-primary font-semibold"
-              style={{
-                filter: "brightness(1.25)",
-                textShadow:
-                  "0 0 12px hsl(var(--stark-sunset) / 0.6), 0 0 28px hsl(var(--stark-sunset) / 0.3)",
-              }}
-            >
-              Your breath moves you forward.
-            </span>
-          </p>
-        </div>
-      </div>
+<div className="absolute inset-x-0 top-0 z-10 px-6 pt-16 md:px-8 md:pt-24">
+  <div className="max-w-xl text-center md:ml-auto md:pr-10 lg:pr-20 md:text-left">
+    <h2 className="text-2xl md:text-3xl lg:text-[2.7rem] font-bold text-foreground leading-[0.95] mb-6 md:mb-8">
+      Your breath now guides the journey.
+    </h2>
+    <div>
+      <p className="text-base md:text-lg lg:text-xl text-foreground/95 font-semibold mb-4 md:mb-5">
+        Choose your route.
+      </p>
+      <p className="text-sm md:text-lg text-foreground/80 font-medium mb-4 md:mb-6">
+        Keys unlock. Locals advise. Nature beckons.
+      </p>
+      <p className="text-base md:text-lg mt-4">
+        <span
+          className="text-primary font-semibold"
+          style={{
+            filter: "brightness(1.25)",
+            textShadow:
+              "0 0 12px hsl(var(--stark-sunset) / 0.6), 0 0 28px hsl(var(--stark-sunset) / 0.3)",
+          }}
+        >
+          Your breath moves you forward.
+        </span>
+      </p>
     </div>
   </div>
+</div>
 );
 
 /* ─── Phase 3: Hiker narrative ─── */
