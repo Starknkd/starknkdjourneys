@@ -1,8 +1,11 @@
+import { CSSProperties } from "react";
+
 interface SlideImageHeroProps {
   src: string;
   alt: string;
   caption?: string;
   objectPosition?: string;
+  imageStyle?: CSSProperties;
 }
 
 const SlideImageHero = ({ src, alt, caption, objectPosition = "center" }: SlideImageHeroProps) => (
@@ -11,7 +14,7 @@ const SlideImageHero = ({ src, alt, caption, objectPosition = "center" }: SlideI
       src={src}
       alt={alt}
       className="absolute inset-0 w-full h-full object-cover"
-      style={{ objectPosition }}
+      style={{ objectPosition, ...imageStyle }}
       loading="lazy"
     />
 
