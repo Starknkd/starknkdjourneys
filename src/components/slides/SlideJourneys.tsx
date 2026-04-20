@@ -94,7 +94,7 @@ const PhaseMap = () => (
           "linear-gradient(to top, hsl(var(--background) / 0.55) 0%, hsl(var(--background) / 0.25) 40%, transparent 60%)",
       }}
     />
-    <div className="absolute inset-x-0 top-0 z-10 px-6 pt-28 md:px-8 md:pt-44">
+    <div className="absolute inset-x-0 top-0 z-10 px-6 pt-28 md:px-8 md:pt-[18vh]">
       <div className="max-w-xl text-center md:ml-auto md:pr-6 lg:pr-12 md:text-left">
         <h2 className="text-2xl md:text-3xl lg:text-[2.7rem] font-bold text-foreground leading-[0.95] mb-6 md:mb-8">
           Your breath now guides the journey.
