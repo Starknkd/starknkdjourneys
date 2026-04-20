@@ -100,10 +100,10 @@ const PhaseMap = () => (
           Your breath now guides the journey.
         </h2>
         <div>
-          <p className="text-base md:text-lg lg:text-xl text-foreground/95 font-semibold mb-4 md:mb-5">
+          <p className="text-base md:text-lg lg:text-xl text-foreground/95 font-semibold mb-5 md:mb-5">
             Choose your route.
           </p>
-          <p className="text-sm md:text-lg text-foreground/80 font-medium mb-4 md:mb-6">
+          <p className="text-sm md:text-lg text-foreground/80 font-medium mb-5 md:mb-6">
             Keys unlock. Locals advise. Nature beckons.
           </p>
           <p className="text-base md:text-lg mt-4">
