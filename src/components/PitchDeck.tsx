@@ -98,15 +98,12 @@ const PitchDeck = () => {
           objectPosition: "30% center",
           key: "img-exec",
         });
-          } else if (Slide === SlideLandscape) {
+      } else if (Slide === SlideLandscape) {
         mobileFlow.push({
           kind: "image",
           src: landscapeImg,
           alt: "Extreme cold exposure training — the industry's default answer",
           caption: "Media hype misleads.",
-          key: "img-landscape",
-        });
-});
           key: "img-landscape",
         });
       } else if (Slide === SlideBreathingLab) {
