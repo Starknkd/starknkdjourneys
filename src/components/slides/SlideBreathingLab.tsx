@@ -13,15 +13,7 @@ const bodyLines = [
 
 const SlideBreathingLab = () => (
   <div className="slide-root absolute inset-0 w-screen h-screen flex flex-col md:flex-row overflow-hidden bg-background">
-    {/* Mobile-only background image bleed */}
-    <img
-      src={labVR}
-      alt=""
-      aria-hidden="true"
-      className="md:hidden absolute inset-0 w-full h-full object-cover opacity-[0.18] z-0 pointer-events-none"
-      style={{ filter: "brightness(0.65) contrast(1.25)" }}
-    />
-    <div className="md:hidden absolute inset-0 bg-background/70 z-0 pointer-events-none" />
+    {/* Mobile: image is shown as a dedicated full-bleed slide; here keep clean text background */}
 
     {/* LEFT: headline + copy */}
     <div className="relative w-full md:w-[55%] h-auto md:h-full flex items-center z-10">

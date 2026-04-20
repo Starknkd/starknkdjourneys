@@ -11,7 +11,7 @@ interface SlideImageHeroProps {
  * would otherwise be reduced to a faint background behind text.
  */
 const SlideImageHero = ({ src, alt, caption, objectPosition = "center" }: SlideImageHeroProps) => (
-  <div className="slide-root relative w-full overflow-hidden bg-background">
+  <div className="slide-root image-hero relative w-full overflow-hidden bg-background flex flex-col">
     <img
       src={src}
       alt={alt}

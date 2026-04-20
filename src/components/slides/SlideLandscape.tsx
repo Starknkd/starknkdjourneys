@@ -65,7 +65,7 @@ const SlideLandscape = () => (
       <img
         src={landscapeImg}
         alt="Extreme cold exposure training in icy conditions"
-        className="absolute inset-0 w-full h-full object-cover brightness-[0.7] contrast-[1.18] saturate-[0.9] opacity-20 md:opacity-100"
+        className="absolute inset-0 w-full h-full object-cover brightness-[0.7] contrast-[1.18] saturate-[0.9] opacity-0 md:opacity-100"
       />
       <div
         className="absolute inset-0"
