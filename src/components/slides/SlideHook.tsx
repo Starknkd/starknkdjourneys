@@ -3,23 +3,20 @@ import { motion } from "framer-motion";
 import brandWaveBg from "@/assets/brand-wave-bg-2.jpg";
 
 const SlideHook = () => (
-  <SlideShell slideKey={1}>
+  <SlideShell slideKey={1} align="center">
     {/* Brand wave pattern — edges/border only at full opacity */}
     <div className="absolute inset-0 z-[1] pointer-events-none">
-      <img
-        src={brandWaveBg}
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ opacity: 1 }}
-      />
+      <img src={brandWaveBg} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ opacity: 1 }} />
       <div
         className="absolute inset-0"
         style={{
-          background: "radial-gradient(ellipse 70% 65% at 50% 50%, hsl(var(--background)) 0%, hsl(var(--background) / 0.85) 60%, transparent 100%)",
+          background:
+            "radial-gradient(ellipse 70% 65% at 50% 50%, hsl(var(--background)) 0%, hsl(var(--background) / 0.85) 60%, transparent 100%)",
         }}
       />
     </div>
-    <div className="relative z-10 max-w-5xl w-full text-center flex flex-col items-center justify-center px-4">
+
+    <div className="relative z-10 w-full max-w-xl text-center flex flex-col items-center justify-center px-6 sm:px-8">
       {/* Line 1 */}
       <motion.h2
         className="text-2xl md:text-6xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] text-foreground"
@@ -41,7 +38,7 @@ const SlideHook = () => (
         <span className="relative inline-block">
           <span className="relative z-10 text-primary">breathing problem.</span>
           <motion.span
-            className="absolute inset-0 -inset-x-4 -inset-y-2 rounded-full bg-primary/10 blur-2xl"
+            className="absolute -inset-x-4 -inset-y-2 rounded-full bg-primary/10 blur-2xl"
             initial={{ opacity: 0, scale: 0.7 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: "easeOut", delay: 1.6 }}
@@ -51,9 +48,9 @@ const SlideHook = () => (
 
       {/* Supporting line */}
       <motion.p
-        className="text-muted-foreground text-base md:text-xl tracking-wide mt-8 md:mt-14"
+        className="text-muted-foreground text-base md:text-xl tracking-wide mt-8 md:mt-14 max-w-md"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.7 }}
+        animate={{ opacity: 0.78 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 2.0 }}
       >
         Your system is overdriven - not broken.
