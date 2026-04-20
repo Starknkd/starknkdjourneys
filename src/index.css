@@ -126,12 +126,14 @@
       height: auto !important;
       overflow: hidden !important;
       touch-action: pan-y;
-      /* Consistent vertical rhythm: generous top space, balanced bottom */
-      padding-top: clamp(4rem, 10vh, 6rem) !important;
-      padding-bottom: clamp(3rem, 7vh, 4.5rem) !important;
+      /* Consistent vertical rhythm: headlines slightly above centre,
+         generous bottom breathing room */
+      padding-top: clamp(5rem, 14vh, 8rem) !important;
+      padding-bottom: clamp(4rem, 12vh, 7rem) !important;
       display: flex !important;
       flex-direction: column !important;
-      justify-content: center !important;
+      /* Sit content slightly above true centre for better optical balance */
+      justify-content: flex-start !important;
     }
 
     /* Inner SlideShell wrapper: stop forcing full-height centering on mobile */
@@ -140,14 +142,22 @@
       min-height: 0 !important;
     }
 
-    /* Split slides: collapse absolute side panels into stacked flow on mobile */
+    /* Image-hero slides should fill the viewport with no inner padding */
+    .slide-root.image-hero {
+      padding: 0 !important;
+      min-height: 80svh;
+      justify-content: flex-end !important;
+    }
+
+    /* Split slides: when an image is treated as a soft mobile bleed,
+       keep it visible but unobtrusive */
     .slide-root .mobile-bg-image {
       position: absolute !important;
       inset: 0 !important;
       width: 100% !important;
       height: 100% !important;
       z-index: 0 !important;
-      opacity: 0.22 !important;
+      opacity: 0.35 !important;
     }
   }
 }

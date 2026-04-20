@@ -72,7 +72,7 @@ const SlideSolution = () => (
       <img
         src={femaleExec}
         alt="Professional experiencing stress and breathing difficulty"
-        className="absolute inset-0 w-full h-full object-cover object-[30%_center] opacity-20 md:opacity-100"
+        className="absolute inset-0 w-full h-full object-cover object-[30%_center] opacity-0 md:opacity-100"
         style={{ filter: "brightness(0.75) contrast(1.12)" }}
       />
       <div
