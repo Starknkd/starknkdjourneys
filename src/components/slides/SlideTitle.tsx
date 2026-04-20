@@ -39,7 +39,7 @@ const SlideTitle = () => (
 
       <motion.p
         className="text-[0.6rem] md:text-xs tracking-[0.5em] uppercase font-light mt-2 mb-12 md:mb-20"
-        style={{ color: "#b393da" }}
+        style={{ color: "rgba(255,255,255,0.75)" }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.7 }}
         transition={{ duration: 0.3, ease: "easeOut", delay: 0.15 }}
