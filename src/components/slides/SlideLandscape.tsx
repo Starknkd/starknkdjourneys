@@ -24,7 +24,7 @@ const SlideLandscape = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
-          The industry is solving this wrong.
+          The industry is solving this <span className="text-primary font-extrabold">wrong.</span>
         </motion.h2>
 
         {/* Body lines */}
@@ -70,7 +70,8 @@ const SlideLandscape = () => (
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background) / 0.85) 35%, hsl(var(--background) / 0.5) 65%, hsl(var(--background) / 0.3) 100%)",
+          background:
+            "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background) / 0.85) 35%, hsl(var(--background) / 0.5) 65%, hsl(var(--background) / 0.3) 100%)",
         }}
       />
       <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
