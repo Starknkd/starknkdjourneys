@@ -5,7 +5,7 @@ import logoWhite from "@/assets/logo-white.png";
 import diverCover from "@/assets/diver-cover.jpg";
 
 const SlideTitle = () => (
-  <SlideShell slideKey={0}>
+  <SlideShell slideKey={0} align="center">
     <div className="absolute inset-0 overflow-hidden">
       <img
         src={diverCover}
@@ -19,8 +19,7 @@ const SlideTitle = () => (
       <div
         className="absolute inset-0"
         style={{
-          background:
-            "radial-gradient(ellipse 44% 30% at 50% 62%, hsl(var(--background) / 0.45) 0%, transparent 100%)",
+          background: "radial-gradient(ellipse 44% 30% at 50% 62%, hsl(var(--background) / 0.45) 0%, transparent 100%)",
         }}
       />
     </div>
@@ -54,9 +53,7 @@ const SlideTitle = () => (
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: "easeOut", delay: 0.3 }}
       >
-        <h1 className="text-foreground/90 leading-[1.5]">
-          Journey into the unknown.
-        </h1>
+        <h1 className="text-foreground/90 leading-[1.5]">Journey into the unknown.</h1>
         <p className="text-primary leading-[1.5] mt-1" style={{ opacity: 0.85 }}>
           Train your way back to control.
         </p>
