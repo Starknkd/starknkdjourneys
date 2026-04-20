@@ -34,8 +34,8 @@ const PhaseTitle = () => (
           "radial-gradient(ellipse at 85% 85%, hsl(var(--background) / 0.45) 0%, transparent 50%)",
       }}
     />
-    <div
-     className="relative z-10 flex flex-col items-center md:items-end h-full pt-12 md:pt-24 px-6 justify-start"tems-center justify-center h-full px-6 md:px-8"
+     <div
+      className="relative z-10 flex flex-col items-center justify-center h-full px-6 md:px-8"
       style={{
         textShadow:
           "0 2px 14px hsl(var(--background) / 0.8), 0 1px 5px hsl(var(--background) / 0.6)",
