@@ -98,18 +98,14 @@ const PitchDeck = () => {
           objectPosition: "30% center",
           key: "img-exec",
         });
-      } else if (Slide === SlideLandscape) {
-       mobileFlow.push({
-  kind: "image",
-  src: landscapeImg,
-  alt: "Extreme cold exposure training — the industry's default answer",
-  caption: "Media hype misleads.",
-  imageStyle: { filter: "brightness(0.9) contrast(0.98) saturate(0.9)" },
-  captionStyle: {
-    fontSize: "0.85rem",   // ↓ slightly reduced
-    opacity: 0.8,
-  },
-  key: "img-landscape",
+          } else if (Slide === SlideLandscape) {
+        mobileFlow.push({
+          kind: "image",
+          src: landscapeImg,
+          alt: "Extreme cold exposure training — the industry's default answer",
+          caption: "Media hype misleads.",
+          key: "img-landscape",
+        });
 });
           key: "img-landscape",
         });
