@@ -116,8 +116,9 @@ const PhaseMap = () => (
           Your breath moves you forward.
         </span>
       </p>
-    </div>
+        </div>
   </div>
+</div>
 </div>
 );
 
