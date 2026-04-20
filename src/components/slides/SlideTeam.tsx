@@ -16,7 +16,8 @@ const SlideTeam = () => (
     />
 
     <div className="absolute inset-0" style={{ background: "hsl(var(--background) / 0.4)" }} />
-    <div className="absolute inset-0" style={{ background: "hsl(var(--background) / 0.8)" }} />
+    <div className="absolute inset-0 hidden md:block" style={{ background: "hsl(var(--background) / 0.8)" }} />
+    <div className="absolute inset-0 md:hidden" style={{ background: "hsl(var(--background) / 0.3)" }} />
     <div
       className="absolute inset-0"
       style={{
