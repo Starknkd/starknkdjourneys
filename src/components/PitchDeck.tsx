@@ -74,19 +74,19 @@ const PitchDeck = () => {
     return () => window.removeEventListener("keydown", handleKey);
   }, [navigate, isMobile]);
 
-  // Mobile: render all slides stacked vertically
+  // Mobile: render all slides stacked vertically with clean section boundaries
   if (isMobile) {
     return (
       <div className="relative w-full bg-background">
         <div className="grain-overlay" />
         {slides.map((Slide, i) => (
-          <div key={i} className="relative w-full min-h-screen">
-            {i === JOURNEYS_INDEX ? (
-              <SlideJourneys ref={journeysRef} />
-            ) : (
-              <Slide />
-            )}
-          </div>
+          <section
+            key={i}
+            className="relative w-full overflow-hidden border-b border-foreground/5"
+            aria-label={`Slide ${i + 1} of ${total}`}
+          >
+            <Slide />
+          </section>
         ))}
       </div>
     );
