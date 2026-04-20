@@ -26,19 +26,17 @@ const SlideHook = () => (
       <div className="w-full max-w-xl">
         {/* Line 1 */}
         <motion.h2
-          className="text-2xl md:text-6xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] mt-3 md:mt-6"
+          className="text-2xl md:text-6xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] text-foreground"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 1.0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
         >
-          <span className="text-foreground">You don't have a </span>
-          <span className="relative inline-block">
-            <span className="relative z-10 text-primary">stress problem.</span>
-            <motion.span
+          You don't have a stress problem.
+        </motion.h2>
 
         {/* Line 2 */}
         <motion.h2
-          className="text-2xl md:text-6xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] mt-3 md:mt-6"
+          className="text-2xl md:text-6xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] mt-5 md:mt-10"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 1.0 }}
@@ -57,7 +55,7 @@ const SlideHook = () => (
 
         {/* Supporting line */}
         <motion.p
-          className="text-muted-foreground text-base md:text-xl tracking-wide mt-8 md:mt-14 max-w-md mx-auto leading-relaxed"
+          className="text-muted-foreground text-base md:text-xl tracking-wide mt-6 md:mt-10 max-w-md mx-auto leading-relaxed"
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.82 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 2.0 }}
