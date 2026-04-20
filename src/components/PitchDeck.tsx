@@ -99,18 +99,18 @@ const PitchDeck = () => {
           key: "img-exec",
         });
       } else if (Slide === SlideLandscape) {
-        mobileFlow.push({
-          kind: "image",
-          src: landscapeImg,
-          alt: "Extreme cold exposure training — the industry's default answer",
-          caption: "Dangerous media hype.",
-          imageStyle: {
-            filter: "brightness(0.9) contrast(1.02) saturate(0.92)",
-          },
-          overlay: {
-            background:
-              "linear-gradient(to bottom, rgba(20,10,40,0.35) 0%, rgba(20,10,40,0.15) 25%, rgba(20,10,40,0) 50%)",
-          },
+       mobileFlow.push({
+  kind: "image",
+  src: landscapeImg,
+  alt: "Extreme cold exposure training — the industry's default answer",
+  caption: "Dangerous media hype.",
+  imageStyle: { filter: "brightness(0.9) contrast(0.98) saturate(0.9)" },
+  captionStyle: {
+    fontSize: "0.9rem",   // ↓ slightly reduced
+    opacity: 0.85,
+  },
+  key: "img-landscape",
+});
           key: "img-landscape",
         });
       } else if (Slide === SlideBreathingLab) {
