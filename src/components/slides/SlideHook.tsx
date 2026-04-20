@@ -55,12 +55,14 @@ const SlideHook = () => (
 
         {/* Supporting line */}
         <motion.p
-          className="text-muted-foreground text-base md:text-xl tracking-wide mt-8 md:mt-14 max-w-md mx-auto"
+          className="text-muted-foreground text-base md:text-xl tracking-wide mt-8 md:mt-14 max-w-md mx-auto leading-relaxed"
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.82 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 2.0 }}
         >
-          Your system is overdriven - not broken.
+          Your system is overdriven.
+          <br />
+          Not broken.
         </motion.p>
       </div>
     </div>
