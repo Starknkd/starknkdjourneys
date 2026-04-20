@@ -142,11 +142,12 @@
       min-height: 0 !important;
     }
 
-    /* Image-hero slides should fill the viewport with no inner padding */
+    /* Image-hero slides: TRUE full-bleed. No padding, no inner flex
+       constraints — image must fill the entire viewport. */
     .slide-root.image-hero {
       padding: 0 !important;
-      min-height: 80svh;
-      justify-content: flex-end !important;
+      min-height: 100svh !important;
+      display: block !important;
     }
 
     /* Split slides: when an image is treated as a soft mobile bleed,
