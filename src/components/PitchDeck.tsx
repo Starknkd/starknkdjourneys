@@ -104,7 +104,13 @@ const PitchDeck = () => {
           src: landscapeImg,
           alt: "Extreme cold exposure training — the industry's default answer",
           caption: "Dangerous media hype.",
-          imageStyle: { filter: "brightness(0.88) contrast(1.02) saturate(0.9)" },
+          imageStyle: {
+            filter: "brightness(0.9) contrast(1.02) saturate(0.92)",
+          },
+          overlay: {
+            background:
+              "linear-gradient(to bottom, rgba(20,10,40,0.35) 0%, rgba(20,10,40,0.15) 25%, rgba(20,10,40,0) 50%)",
+          },
           key: "img-landscape",
         });
       } else if (Slide === SlideBreathingLab) {
