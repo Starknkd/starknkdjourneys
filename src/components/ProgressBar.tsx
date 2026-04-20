@@ -6,7 +6,7 @@ interface ProgressBarProps {
 const ProgressBar = ({ current, total }: ProgressBarProps) => (
   <nav
     aria-label="Slide progress"
-    className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex gap-1.5 transition-opacity duration-500"
+    className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 hidden md:flex gap-1.5 transition-opacity duration-500"
     style={{ opacity: current === 0 ? 0.3 : 1 }}
   >
     {Array.from({ length: total }, (_, i) => (

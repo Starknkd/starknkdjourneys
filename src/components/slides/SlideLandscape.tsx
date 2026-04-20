@@ -4,7 +4,7 @@ import landscapeImg from "@/assets/landscape-wim.webp";
 const SlideLandscape = () => (
   <div className="slide-root absolute inset-0 w-screen h-screen flex flex-col md:flex-row overflow-hidden">
     {/* Left side — text */}
-    <div className="relative w-full md:w-[60%] h-auto md:h-full flex items-center bg-background z-10">
+    <div className="relative w-full md:w-[60%] h-auto md:h-full flex items-center bg-transparent md:bg-background z-10">
       <div className="px-6 py-10 md:py-0 md:pl-24 lg:pl-32 md:pr-8 max-w-2xl">
         {/* Section label */}
         <motion.p
@@ -60,20 +60,20 @@ const SlideLandscape = () => (
       </div>
     </div>
 
-    {/* Right side — image (hidden on mobile) */}
-    <div className="relative hidden md:block w-[40%] h-full">
+    {/* Right side — image. Desktop panel; mobile: low-opacity background bleed */}
+    <div className="absolute md:relative inset-0 md:inset-auto w-full md:w-[40%] h-full pointer-events-none md:pointer-events-auto z-0 md:z-auto">
       <img
         src={landscapeImg}
         alt="Extreme cold exposure training in icy conditions"
-        className="absolute inset-0 w-full h-full object-cover brightness-[0.7] contrast-[1.18] saturate-[0.9]"
+        className="absolute inset-0 w-full h-full object-cover brightness-[0.7] contrast-[1.18] saturate-[0.9] opacity-20 md:opacity-100"
       />
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(to right, hsl(var(--background) / 0.75) 0%, hsl(var(--background) / 0.35) 40%, hsl(var(--background) / 0.3) 100%)",
+          background: "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background) / 0.85) 35%, hsl(var(--background) / 0.5) 65%, hsl(var(--background) / 0.3) 100%)",
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
+      <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
     </div>
   </div>
 );

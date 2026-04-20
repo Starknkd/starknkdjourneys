@@ -3,10 +3,20 @@ import vrBg from "@/assets/vr-partner-bg.png";
 
 const SlidePartner = () => (
   <div className="slide-root absolute inset-0 w-screen h-screen overflow-hidden bg-background">
-    {/* Left text area — pure background (desktop only) */}
-    <div className="absolute top-0 left-0 bottom-0 w-full md:w-[58%] bg-background" />
+    {/* Mobile background bleed */}
+    <img
+      src={vrBg}
+      alt=""
+      aria-hidden="true"
+      className="md:hidden absolute inset-0 w-full h-full object-cover opacity-[0.18] z-0 pointer-events-none"
+      style={{ filter: "saturate(0.85) contrast(1.05) brightness(0.9)" }}
+    />
+    <div className="md:hidden absolute inset-0 bg-background/70 z-0 pointer-events-none" />
 
-    {/* Right-side image container (hidden on mobile) */}
+    {/* Left text area — pure background (desktop only) */}
+    <div className="hidden md:block absolute top-0 left-0 bottom-0 w-[58%] bg-background" />
+
+    {/* Right-side image container (desktop only) */}
     <div className="absolute top-0 right-0 bottom-0 w-[42%] overflow-hidden hidden md:block">
       <img
         src={vrBg}
