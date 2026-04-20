@@ -26,13 +26,15 @@ const SlideHook = () => (
       <div className="w-full max-w-xl">
         {/* Line 1 */}
         <motion.h2
-          className="text-2xl md:text-6xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] text-foreground"
+          className="text-2xl md:text-6xl lg:text-7xl font-extrabold leading-[0.92] tracking-[-0.01em] mt-3 md:mt-6"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 1.0 }}
         >
-          You don't have a stress problem.
-        </motion.h2>
+          <span className="text-foreground">You don't have a </span>
+          <span className="relative inline-block">
+            <span className="relative z-10 text-primary">stress problem.</span>
+            <motion.span
 
         {/* Line 2 */}
         <motion.h2
