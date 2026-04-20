@@ -19,6 +19,12 @@ import SlideTeam from "@/components/slides/SlideTeam";
 import SlideBiotravel from "@/components/slides/SlideBiotravel";
 import SlidePartner from "@/components/slides/SlidePartner";
 import SlideClose from "@/components/slides/SlideClose";
+import SlideImageHero from "@/components/slides/SlideImageHero";
+
+import femaleExec from "@/assets/female-exec.png";
+import landscapeImg from "@/assets/landscape-wim.webp";
+import labVR from "@/assets/lab-vr-headset.jpg";
+import vrBg from "@/assets/vr-partner-bg.png";
 
 const JOURNEYS_INDEX = 6;
 
@@ -60,7 +66,7 @@ const PitchDeck = () => {
   );
 
   useEffect(() => {
-    if (isMobile) return; // No keyboard nav on mobile
+    if (isMobile) return;
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "ArrowRight" || e.key === " " || e.key === "ArrowDown") {
         e.preventDefault();
@@ -74,18 +80,72 @@ const PitchDeck = () => {
     return () => window.removeEventListener("keydown", handleKey);
   }, [navigate, isMobile]);
 
-  // Mobile: render all slides stacked vertically with clean section boundaries
+  // Mobile: stack all slides vertically. Primary narrative images get
+  // dedicated full-bleed image slides interleaved between text slides
+  // to preserve cinematic pacing and visual identity.
   if (isMobile) {
+    type MobileEntry =
+      | { kind: "slide"; Component: (typeof slides)[number]; key: string }
+      | { kind: "image"; src: string; alt: string; caption?: string; objectPosition?: string; key: string };
+
+    const mobileFlow: MobileEntry[] = [];
+    slides.forEach((Slide, i) => {
+      mobileFlow.push({ kind: "slide", Component: Slide, key: `s-${i}` });
+      if (Slide === SlideSolution) {
+        mobileFlow.push({
+          kind: "image",
+          src: femaleExec,
+          alt: "Professional under pressure — the moment a system tips into dysregulation",
+          caption: "The mechanism, made visible",
+          objectPosition: "30% center",
+          key: "img-exec",
+        });
+      } else if (Slide === SlideLandscape) {
+        mobileFlow.push({
+          kind: "image",
+          src: landscapeImg,
+          alt: "Extreme cold exposure training — the industry's default answer",
+          caption: "Where the industry takes you",
+          key: "img-landscape",
+        });
+      } else if (Slide === SlideBreathingLab) {
+        mobileFlow.push({
+          kind: "image",
+          src: labVR,
+          alt: "Inside the Stark NKD breathing lab — VR headset, live biofeedback",
+          caption: "Inside the lab",
+          key: "img-lab",
+        });
+      } else if (Slide === SlidePartner) {
+        mobileFlow.push({
+          kind: "image",
+          src: vrBg,
+          alt: "VR breathing regulation experience — what partners help us scale",
+          caption: "Build it with us",
+          key: "img-partner",
+        });
+      }
+    });
+
     return (
       <div className="relative w-full bg-background">
         <div className="grain-overlay" />
-        {slides.map((Slide, i) => (
+        {mobileFlow.map((entry, i) => (
           <section
-            key={i}
+            key={entry.key}
             className="relative w-full overflow-hidden border-b border-foreground/5"
-            aria-label={`Slide ${i + 1} of ${total}`}
+            aria-label={`Slide ${i + 1}`}
           >
-            <Slide />
+            {entry.kind === "slide" ? (
+              <entry.Component />
+            ) : (
+              <SlideImageHero
+                src={entry.src}
+                alt={entry.alt}
+                caption={entry.caption}
+                objectPosition={entry.objectPosition}
+              />
+            )}
           </section>
         ))}
       </div>
