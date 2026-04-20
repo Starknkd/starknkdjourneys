@@ -19,9 +19,10 @@ const SlideImageHero = ({ src, alt, caption, objectPosition = "center", imageSty
     />
 
     <div
-      className="absolute inset-x-0 top-0 h-1/3 pointer-events-none z-[1]"
+      className="absolute inset-x-0 bottom-0 h-[60%] pointer-events-none z-[1]"
       style={{
-        background: "linear-gradient(to bottom, rgba(20,10,40,0.42) 0%, rgba(20,10,40,0.18) 35%, transparent 100%)",
+        background:
+          "linear-gradient(to top, hsl(var(--background) / 1) 0%, hsl(var(--background) / 0.85) 25%, hsl(var(--background) / 0.5) 55%, transparent 100%)",
       }}
     />
 
