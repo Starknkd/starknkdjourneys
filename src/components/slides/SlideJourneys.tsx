@@ -1,10 +1,9 @@
 import { useState, useEffect, useRef, forwardRef, useImperativeHandle } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useIsMobile } from "@/hooks/use-mobile";
 import milfordImg from "@/assets/milford-bird.png";
 import mapImg from "@/assets/world-map.png";
 import hikerImg from "@/assets/hiker-journey.png";
-
-
 /* ─── ambient dot nodes (dimmer, secondary) ─── */
 const ambientDots = [
 { cx: 780, cy: 280, delay: 0 },
@@ -23,6 +22,7 @@ export interface SlideJourneysRef {
 const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
   const [phase, setPhase] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const isMobile = useIsMobile();
 
   useImperativeHandle(ref, () => ({
     handleNext: () => {
@@ -44,6 +44,22 @@ const SlideJourneys = forwardRef<SlideJourneysRef>((_, ref) => {
     };
   }, []);
 
+  // Mobile: render all 3 phases stacked so narrative parity is preserved
+  if (isMobile) {
+    return (
+      <>
+        <div className="slide-root relative w-full overflow-hidden bg-background">
+          <PhaseTitle />
+        </div>
+        <div className="slide-root relative w-full overflow-hidden bg-background">
+          <PhaseMap />
+        </div>
+        <div className="slide-root relative w-full overflow-hidden bg-background">
+          <PhaseNarrative />
+        </div>
+      </>
+    );
+  }
 
   return (
     <div className="slide-root absolute inset-0 w-screen h-screen overflow-hidden bg-background z-10">
